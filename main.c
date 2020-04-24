@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
 
 void takeInput(char input[]);
 void LD(char input[]);
+void ADD(char input[]);
+void regbin(int n , int k,int temp[] );
 
 int main() {
 
@@ -30,6 +33,7 @@ int main() {
 
                 //ADD
             case 201:
+                ADD(input);
                 break;
 
                 //NOT
@@ -90,6 +94,90 @@ void bin(char n){
 
     /* step 2 */
     printf("%d", n % 2);
+}
+
+void regbin(int n , int k,int temp[] ){
+    if (n > 1) {
+        k++;
+        regbin((n / 2), k, temp);
+
+    }
+    if (n ==1 )
+        k++;
+
+    *(temp+(k)) = n % 2;
+
+}
+void ADD(char input[]) {
+
+    int bits[4] = {0, 0, 0, 1};
+    for (int i = 0; i < 4; ++i) {
+        printf("%d", bits[i]);
+    }
+
+    int reg_bits[3] = {0, 0, 0};
+
+    char reg1 = input[5];
+    reg1 = reg1 - 48; //reset ASCII value
+    regbin(reg1, -1, reg_bits);
+
+    for (int l = 2; l >= 0; --l) {
+        printf("%d", reg_bits[l]);
+    }
+
+    char reg2 = input[9];
+    reg2 = reg2 - 48; //reset ASCII value
+    regbin(reg2, -1, reg_bits);
+
+    for (int l = 2; l >= 0; --l) {
+        printf("%d", reg_bits[l]);
+    }
+
+
+    if (input[12] == 'R') {
+        printf("000");
+
+        char reg3 = input[13];
+        reg3 = reg3 - 48; //reset ASCII value
+        regbin(reg3, -1, reg_bits);
+
+        for (int l = 2; l >= 0; --l) {
+            printf("%d", reg_bits[l]);
+        }
+    } else{
+
+        char imm[3];
+        int immadiate_counter = 0;
+        for (int j = 13; j < 30 ; ++j) {
+            if((input[j]>48 && input[j]<57) || input[j] == '-'){
+                imm[immadiate_counter] = input[j];
+                immadiate_counter++;
+            } else
+                break;
+        }
+        int immadiateint;
+        immadiateint = atoi(imm);
+
+        int last[5] = {0,0,0,0,0};
+
+        if(imm[0]=='-'){
+            immadiateint = immadiateint * -1;
+            regbin(immadiateint,-1,last);
+
+
+
+
+        }
+
+        regbin(immadiateint,-1,last);
+        for (int l = 4; l >= 0; --l) {
+            printf("%d", last[l]);
+        }
+
+
+    }
+
+
 }
 
 
