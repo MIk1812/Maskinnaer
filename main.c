@@ -1,23 +1,20 @@
 #include <stdio.h>
-
-char * takeInput(void);
+void takeInput(char input[]);
 
 int main() {
 
-//    char input[10] = "Hej sa";
-//    printf("%s", input);
-
-    char * input;
-    input = takeInput();
-    printf("%s", input);
-
-
-}
-
-char * takeInput(void){
-
     char input[10];
     scanf("%9[^\n]", &input);
-    return input;
-
+    printf("%s", input);
 }
+
+
+
+
+//void takeInput(char input[]){
+//
+//    char temp[10];
+//    scanf("%9[^\n]", &temp);
+//    for (int i = 0; i < 10 ; ++i) {
+//        input[i] = temp[i];
+//    }

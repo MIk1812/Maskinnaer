@@ -12,9 +12,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a56a94c6-e6cd-41cf-8ee2-355ddbe15071" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/main.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/main.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/projekt2.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/projekt2.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,26 +72,34 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="chech" />
+    <option name="LAST_COMMIT_MESSAGE" value="chech" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="284" y="154" key="CommitChangelistDialog2" timestamp="1587723352291">
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
     <state x="284" y="154" key="CommitChangelistDialog2/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587723352291" />
-    <state width="1216" height="290" key="GridCell.Tab.0.bottom" timestamp="1587723258903">
-      <screen x="44" y="23" width="2516" height="1057" />
+    <state width="724" height="210" key="GridCell.Tab.0.bottom" timestamp="1587730359314">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="724" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587730359314" />
     <state width="1216" height="290" key="GridCell.Tab.0.bottom/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587723258903" />
-    <state width="1216" height="290" key="GridCell.Tab.0.center" timestamp="1587723258903">
-      <screen x="44" y="23" width="2516" height="1057" />
+    <state width="724" height="210" key="GridCell.Tab.0.center" timestamp="1587730359314">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="724" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587730359314" />
     <state width="1216" height="290" key="GridCell.Tab.0.center/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587723258903" />
-    <state width="1216" height="290" key="GridCell.Tab.0.left" timestamp="1587723258902">
-      <screen x="44" y="23" width="2516" height="1057" />
+    <state width="724" height="210" key="GridCell.Tab.0.left" timestamp="1587730359314">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="724" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587730359314" />
     <state width="1216" height="290" key="GridCell.Tab.0.left/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587723258902" />
-    <state width="1216" height="290" key="GridCell.Tab.0.right" timestamp="1587723258903">
-      <screen x="44" y="23" width="2516" height="1057" />
+    <state width="724" height="210" key="GridCell.Tab.0.right" timestamp="1587730359314">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="724" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587730359314" />
     <state width="1216" height="290" key="GridCell.Tab.0.right/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587723258903" />
     <state width="1216" height="357" key="GridCell.Tab.1.bottom" timestamp="1587722873763">
       <screen x="44" y="23" width="2516" height="1057" />
@@ -108,19 +121,22 @@
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
     <state x="273" y="291" key="Vcs.Push.Dialog.v2/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587723364663" />
+    <state x="392" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1587759653206">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="392" y="342" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587759653206" />
+    <state x="502" y="204" key="git4idea.merge.GitPullDialog" timestamp="1587759758202">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="502" y="204" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1587759758202" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.c</url>
-          <line>11</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.c</url>
-          <line>20</line>
-          <option name="timeStamp" value="5" />
+          <line>3</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
