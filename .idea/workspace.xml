@@ -12,9 +12,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a56a94c6-e6cd-41cf-8ee2-355ddbe15071" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/main.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/projekt2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/projekt2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,6 +51,18 @@
       </method>
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -72,55 +86,54 @@
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
     <state x="284" y="154" key="CommitChangelistDialog2/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587723352291" />
-    <state width="1216" height="290" key="GridCell.Tab.0.bottom" timestamp="1587723258903">
+    <state width="1216" height="198" key="GridCell.Tab.0.bottom" timestamp="1587730082403">
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
-    <state width="1216" height="290" key="GridCell.Tab.0.bottom/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587723258903" />
-    <state width="1216" height="290" key="GridCell.Tab.0.center" timestamp="1587723258903">
+    <state width="1216" height="198" key="GridCell.Tab.0.bottom/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587730082403" />
+    <state width="1216" height="198" key="GridCell.Tab.0.center" timestamp="1587730082403">
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
-    <state width="1216" height="290" key="GridCell.Tab.0.center/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587723258903" />
-    <state width="1216" height="290" key="GridCell.Tab.0.left" timestamp="1587723258902">
+    <state width="1216" height="198" key="GridCell.Tab.0.center/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587730082403" />
+    <state width="1216" height="198" key="GridCell.Tab.0.left" timestamp="1587730082402">
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
-    <state width="1216" height="290" key="GridCell.Tab.0.left/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587723258902" />
-    <state width="1216" height="290" key="GridCell.Tab.0.right" timestamp="1587723258903">
+    <state width="1216" height="198" key="GridCell.Tab.0.left/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587730082402" />
+    <state width="1216" height="198" key="GridCell.Tab.0.right" timestamp="1587730082403">
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
-    <state width="1216" height="290" key="GridCell.Tab.0.right/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587723258903" />
-    <state width="1216" height="357" key="GridCell.Tab.1.bottom" timestamp="1587722873763">
+    <state width="1216" height="198" key="GridCell.Tab.0.right/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587730082403" />
+    <state width="1216" height="357" key="GridCell.Tab.1.bottom" timestamp="1587729680612">
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
-    <state width="1216" height="357" key="GridCell.Tab.1.bottom/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587722873763" />
-    <state width="1216" height="357" key="GridCell.Tab.1.center" timestamp="1587722873762">
+    <state width="1216" height="357" key="GridCell.Tab.1.bottom/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587729680612" />
+    <state width="1216" height="357" key="GridCell.Tab.1.center" timestamp="1587729680611">
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
-    <state width="1216" height="357" key="GridCell.Tab.1.center/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587722873762" />
-    <state width="1216" height="357" key="GridCell.Tab.1.left" timestamp="1587722873761">
+    <state width="1216" height="357" key="GridCell.Tab.1.center/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587729680611" />
+    <state width="1216" height="357" key="GridCell.Tab.1.left" timestamp="1587729680611">
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
-    <state width="1216" height="357" key="GridCell.Tab.1.left/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587722873761" />
-    <state width="1216" height="357" key="GridCell.Tab.1.right" timestamp="1587722873762">
+    <state width="1216" height="357" key="GridCell.Tab.1.left/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587729680611" />
+    <state width="1216" height="357" key="GridCell.Tab.1.right" timestamp="1587729680612">
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
-    <state width="1216" height="357" key="GridCell.Tab.1.right/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587722873762" />
+    <state width="1216" height="357" key="GridCell.Tab.1.right/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587729680612" />
     <state x="273" y="291" key="Vcs.Push.Dialog.v2" timestamp="1587723364663">
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
     <state x="273" y="291" key="Vcs.Push.Dialog.v2/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587723364663" />
+    <state x="338" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1587729634131">
+      <screen x="44" y="23" width="2516" height="1057" />
+    </state>
+    <state x="338" y="258" width="670" height="676" key="search.everywhere.popup/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587729634131" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.c</url>
-          <line>11</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.c</url>
-          <line>20</line>
-          <option name="timeStamp" value="5" />
+          <line>61</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

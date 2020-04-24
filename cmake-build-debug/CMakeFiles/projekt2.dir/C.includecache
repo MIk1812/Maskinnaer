@@ -9,4 +9,6 @@
 /Users/mikkeldanielsen/CLionProjects/projekt2/main.c
 stdio.h
 -
+stdbool.h
+-
 
