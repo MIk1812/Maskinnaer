@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/projekt2.dir/main.c.o"
-  "projekt2"
+  "CMakeFiles/projekt2.dir/main.c.obj"
+  "libprojekt2.dll.a"
+  "projekt2.exe"
+  "projekt2.exe.manifest"
   "projekt2.pdb"
 )
 
