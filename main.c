@@ -10,17 +10,22 @@ int main() {
     while(exit == 0){
 
         char input[30];
+
+        //By giving the address of input, we can let takeInput modify it
         takeInput(input);
 
+        //Sum the ASCII values of the opcode's characters
         int sum = 0;
         for (int i = 0; i < 30; ++i) {
 
-            if(input[i] == ' ') //ASCII value for space
+            //Until first blank space
+            if(input[i] == ' ')
                 break;
 
             sum = sum + input[i];
         }
 
+        //Identify opcode
         switch(sum){
 
             //LD
@@ -60,17 +65,23 @@ void LD(char input[]){
 
     int bits[16] = {0,0,1,0};
 
-    char reg = input[5];
-    reg = reg - 48; //reset ASCII value
+    char reg = input[4];
 
-    if(reg & 1 > 0)
-        bits[4] = 1;
-    if(reg & 2 > 0)
-        bits[5] = 1;
-    if(reg & 3 > 0)
+    //Reset ASCII value. Upcasts reg to int
+    reg = reg - 48;
+
+    printf("%d\n", reg);
+
+    //Update destination bits according to register
+    if((reg & 1) > 0)
         bits[6] = 1;
+    if((reg & 2) > 0)
+        bits[5] = 1;
+    if((reg & 4) > 0)
+        bits[4] = 1;
 
 
+    
     for (int i = 0; i < 16; ++i) {
         printf("%d", bits[i]);
     }
@@ -95,10 +106,22 @@ void bin(char n){
 
 void takeInput(char input[]){
 
-    char temp[30];
-    scanf("%29[^\n]", &temp);
-    for (int i = 0; i < 30 ; ++i) {
-        input[i] = temp[i];
-    }
+    //Space for 29 characters. Scanf reads until \n
+    scanf("%29[^\n]s", input);
+
+    //Clears line (\n)
+    scanf("%*c");
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
