@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated />
+    <generated>
+      <config projectName="projekt2" targetName="projekt2" />
+    </generated>
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -9,7 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f11b044-cd1e-4945-b4d7-8d9bac017037" name="Default Changelist" comment="" />
+    <list default="true" id="a56a94c6-e6cd-41cf-8ee2-355ddbe15071" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,18 +20,8 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="$PROJECT_DIR$/.idea" />
-      </set>
-    </option>
-  </component>
-  <component name="ProjectId" id="1aytS1ZZnSGTySH5syK0mi9QyTv" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ProjectId" id="1ayurp6ke3TduewB8Wp3sRnfV3J" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -38,21 +30,25 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="projekt2" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="projekt2" TARGET_NAME="projekt2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="projekt2" RUN_TARGET_NAME="projekt2">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5f11b044-cd1e-4945-b4d7-8d9bac017037" name="Default Changelist" comment="" />
-      <created>1587719657521</created>
+      <changelist id="a56a94c6-e6cd-41cf-8ee2-355ddbe15071" name="Default Changelist" comment="" />
+      <created>1587720355210</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1587719657521</updated>
-      <workItem from="1587719658727" duration="410000" />
-      <workItem from="1587720115461" duration="33000" />
-      <workItem from="1587720168406" duration="23000" />
+      <updated>1587720355210</updated>
+      <workItem from="1587720356358" duration="2000" />
     </task>
     <servers />
   </component>
