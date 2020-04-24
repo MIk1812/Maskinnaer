@@ -9,4 +9,6 @@
 /home/volkan/CLionProjects/projekt2/main.c
 stdio.h
 -
+stdbool.h
+-
 
