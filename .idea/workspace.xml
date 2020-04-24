@@ -36,7 +36,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a56a94c6-e6cd-41cf-8ee2-355ddbe15071" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/C.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/main.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/projekt2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/projekt2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
@@ -95,7 +94,7 @@
       <updated>1587720355210</updated>
       <workItem from="1587720356358" duration="2000" />
       <workItem from="1587720513533" duration="2703000" />
-      <workItem from="1587736826304" duration="6233000" />
+      <workItem from="1587736826304" duration="8415000" />
     </task>
     <task id="LOCAL-00001" summary="Volkans branch">
       <created>1587735180188</created>
@@ -104,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587735180188</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add funktion">
+      <created>1587747008443</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1587747008443</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,33 +130,34 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Volkans branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Volkans branch" />
+    <MESSAGE value="add funktion" />
+    <option name="LAST_COMMIT_MESSAGE" value="add funktion" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2164" y="178" width="802" height="886" key="CommitChangelistDialog2" timestamp="1587735180135">
+    <state x="2164" y="178" width="802" height="886" key="CommitChangelistDialog2" timestamp="1587747008387">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2164" y="178" width="802" height="886" key="CommitChangelistDialog2/1920.0.2560.1440/0.194.1920.1080@1920.0.2560.1440" timestamp="1587735180135" />
+    <state x="2164" y="178" width="802" height="886" key="CommitChangelistDialog2/1920.0.2560.1440/0.194.1920.1080@1920.0.2560.1440" timestamp="1587747008387" />
     <state x="284" y="154" key="CommitChangelistDialog2/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587723352291" />
-    <state width="1318" height="394" key="GridCell.Tab.0.bottom" timestamp="1587745964146">
+    <state width="1303" height="394" key="GridCell.Tab.0.bottom" timestamp="1587749141692">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state width="1318" height="394" key="GridCell.Tab.0.bottom/1920.0.2560.1440/0.194.1920.1080@1920.0.2560.1440" timestamp="1587745964146" />
+    <state width="1303" height="394" key="GridCell.Tab.0.bottom/1920.0.2560.1440/0.194.1920.1080@1920.0.2560.1440" timestamp="1587749141692" />
     <state width="1216" height="290" key="GridCell.Tab.0.bottom/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587723258903" />
-    <state width="1318" height="394" key="GridCell.Tab.0.center" timestamp="1587745964146">
+    <state width="1303" height="394" key="GridCell.Tab.0.center" timestamp="1587749141692">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state width="1318" height="394" key="GridCell.Tab.0.center/1920.0.2560.1440/0.194.1920.1080@1920.0.2560.1440" timestamp="1587745964146" />
+    <state width="1303" height="394" key="GridCell.Tab.0.center/1920.0.2560.1440/0.194.1920.1080@1920.0.2560.1440" timestamp="1587749141692" />
     <state width="1216" height="290" key="GridCell.Tab.0.center/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587723258903" />
-    <state width="1318" height="394" key="GridCell.Tab.0.left" timestamp="1587745964146">
+    <state width="1303" height="394" key="GridCell.Tab.0.left" timestamp="1587749141692">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state width="1318" height="394" key="GridCell.Tab.0.left/1920.0.2560.1440/0.194.1920.1080@1920.0.2560.1440" timestamp="1587745964146" />
+    <state width="1303" height="394" key="GridCell.Tab.0.left/1920.0.2560.1440/0.194.1920.1080@1920.0.2560.1440" timestamp="1587749141692" />
     <state width="1216" height="290" key="GridCell.Tab.0.left/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587723258902" />
-    <state width="1318" height="394" key="GridCell.Tab.0.right" timestamp="1587745964146">
+    <state width="1303" height="394" key="GridCell.Tab.0.right" timestamp="1587749141692">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state width="1318" height="394" key="GridCell.Tab.0.right/1920.0.2560.1440/0.194.1920.1080@1920.0.2560.1440" timestamp="1587745964146" />
+    <state width="1303" height="394" key="GridCell.Tab.0.right/1920.0.2560.1440/0.194.1920.1080@1920.0.2560.1440" timestamp="1587749141692" />
     <state width="1216" height="290" key="GridCell.Tab.0.right/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587723258903" />
     <state width="1258" height="266" key="GridCell.Tab.1.bottom" timestamp="1587745209397">
       <screen x="1920" y="0" width="2560" height="1440" />
