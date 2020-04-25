@@ -3,7 +3,7 @@
 
 void takeInput(char input[]);
 void LD(char input[]);
-void BRnzp(char input[]);
+void Br(char input[]);
 void ST(char input[]);
 void regbin(int n , int k,int temp[] );
 int length = 0;
@@ -23,12 +23,12 @@ int main() {
         //Sum the ASCII values of the opcode's characters
         int sum = 0;
         for (int i = 0; i < 30; ++i) {
-
             //Until first blank space
-            if(input[i] == ' ')
+            if(input[i] == ' ' || input[i] == 110 || input[i] == 122 || input[i] == 112)
                 break;
             sum = sum + input[i];
         }
+
 
 
         //Identify opcode
@@ -49,6 +49,7 @@ int main() {
 
             //BR
             case 148:
+                Br(input);
                 break;
 
             //LDR
@@ -97,14 +98,48 @@ void LD(char input[]){
 
 }
 
-void BRnzp(char input[]){
+void Br(char input[]) {
 
-    int bits[16]={0,0,0,0,1,1,1};
-    for (int i = 0; i < 16; ++i) {
-
+    int OPC_Bits[4] = {0, 0, 0, 0};
+    for (int i = 0; i < 4; ++i) {
+        printf("%d", OPC_Bits[i]);
+    }
+    int OPR_Bits[3] = {0, 0, 0};
+    // set correct operation bit n,z,p
+    for (int j = 2; j < 5 ; ++j) {
+        if(input[j]=='n'){
+            OPR_Bits[0]=1;
+        }
+        else if(input[j]=='z'){
+            OPR_Bits[1]=1;
+        }
+        else if(input[j]=='p'){
+            OPR_Bits[2]=1;
+        }
+    }
+    for (int k = 0; k < 3 ; ++k) {
+        printf("%d", OPR_Bits[k]);
     }
 
+    int PCoff[9]={0,0,0,0,0,0,0,0,0};
+    //finding the index of space after BRnzp
+    int spaceIndex= 0;
+    for (int l = 0; l < 8 ; ++l) {
+        if (input[l] == ' ')
+            break;
+        spaceIndex++;
+    }
+    int pcVal = input[spaceIndex+2];
+    pcVal = pcVal - 48; // resetting Ascii according to PC.
+    regbin(pcVal,-1,PCoff);
+    for (int m = 8; m >= 0 ; --m) {
+        printf("%d", PCoff[m]);
+    }
+
+    //todo labels are not implemented for BR
+
 }
+
 void ST(char input[]){
     int bits[4]={0,0,1,1};
     for (int i = 0; i < 4; ++i) {
