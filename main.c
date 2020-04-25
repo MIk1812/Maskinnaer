@@ -3,9 +3,13 @@
 
 void takeInput(char input[]);
 void LD(char input[]);
+void BRnzp(char input[]);
+int length = 0;
+
+void bin(char n);
 
 int main() {
-
+    bin(10);
     int exit = 0;
     while(exit == 0){
 
@@ -17,9 +21,10 @@ int main() {
 
             if(input[i] == ' ') //ASCII value for space
                 break;
-
+            length++;
             sum = sum + input[i];
         }
+        printf("%d", length);
 
         switch(sum){
 
@@ -49,6 +54,7 @@ int main() {
                 break;
 
         }
+        length = 0;
 
         exit = 1;
 
@@ -76,11 +82,18 @@ void LD(char input[]){
     }
 
 
+}
 
+void BRnzp(char input[]){
 
+    int bits[16]={0,0,0,0,1,1,1};
+    for (int i = 0; i < 16; ++i) {
 
+    }
 
 }
+
+
 
 //https://www.geeksforgeeks.org/binary-representation-of-a-given-number/
 void bin(char n){
