@@ -4,12 +4,13 @@
 void takeInput(char input[]);
 void LD(char input[]);
 void BRnzp(char input[]);
+void ST(char input[]);
 int length = 0;
+
 
 void bin(char n);
 
 int main() {
-    bin(10);
     int exit = 0;
     while(exit == 0){
 
@@ -101,6 +102,21 @@ void BRnzp(char input[]){
     for (int i = 0; i < 16; ++i) {
 
     }
+
+}
+void ST(char input[]){
+    int bits[4]={0,0,1,1};
+    for (int i = 0; i < 4; ++i) {
+        printf("%d", bits[i]);
+    }
+    int SR_bits[3]={0,0,0};
+    int SR_reg = input[5];
+    SR_reg = SR_reg - 48; //reset ASCII value
+    // convert SR value to binary
+
+
+
+
 
 }
 
