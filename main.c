@@ -5,6 +5,7 @@ void takeInput(char input[]);
 void LD(char input[]);
 void BRnzp(char input[]);
 void ST(char input[]);
+void regbin(int n , int k,int temp[] );
 int length = 0;
 
 
@@ -26,10 +27,9 @@ int main() {
             //Until first blank space
             if(input[i] == ' ')
                 break;
-            length++;
             sum = sum + input[i];
         }
-        printf("%d", length);
+
 
         //Identify opcode
         switch(sum){
@@ -57,6 +57,7 @@ int main() {
 
             //ST
             case 167:
+                ST(input);
                 break;
 
         }
@@ -110,14 +111,29 @@ void ST(char input[]){
         printf("%d", bits[i]);
     }
     int SR_bits[3]={0,0,0};
-    int SR_reg = input[5];
+    int SR_reg = input[4];
     SR_reg = SR_reg - 48; //reset ASCII value
     // convert SR value to binary
+    regbin(SR_reg,-1,SR_bits);
+    for (int l = 2; l >= 0; --l) {
+        printf("%d", SR_bits[l]);
+    }
+    int LabelBits[9]={0,0,0,0,0,0,0,0,0};
 
+    //ASCii value of Label
+    int sum = 0;
+    for (int i = 7; i < 30; ++i) {
+        //Until no input
+        if(!input[i])
+            break;
+        sum = sum + input[i];
+    }
+    //conversion of ASCII value of Label to bits
+    regbin(sum,-1,LabelBits);
 
-
-
-
+    for (int l = 8; l >= 0; --l) {
+        printf("%d", LabelBits[l]);
+    }
 }
 
 
@@ -132,6 +148,17 @@ void bin(char n){
     printf("%d", n % 2);
 }
 
+void regbin(int n , int k,int temp[]){
+    if (n > 1) {
+        k++;
+        regbin((n / 2), k, temp);
+
+    }
+    if (n ==1 )
+        k++;
+
+    *(temp+(k)) = n % 2;
+}
 
 void takeInput(char input[]){
 
