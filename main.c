@@ -150,7 +150,7 @@ void ADD(char input[]) {
         char imm[3];
         int immadiate_counter = 0;
         for (int j = 13; j < 30 ; ++j) {
-            if((input[j]>48 && input[j]<57) || input[j] == '-'){
+            if((input[j]>=48 && input[j]<=57) || input[j] == '-'){
                 imm[immadiate_counter] = input[j];
                 immadiate_counter++;
             } else
