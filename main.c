@@ -43,6 +43,7 @@ int main() {
 
             //ADD
             case 201:
+                ADD(input);
                 break;
 
             //NOT
