@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/volkan/CLionProjects/projekt2/main.c
+/cygdrive/c/Users/volka/CLionProjects/projekt2/main.c
 stdio.h
 -
 stdbool.h
