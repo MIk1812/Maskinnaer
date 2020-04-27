@@ -11,7 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a56a94c6-e6cd-41cf-8ee2-355ddbe15071" name="Default Changelist" comment="BR er tilføjet med offset dog mangler Label">
+    <list default="true" id="a56a94c6-e6cd-41cf-8ee2-355ddbe15071" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/main.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/projekt2.dir/objects.a" afterDir="false" />
@@ -84,6 +84,8 @@
       <workItem from="1587720513533" duration="2703000" />
       <workItem from="1587761301027" duration="6692000" />
       <workItem from="1587825071359" duration="14187000" />
+      <workItem from="1587845405757" duration="703000" />
+      <workItem from="1587992202705" duration="1367000" />
     </task>
     <task id="LOCAL-00001" summary="ST tilføjet">
       <created>1587831377981</created>
@@ -92,7 +94,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587831377981</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="BR er tilføjet med offset dog mangler Label">
+      <created>1587845568373</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1587845568373</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,33 +114,33 @@
     <option name="LAST_COMMIT_MESSAGE" value="BR er tilføjet med offset dog mangler Label" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="147" y="14" key="CommitChangelistDialog2" timestamp="1587845162131">
+    <state x="147" y="14" key="CommitChangelistDialog2" timestamp="1587845564925">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="147" y="14" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587845162131" />
+    <state x="147" y="14" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587845564925" />
     <state x="284" y="154" key="CommitChangelistDialog2/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587723352291" />
-    <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1587845239318">
+    <state width="1493" height="255" key="GridCell.Tab.0.bottom" timestamp="1587846112221">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587845239318" />
+    <state width="1493" height="255" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587846112221" />
     <state width="1250" height="249" key="GridCell.Tab.0.bottom/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587769050946" />
     <state width="1216" height="357" key="GridCell.Tab.0.bottom/517.1103.1440.877/44.23.2516.1057@517.1103.1440.877" timestamp="1587745665804" />
-    <state width="1493" height="261" key="GridCell.Tab.0.center" timestamp="1587845239318">
+    <state width="1493" height="255" key="GridCell.Tab.0.center" timestamp="1587846112221">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587845239318" />
+    <state width="1493" height="255" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587846112221" />
     <state width="1250" height="249" key="GridCell.Tab.0.center/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587769050946" />
     <state width="1216" height="357" key="GridCell.Tab.0.center/517.1103.1440.877/44.23.2516.1057@517.1103.1440.877" timestamp="1587745665803" />
-    <state width="1493" height="261" key="GridCell.Tab.0.left" timestamp="1587845239318">
+    <state width="1493" height="255" key="GridCell.Tab.0.left" timestamp="1587846112221">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587845239318" />
+    <state width="1493" height="255" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587846112221" />
     <state width="1250" height="249" key="GridCell.Tab.0.left/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587769050945" />
     <state width="1216" height="357" key="GridCell.Tab.0.left/517.1103.1440.877/44.23.2516.1057@517.1103.1440.877" timestamp="1587745665803" />
-    <state width="1493" height="261" key="GridCell.Tab.0.right" timestamp="1587845239318">
+    <state width="1493" height="255" key="GridCell.Tab.0.right" timestamp="1587846112221">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587845239318" />
+    <state width="1493" height="255" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587846112221" />
     <state width="1250" height="249" key="GridCell.Tab.0.right/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587769050946" />
     <state width="1216" height="357" key="GridCell.Tab.0.right/517.1103.1440.877/44.23.2516.1057@517.1103.1440.877" timestamp="1587745665804" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1587845239318">
@@ -163,10 +172,10 @@
     </state>
     <state x="140" y="209" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1587831438678" />
     <state x="273" y="291" key="Vcs.Push.Dialog.v2/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1587723364663" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1587845408148">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1587992207360">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587845408148" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587992207360" />
     <state x="502" y="204" key="git4idea.merge.GitPullDialog" timestamp="1587831401143">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

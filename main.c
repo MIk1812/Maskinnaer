@@ -99,7 +99,7 @@ void LD(char input[]){
 }
 
 void Br(char input[]) {
-
+    int Br_bits[16];
     int OPC_Bits[4] = {0, 0, 0, 0};
     for (int i = 0; i < 4; ++i) {
         printf("%d", OPC_Bits[i]);
@@ -120,7 +120,6 @@ void Br(char input[]) {
     for (int k = 0; k < 3 ; ++k) {
         printf("%d", OPR_Bits[k]);
     }
-
     int PCoff[9]={0,0,0,0,0,0,0,0,0};
     //finding the index of space after BRnzp
     int spaceIndex= 0;
@@ -137,7 +136,6 @@ void Br(char input[]) {
     }
 
     //todo labels are not implemented for BR
-
 }
 
 void ST(char input[]){
@@ -187,7 +185,6 @@ void regbin(int n , int k,int temp[]){
     if (n > 1) {
         k++;
         regbin((n / 2), k, temp);
-
     }
     if (n ==1 )
         k++;
