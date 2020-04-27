@@ -6,9 +6,11 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/buttt/Google Drive/projekt2/main.c
+/home/volkan/CLionProjects/projekt2/main.c
 stdio.h
 -
 stdbool.h
+-
+stdlib.h
 -
 
