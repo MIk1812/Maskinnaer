@@ -54,6 +54,7 @@ int main() {
                 break;
 
         }
+//        test
 
         exit = 1;
 
@@ -70,8 +71,6 @@ void LD(char input[]){
     //Reset ASCII value. Upcasts reg to int
     reg = reg - 48;
 
-    printf("%d\n", reg);
-
     //Update destination bits according to register
     if((reg & 1) > 0)
         bits[6] = 1;
@@ -81,7 +80,7 @@ void LD(char input[]){
         bits[4] = 1;
 
 
-    
+
     for (int i = 0; i < 16; ++i) {
         printf("%d", bits[i]);
     }
