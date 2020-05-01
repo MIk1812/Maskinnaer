@@ -1,3 +1,3 @@
-/home/volkan/CLionProjects/projekt2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/volkan/CLionProjects/projekt2/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/volkan/CLionProjects/projekt2/cmake-build-debug/CMakeFiles/projekt2.dir
+C:/Users/buttt/Google Drive/projekt2/cmake-build-debug/CMakeFiles/projekt2.dir
+C:/Users/buttt/Google Drive/projekt2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/buttt/Google Drive/projekt2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
