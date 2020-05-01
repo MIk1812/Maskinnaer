@@ -42,9 +42,7 @@ void updateRegBits(char* output, char reg, int start){
  * @param bitcount: antalet bits man manipulerer
  */
 void writeIntBits(char* output, int offset , int start,int bitcount){
-
     int bit=1;
-
     //Update destination bits according to register
     for (int i = 0; i < bitcount ; ++i) {
         if((offset & bit) > 0)
