@@ -7,17 +7,7 @@
 
 #endif //PROJEKT2_ADD_H
 
-void regbin(int n , int k,int temp[]){
-    if (n > 1) {
-        k++;
-        regbin((n / 2), k, temp);
-
-    }
-    if (n ==1 )
-        k++;
-
-    *(temp+(k)) = n % 2;
-}
+#include "Func.h"
 
 void ADD(char input[]) {
 

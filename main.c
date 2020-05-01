@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
-#include "LD.h"
-#include "ADD.h"
-#include "BR.h"
-#include "ST.h"
-#include "NOT.h"
+
+#include "Opcodes/LD.h"
+#include "Opcodes/ADD.h"
+#include "Opcodes/BR.h"
+#include "Opcodes/ST.h"
+#include "Opcodes/NOT.h"
 
 void takeInput(char input[]);
 
