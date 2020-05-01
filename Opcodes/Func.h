@@ -20,7 +20,6 @@ void regbin(int n , int k,int temp[]){
     *(temp+(k)) = n % 2;
 }
 
-
 //start determines which bits in bits[] are to be modified
 void updateRegBits(char* output, char reg, int start){
 
@@ -34,4 +33,17 @@ void updateRegBits(char* output, char reg, int start){
         output[start+1] = 1;
     if((reg & 4) > 0)
         output[start] = 1;
+}
+
+void convertOffsetOrInt(char* output, int offset , int start,int bitcount){
+
+    int bit=1;
+    int bitplace = 15;
+    //Update destination bits according to register
+    for (int i = 0; i < bitcount ; ++i) {
+        if((offset & bit) > 0)
+            output[bitplace] = 1;
+        bitplace--;
+        bit = bit*2;
+    }
 }
