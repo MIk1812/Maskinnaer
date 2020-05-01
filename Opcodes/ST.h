@@ -7,7 +7,7 @@
 
 #endif //PROJEKT2_ST_H
 
-void ST(char input[]){
+void ST(char input[], char output[]){
     int bits[4]={0,0,1,1};
     for (int i = 0; i < 4; ++i) {
         printf("%d", bits[i]);

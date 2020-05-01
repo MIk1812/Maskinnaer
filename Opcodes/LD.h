@@ -7,27 +7,17 @@
 
 #endif //PROJEKT2_LD_H
 
+#include "Func.h"
 
-void LD(char input[]){
+void LD(char* input, char* output){
 
-    int bits[16] = {0,0,1,0};
+    output[0] = 0;
+    output[1] = 0;
+    output[2] = 1;
+    output[3] = 0;
 
     char reg = input[4];
 
-    //Reset ASCII value. Upcasts reg to int
-    reg = reg - 48;
-
-    //Update destination bits according to register
-    if((reg & 1) > 0)
-        bits[6] = 1;
-    if((reg & 2) > 0)
-        bits[5] = 1;
-    if((reg & 4) > 0)
-        bits[4] = 1;
-
-    for (int i = 0; i < 16; ++i) {
-        printf("%d", bits[i]);
-    }
-
+    updateRegBits(output, reg, 4);
 
 }

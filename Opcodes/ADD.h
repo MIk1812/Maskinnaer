@@ -9,7 +9,7 @@
 
 #include "Func.h"
 
-void ADD(char input[]) {
+void ADD(char input[], char output[]) {
 
     int bits[4] = {0, 0, 0, 1};
     for (int i = 0; i < 4; ++i) {

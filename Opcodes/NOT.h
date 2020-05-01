@@ -7,7 +7,7 @@
 
 #endif //PROJEKT2_NOT_H
 
-void NOT(char input[]){
+void NOT(char input[], char output[]){
     int bits[4] = {1,0,0,1};
     for (int i = 0; i < 4; ++i) {
         printf("%d", bits[i]);

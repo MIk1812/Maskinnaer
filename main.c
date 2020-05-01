@@ -12,7 +12,8 @@ void takeInput(char input[]);
 
 int main() {
 
-    char* input = (char*) malloc(30);
+    char* input = (char*) malloc(31);
+    char* output = (char*) calloc(1, 17);
     int exit = 0;
 
     while(exit == 0){
@@ -35,17 +36,17 @@ int main() {
 
             //LD
             case 144:
-                LD(input);
+                LD(input, output);
                 break;
 
             //ADD
             case 201:
-                ADD(input);
+                ADD(input, output);
                 break;
 
             //NOT
             case 241:
-                NOT(input);
+                NOT(input, output);
                 break;
 
             //BR
@@ -58,10 +59,15 @@ int main() {
 
             //ST
             case 167:
-                ST(input);
+                ST(input, output);
                 break;
 
         }
+
+        for (int i = 0; i < 16; ++i) {
+            printf("%d", output[i]);
+        }
+
 
         exit = 1;
 
