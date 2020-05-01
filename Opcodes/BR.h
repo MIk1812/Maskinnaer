@@ -17,6 +17,7 @@ void Br(char* input, char* output) {
     // set correct operation bit n,z,p
     nzp_Operation(input, output);
 
+
 //    int PCoff[9]={0,0,0,0,0,0,0,0,0};
 //    //finding the index of space after BRnzp
 //    int spaceIndex= 0;
