@@ -64,4 +64,16 @@ void nzp_Operation(char* input, char* output){
             output[6]=1;
         }
     }
+
+}
+int  getPCoffset (char* input){
+    int spaceIndex= 0;
+    for (int l = 0; l < 8 ; ++l) {
+        if (input[l] == '#')
+            break;
+        spaceIndex++;
+    }
+    int pcVal = input[spaceIndex+1];
+    pcVal = pcVal - 48; // resetting Ascii according to PC.
+    return pcVal;
 }
