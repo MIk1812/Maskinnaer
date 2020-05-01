@@ -47,3 +47,17 @@ void convertOffsetOrInt(char* output, int offset , int start,int bitcount){
         bit = bit*2;
     }
 }
+
+void nzp_Operation(char* input, char* output){
+    for (int j = 2; j < 5 ; ++j) {
+        if(input[j]=='n'){
+            output[4]=1;
+        }
+        else if(input[j]=='z'){
+            output[5]=1;
+        }
+        else if(input[j]=='p'){
+            output[6]=1;
+        }
+    }
+}

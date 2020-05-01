@@ -26,7 +26,7 @@ int main() {
         for (int i = 0; i < 30; ++i) {
 
             //Until first blank space
-            if(input[i] == ' ')
+            if(input[i] == ' '|| input[i] == 110 || input[i] == 122 || input[i] == 112)
                 break;
             sum = sum + input[i];
         }
@@ -51,6 +51,7 @@ int main() {
 
             //BR
             case 148:
+                Br(input,output);
                 break;
 
             //LDR
