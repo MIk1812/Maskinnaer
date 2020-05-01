@@ -34,16 +34,20 @@ void updateRegBits(char* output, char reg, int start){
     if((reg & 4) > 0)
         output[start] = 1;
 }
-
-void convertOffsetOrInt(char* output, int offset , int start,int bitcount){
-
+/**
+ *
+ * @param output: output arreyet som man manipulerer med.
+ * @param offset: selv int værdi som bliver konveteret til bits
+ * @param start: start punktet i output array(funktionen kører fra højre mod venstre.
+ * @param bitcount: antalet bits man manipulerer
+ */
+void writeIntBits(char* output, int offset , int start,int bitcount){
     int bit=1;
-    int bitplace = 15;
     //Update destination bits according to register
     for (int i = 0; i < bitcount ; ++i) {
         if((offset & bit) > 0)
-            output[bitplace] = 1;
-        bitplace--;
+            output[start] = 1;
+        start--;
         bit = bit*2;
     }
 }
