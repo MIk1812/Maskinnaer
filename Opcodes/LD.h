@@ -25,6 +25,11 @@ void LD(char* input, char* output){
 
     writeIntBits(output, pcOffset, 15, 9);
 
+    for (int i = 0; i < 16; ++i) {
+        printf("%d", *(output + i));
+    }
+    printf("\n");
+
 }
 
 

@@ -10,22 +10,19 @@
 #include "Func.h"
 #include "../Opcodes/BR.h"
 
-bool testBR1();
-bool testBR2();
+void testBR1();
+void testBR2();
 
-bool testBR(){
+void testBR(){
 
-    if(testBR1() != true)
-        return false;
-
-    if(testBR2() != true)
-        return false;
+    testBR1();
+    testBR2();
 
 }
 
-bool testBR1(){
+void testBR1(){
 
-    char* testID = "LD1";
+    char* testID = "BR1";
     char* input = "LD R1, #-3";
     char* output = (char*) malloc( 17);
 
@@ -33,13 +30,13 @@ bool testBR1(){
     char* expected = "0010001111111101";
 
     free(output);
-    return equals(output, expected, testID);
+    equals(output, expected, testID);
 
 }
 
-bool testBR2(){
+void testBR2(){
 
-    char* testID = "LD1";
+    char* testID = "BR2";
     char* input = "LD R1, #-3";
     char* output = (char*) malloc( 17);
 
@@ -47,6 +44,6 @@ bool testBR2(){
     char* expected = "0010001111111101";
 
     free(output);
-    return equals(output, expected, testID);
+    equals(output, expected, testID);
 
 }

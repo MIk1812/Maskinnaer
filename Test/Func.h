@@ -9,7 +9,7 @@
 
 #endif //PROJEKT2_FUNC_H
 
-bool equals(char* output, char* expected, char* testID){
+void equals(char* output, char* expected, char* testID){
 
     bool status = true;
 
@@ -30,12 +30,10 @@ bool equals(char* output, char* expected, char* testID){
             for (int k = 0; k < 16; ++k) {
                 printf("%d", *(expected + k)-48);
             }
-            printf("\n\n");
+            printf("\n");
 
             status = false;
             break;
         }
     }
-
-    return status;
 }

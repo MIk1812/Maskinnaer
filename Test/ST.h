@@ -10,20 +10,17 @@
 #include "Func.h"
 #include "../Opcodes/ST.h"
 
-bool testST1();
-bool testST2();
+void testST1();
+void testST2();
 
-bool testST(){
+void testST(){
 
-    if(testST1() != true)
-        return false;
-
-    if(testST2() != true)
-        return false;
+    testST1();
+    testST2();
 
 }
 
-bool testST1(){
+void testST1(){
 
     char* testID = "LD1";
     char* input = "LD R1, #-3";
@@ -33,11 +30,11 @@ bool testST1(){
     char* expected = "0010001111111101";
 
     free(output);
-    return equals(output, expected, testID);
+    equals(output, expected, testID);
 
 }
 
-bool testST2(){
+void testST2(){
 
     char* testID = "LD1";
     char* input = "LD R1, #-3";
@@ -47,6 +44,6 @@ bool testST2(){
     char* expected = "0010001111111101";
 
     free(output);
-    return equals(output, expected, testID);
+    equals(output, expected, testID);
 
 }

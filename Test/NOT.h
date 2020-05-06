@@ -10,20 +10,17 @@
 #include "Func.h"
 #include "../Opcodes/NOT.h"
 
-bool testNOT1();
-bool testNOT2();
+void testNOT1();
+void testNOT2();
 
-bool testNOT(){
+void testNOT(){
 
-    if(testNOT1() != true)
-        return false;
-
-    if(testNOT2() != true)
-        return false;
+    testNOT1();
+    testNOT2();
 
 }
 
-bool testNOT1(){
+void testNOT1(){
 
     char* testID = "LD1";
     char* input = "LD R1, #-3";
@@ -33,11 +30,11 @@ bool testNOT1(){
     char* expected = "0010001111111101";
 
     free(output);
-    return equals(output, expected, testID);
+    equals(output, expected, testID);
 
 }
 
-bool testNOT2(){
+void testNOT2(){
 
     char* testID = "LD1";
     char* input = "LD R1, #-3";
@@ -47,6 +44,6 @@ bool testNOT2(){
     char* expected = "0010001111111101";
 
     free(output);
-    return equals(output, expected, testID);
+    equals(output, expected, testID);
 
 }

@@ -15,22 +15,13 @@
 #include "ST.h"
 #include "NOT.h"
 
-bool testAll(){
+void testAll(){
 
-    if(testLD() != true)
-        return false;
-
-    if(testADD() != true)
-        return false;
-
-    if(testBR() != true)
-        return false;
-
-    if(testST() != true)
-        return false;
-
-    if(testNOT() != true)
-        return false;
+    testLD();
+//    testADD();
+//    testBR();
+//    testST();
+//    testNOT();
 
 }
 

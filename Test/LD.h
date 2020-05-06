@@ -10,20 +10,19 @@
 #include "Func.h"
 #include "../Opcodes/LD.h"
 
-bool testLD1();
-bool testLD2();
+void testLD1();
+void testLD2();
+void testLD3();
 
-bool testLD(){
+void testLD(){
 
-    if(testLD1() != true)
-        return false;
-
-    if(testLD2() != true)
-        return false;
+    testLD1();
+    testLD2();
+    testLD3();
 
 }
 
-bool testLD1(){
+void testLD1(){
 
     char* testID = "LD1";
     char* input = "LD R1, #-3";
@@ -33,11 +32,25 @@ bool testLD1(){
     char* expected = "0010001111111101";
 
     free(output);
-    return equals(output, expected, testID);
+    equals(output, expected, testID);
 
 }
 
-bool testLD2(){
+void testLD3(){
+
+    char* testID = "LD3";
+    char* input = "LD R1, #-3";
+    char* output = (char*) malloc( 17);
+
+    LD(input, output);
+    char* expected = "0010001111111101";
+
+    free(output);
+    equals(output, expected, testID);
+
+}
+
+void testLD2(){
 
     char* testID = "LD2";
     char* input = "LD R1, #3";
@@ -47,6 +60,6 @@ bool testLD2(){
     char* expected = "0010001000000011";
 
     free(output);
-    return equals(output, expected, testID);
+    equals(output, expected, testID);
 
 }
