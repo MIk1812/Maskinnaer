@@ -20,9 +20,9 @@ void LD(char* input, char* output){
 
     char reg = input[4];
 
-    updateRegBits(output, reg, 4);
+    writeRegBits(output, reg, 4);
 
-    int pcOffset = charToInt(input, 8, 4);
+    int pcOffset = charsToInt(input, 8, 4);
 
     writeIntBits(output, pcOffset, 15, 9);
 

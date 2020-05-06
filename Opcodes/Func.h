@@ -9,7 +9,7 @@
 #endif //PROJEKT2_FUNC_H
 
 //start determines which bits in bits[] are to be modified
-void updateRegBits(char* output, char reg, int start){
+void writeRegBits(char* output, char reg, int start){
 
     //Reset ASCII value. Upcasts reg to int
     reg = reg - 48;
@@ -29,16 +29,18 @@ void updateRegBits(char* output, char reg, int start){
 /**
  *
  * @param output: output arreyet som man manipulerer med.
- * @param offset: selv int værdi som bliver konveteret til bits
+ * @param intToWrite: selv int værdi som bliver konveteret til bits
  * @param start: start punktet i output array(funktionen kører fra højre mod venstre.
- * @param bitcount: antalet bits man manipulerer
+ * @param numberOfBits: antalet bits man manipulerer
  */
-void writeIntBits(char* output, int offset , int start,int bitcount){
-    int bit=1;
-    //Update destination bits according to register
-    for (int i = 0; i < bitcount ; ++i) {
+void writeIntBits(char* output, int intToWrite, int start, int numberOfBits){
 
-        if((offset & bit) > 0)
+    int bit=1;
+
+    //Update destination bits according to register
+    for (int i = 0; i < numberOfBits ; ++i) {
+
+        if((intToWrite & bit) > 0)
             output[start] = '1';
         else
             output[start] = '0';
@@ -49,7 +51,9 @@ void writeIntBits(char* output, int offset , int start,int bitcount){
 }
 
 void nzp_Operation(char* input, char* output){
+
     for (int j = 2; j < 5 ; ++j) {
+
         if(input[j]=='n') output[4]='1';
         else output[4]='0';
 
@@ -58,6 +62,7 @@ void nzp_Operation(char* input, char* output){
 
         if(input[j]=='p') output[6]='1';
         else output[6]='0';
+
     }
 }
 
@@ -76,7 +81,7 @@ int getPCoffset(char* input){
 //Start is index of first byte (zero-indexed)
 //Accepts negative values if minus is included
 //Only whole numbers
-int charToInt(char* input, int start, int maxLength){
+int charsToInt(char* input, int start, int maxLength){
 
     char* temp = (char*) calloc(1,maxLength + 1);
 

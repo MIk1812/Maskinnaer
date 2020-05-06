@@ -19,8 +19,8 @@ int main() {
     testEverything();
 
     char* output = (char*) calloc(1, outputSize +1);
-    int exit = 0;
 
+    int exit = 0;
     while(exit == 0){
 
         //By giving the address of input, we can let takeInput modify it

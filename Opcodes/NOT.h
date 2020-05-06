@@ -18,11 +18,11 @@ void NOT(char input[], char output[]){
 
     //Register DR
     char dr = input[5];
-    updateRegBits(output,dr,4);
+    writeRegBits(output, dr, 4);
 
     //Register SR1
     char sr1 = input[9];
-    updateRegBits(output,sr1,7);
+    writeRegBits(output, sr1, 7);
 
     output[10] = '1';
     output[11] = '1';

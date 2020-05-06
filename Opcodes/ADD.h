@@ -19,11 +19,11 @@ void ADD(char input[], char output[]) {
 
     //Register DR
     char dr = input[5];
-    updateRegBits(output,dr,4);
+    writeRegBits(output, dr, 4);
 
     //Register SR1
     char sr1 = input[9];
-    updateRegBits(output,sr1,7);
+    writeRegBits(output, sr1, 7);
 
     // Her kontrolleres der om det er en immadiate værdi eller bare register
     if (input[12] == 'R') {
@@ -32,7 +32,7 @@ void ADD(char input[], char output[]) {
         output[12] = '0';
 
         char sr2 = input[13];
-        updateRegBits(output,sr2,13);
+        writeRegBits(output, sr2, 13);
     } else{
         char imm[3];
         int immDigits = 0;
