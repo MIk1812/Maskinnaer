@@ -11,28 +11,21 @@
 
 void equals(char* output, char* expected, char* testID){
 
-    bool status = true;
-
     for (int i = 0; i < 16; ++i) {
 
         //If bytes do not match, print statement
-        if( *(output + i) != *(expected + i)-48) {
+        if(*(output + i) != *(expected + i)) {
 
             printf("\nTest %s failed \n", testID);
 
             printf("Received: ");
-            for (int j = 0; j < 16; ++j) {
-                printf("%d", *(output + j));
-            }
+            printf("%s", output);
             printf("\n");
 
             printf("Expected: ");
-            for (int k = 0; k < 16; ++k) {
-                printf("%d", *(expected + k)-48);
-            }
+            printf("%s", output);
             printf("\n");
 
-            status = false;
             break;
         }
     }

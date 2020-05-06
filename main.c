@@ -71,9 +71,7 @@ int main() {
 
         }
 
-        for (int i = 0; i < 16; ++i) {
-            printf("%d", output[i]);
-        }
+        printf("%s", output);
 
         exit = 1;
 

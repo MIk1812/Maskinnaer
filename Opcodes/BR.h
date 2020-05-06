@@ -10,10 +10,10 @@
 
 #include "Func.h"
 void BR(char* input, char* output) {
-    output[0] = 0;
-    output[1] = 0;
-    output[2] = 0;
-    output[3] = 0;
+    output[0] = '0';
+    output[1] = '0';
+    output[2] = '0';
+    output[3] = '0';
 
     // set correct operation bit n,z,p
     nzp_Operation(input, output);

@@ -15,12 +15,14 @@ void updateRegBits(char* output, char reg, int start){
     reg = reg - 48;
 
     //Update destination bits according to register
-    if((reg & 1) > 0)
-        output[start+2] = 1;
-    if((reg & 2) > 0)
-        output[start+1] = 1;
-    if((reg & 4) > 0)
-        output[start] = 1;
+    if((reg & 1) > 0) output[start+2] = '1';
+    else output[start+2] = '0';
+
+    if((reg & 2) > 0) output[start+1] = '1';
+    else output[start+1] = '0';
+
+    if((reg & 4) > 0) output[start] = '1';
+    else output[start] = '0';
 }
 
 
@@ -35,8 +37,12 @@ void writeIntBits(char* output, int offset , int start,int bitcount){
     int bit=1;
     //Update destination bits according to register
     for (int i = 0; i < bitcount ; ++i) {
+
         if((offset & bit) > 0)
-            output[start] = 1;
+            output[start] = '1';
+        else
+            output[start] = '0';
+
         start--;
         bit = bit*2;
     }
@@ -44,19 +50,18 @@ void writeIntBits(char* output, int offset , int start,int bitcount){
 
 void nzp_Operation(char* input, char* output){
     for (int j = 2; j < 5 ; ++j) {
-        if(input[j]=='n'){
-            output[4]=1;
-        }
-        else if(input[j]=='z'){
-            output[5]=1;
-        }
-        else if(input[j]=='p'){
-            output[6]=1;
-        }
-    }
+        if(input[j]=='n') output[4]='1';
+        else output[4]='0';
 
+        if(input[j]=='z') output[5]='1';
+        else output[5]='0';
+
+        if(input[j]=='p') output[6]='1';
+        else output[6]='0';
+    }
 }
-int  getPCoffset (char* input){
+
+int getPCoffset(char* input){
     int spaceIndex= 0;
     for (int l = 0; l < 8 ; ++l) {
         if (input[l] == '#')

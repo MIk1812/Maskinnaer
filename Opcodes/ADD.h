@@ -12,10 +12,10 @@
 
 void ADD(char input[], char output[]) {
     // Opcode
-    output[0] = 0;
-    output[1] = 0;
-    output[2] = 0;
-    output[3] = 1;
+    output[0] = '0';
+    output[1] = '0';
+    output[2] = '0';
+    output[3] = '1';
 
     //Register DR
     char dr = input[5];
@@ -27,9 +27,9 @@ void ADD(char input[], char output[]) {
 
     // Her kontrolleres der om det er en immadiate værdi eller bare register
     if (input[12] == 'R') {
-        output[10] = 0;
-        output[11] = 0;
-        output[12] = 0;
+        output[10] = '0';
+        output[11] = '0';
+        output[12] = '0';
 
         char sr2 = input[13];
         updateRegBits(output,sr2,13);
@@ -46,7 +46,7 @@ void ADD(char input[], char output[]) {
         }
 
         //iMM IDENTIFIER
-        output[10] = 1;
+        output[10] = '1';
         // Læser en char array laver den om til int.
         int immInt;
         immInt = atoi(imm);

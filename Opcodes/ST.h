@@ -9,10 +9,10 @@
 #endif //PROJEKT2_ST_H
 #include "Func.h"
 void ST(char* input, char* output){
-    output[0] = 0;
-    output[1] = 0;
-    output[2] = 1;
-    output[3] = 1;
+    output[0] = '0';
+    output[1] = '0';
+    output[2] = '1';
+    output[3] = '1';
 
     char reg = input[4];
 

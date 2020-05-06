@@ -13,10 +13,10 @@
 void LD(char* input, char* output){
 
     //todo, vi skal sætte chars ind!
-    output[0] = 0;
-    output[1] = 0;
-    output[2] = 1;
-    output[3] = 0;
+    output[0] = '0';
+    output[1] = '0';
+    output[2] = '1';
+    output[3] = '0';
 
     char reg = input[4];
 
