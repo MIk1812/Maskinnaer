@@ -72,7 +72,6 @@ int main() {
             printf("%d", output[i]);
         }
 
-
         exit = 1;
 
     }

@@ -1,7 +1,6 @@
 //
 // Created by Mikkel Danielsen on 01/05/2020.
 //
-
 #pragma once
 
 #ifndef PROJEKT2_LD_H

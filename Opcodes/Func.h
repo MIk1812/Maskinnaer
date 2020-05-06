@@ -8,18 +8,6 @@
 
 #endif //PROJEKT2_FUNC_H
 
-void regbin(int n , int k,int temp[]){
-    if (n > 1) {
-        k++;
-        regbin((n / 2), k, temp);
-
-    }
-    if (n ==1 )
-        k++;
-
-    *(temp+(k)) = n % 2;
-}
-
 //start determines which bits in bits[] are to be modified
 void updateRegBits(char* output, char reg, int start){
 

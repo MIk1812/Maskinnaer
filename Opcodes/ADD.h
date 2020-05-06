@@ -1,6 +1,7 @@
 //
 // Created by Mikkel Danielsen on 01/05/2020.
 //
+#pragma once
 
 #ifndef PROJEKT2_ADD_H
 #define PROJEKT2_ADD_H
