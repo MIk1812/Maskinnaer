@@ -90,7 +90,13 @@ int charToInt(char* input, int start, int maxLength){
 
     //Isolate the chars from the input array.
     for (int i = 0; i < maxLength; ++i) {
-        temp[i] = input[i+start];
+
+        char charRead = input[i+start];
+
+        if( !((charRead >= '0' && charRead <= '9') || charRead == '-') )
+            break;
+
+        temp[i] = charRead;
     }
 
     free(temp);
