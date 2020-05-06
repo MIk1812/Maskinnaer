@@ -13,14 +13,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d6d5bf27-4a34-4576-b421-5d11eec78c96" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Opcodes/ADD.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/ADD.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Opcodes/BR.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/BR.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Opcodes/Func.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/Func.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Opcodes/LD.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/LD.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Opcodes/NOT.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/NOT.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Opcodes/ST.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/ST.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/Func.h" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Func.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +64,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3d1c1480-f970-4738-8d20-e6ba6578d54b" name="Default Changelist" comment="" />
+      <changelist id="d6d5bf27-4a34-4576-b421-5d11eec78c96" name="Default Changelist" comment="" />
       <created>1587994316771</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -79,6 +72,7 @@
       <workItem from="1587994324498" duration="262000" />
       <workItem from="1588069859389" duration="704000" />
       <workItem from="1588284164677" duration="2946000" />
+      <workItem from="1588797318267" duration="380000" />
     </task>
     <task id="LOCAL-00001" summary="check">
       <created>1588324165005</created>
@@ -164,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588796276288</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="STOR ÆNDRING: har lavet om, så vi kun indsætter chars i chars char array. Det giver meget bedre mening. Det er nemmere at debugge og det er nemmere at printe. Alle testene virker som før.">
+      <created>1588797508386</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1588797508387</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,38 +195,39 @@
     <MESSAGE value="Fandt fejlen der gjorde, at testene fejlede" />
     <MESSAGE value="Lavet både output of input om til calloc - det andet kan give problemer" />
     <MESSAGE value="Defineret input og output size i stedet for at vi skriver dem hver gang" />
-    <option name="LAST_COMMIT_MESSAGE" value="Defineret input og output size i stedet for at vi skriver dem hver gang" />
+    <MESSAGE value="STOR ÆNDRING: har lavet om, så vi kun indsætter chars i chars char array. Det giver meget bedre mening. Det er nemmere at debugge og det er nemmere at printe. Alle testene virker som før." />
+    <option name="LAST_COMMIT_MESSAGE" value="STOR ÆNDRING: har lavet om, så vi kun indsætter chars i chars char array. Det giver meget bedre mening. Det er nemmere at debugge og det er nemmere at printe. Alle testene virker som før." />
   </component>
   <component name="WindowStateProjectService">
     <state x="1032" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588790134963">
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
     <state x="1032" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588790134963" />
-    <state x="880" y="130" key="CommitChangelistDialog2" timestamp="1588796276192">
+    <state x="880" y="130" key="CommitChangelistDialog2" timestamp="1588797508227">
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
     <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588345975415" />
-    <state x="880" y="130" key="CommitChangelistDialog2/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588796276192" />
-    <state width="1216" height="230" key="GridCell.Tab.0.bottom" timestamp="1588797455850">
+    <state x="880" y="130" key="CommitChangelistDialog2/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588797508227" />
+    <state width="1216" height="230" key="GridCell.Tab.0.bottom" timestamp="1588797683845">
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
     <state width="746" height="177" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588348615681" />
-    <state width="1216" height="230" key="GridCell.Tab.0.bottom/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588797455850" />
-    <state width="1216" height="230" key="GridCell.Tab.0.center" timestamp="1588797455849">
+    <state width="1216" height="230" key="GridCell.Tab.0.bottom/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588797683845" />
+    <state width="1216" height="230" key="GridCell.Tab.0.center" timestamp="1588797683844">
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
     <state width="746" height="177" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588348615681" />
-    <state width="1216" height="230" key="GridCell.Tab.0.center/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588797455849" />
-    <state width="1216" height="230" key="GridCell.Tab.0.left" timestamp="1588797455848">
+    <state width="1216" height="230" key="GridCell.Tab.0.center/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588797683844" />
+    <state width="1216" height="230" key="GridCell.Tab.0.left" timestamp="1588797683844">
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
     <state width="746" height="177" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588348615681" />
-    <state width="1216" height="230" key="GridCell.Tab.0.left/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588797455848" />
-    <state width="1216" height="230" key="GridCell.Tab.0.right" timestamp="1588797455850">
+    <state width="1216" height="230" key="GridCell.Tab.0.left/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588797683844" />
+    <state width="1216" height="230" key="GridCell.Tab.0.right" timestamp="1588797683844">
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
     <state width="746" height="177" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588348615681" />
-    <state width="1216" height="230" key="GridCell.Tab.0.right/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588797455850" />
+    <state width="1216" height="230" key="GridCell.Tab.0.right/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588797683844" />
     <state width="1216" height="357" key="GridCell.Tab.1.bottom" timestamp="1588797292337">
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
@@ -246,11 +248,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="555" y="128" key="VCS.ChangeListViewerDialog/0.0.1536.824@0.0.1536.824" timestamp="1588330399963" />
-    <state x="635" y="209" key="Vcs.Push.Dialog.v2" timestamp="1588791243558">
+    <state x="635" y="209" key="Vcs.Push.Dialog.v2" timestamp="1588797512544">
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588346000176" />
-    <state x="635" y="209" key="Vcs.Push.Dialog.v2/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588791243558" />
+    <state x="635" y="209" key="Vcs.Push.Dialog.v2/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588797512544" />
     <state x="806" y="326" key="com.intellij.ide.util.TipDialog" timestamp="1588797318493">
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
@@ -284,7 +286,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Test/Func.h</url>
-          <line>18</line>
+          <line>16</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>

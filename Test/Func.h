@@ -23,7 +23,7 @@ void equals(char* output, char* expected, char* testID){
             printf("\n");
 
             printf("Expected: ");
-            printf("%s", output);
+            printf("%s", expected);
             printf("\n");
 
             break;
