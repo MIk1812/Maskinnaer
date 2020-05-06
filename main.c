@@ -83,8 +83,8 @@ char* takeInput(void) {
 
     char* input = (char*) calloc(1,inputSize + 1);
 
-    //Space for 29 characters. Scanf reads until \n
-    scanf("%29[^\n]s", input);
+    //Space for 30 characters. Scanf reads until \n
+    scanf("%30[^\n]s", input);
 
     //Clears line (\n)
     scanf("%*c");

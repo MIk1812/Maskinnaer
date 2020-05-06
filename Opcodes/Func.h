@@ -78,7 +78,7 @@ int getPCoffset(char* input){
 //Only whole numbers
 int charToInt(char* input, int start, int maxLength){
 
-    char* temp = (char*) malloc(maxLength + 1);
+    char* temp = (char*) calloc(1,maxLength + 1);
 
     //Isolate the chars from the input array.
     for (int i = 0; i < maxLength; ++i) {

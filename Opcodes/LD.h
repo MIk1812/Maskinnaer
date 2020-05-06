@@ -26,8 +26,6 @@ void LD(char* input, char* output){
 
     writeIntBits(output, pcOffset, 15, 9);
 
-
-
 }
 
 

@@ -37,7 +37,7 @@ void testADD1(){
 void testADD2(){
 
     char* testID = "ADD2";
-    char* input = "LD R1, R2, #10";
+    char* input = "ADD R1, R2, #10";
     char* output = (char*) calloc(1, 17);
 
     ADD(input, output);
