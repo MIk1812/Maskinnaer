@@ -9,21 +9,22 @@
 #include "Opcodes/ST.h"
 #include "Opcodes/NOT.h"
 
-void takeInput(char input[]);
+char* takeInput(void);
+
+#define inputSize 30
+#define outputSize 16
 
 int main() {
 
     testAll();
 
-    //det skal initiliseres
-    char* input = (char*) malloc(31);
-    char* output = (char*) calloc(1, 17);
+    char* output = (char*) calloc(1, outputSize +1);
     int exit = 0;
 
     while(exit == 0){
 
         //By giving the address of input, we can let takeInput modify it
-        takeInput(input);
+        char* input = takeInput();
 
         //Sum the ASCII values of the opcode's characters
         int sum = 0;
@@ -80,13 +81,17 @@ int main() {
 
 }
 
-void takeInput(char input[]) {
+char* takeInput(void) {
+
+    char* input = (char*) calloc(1,inputSize + 1);
 
     //Space for 29 characters. Scanf reads until \n
     scanf("%29[^\n]s", input);
 
     //Clears line (\n)
     scanf("%*c");
+
+    return input;
 }
 
 
