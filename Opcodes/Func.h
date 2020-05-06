@@ -77,3 +77,24 @@ int  getPCoffset (char* input){
     pcVal = pcVal - 48; // resetting Ascii according to PC.
     return pcVal;
 }
+
+//Length is number of chars, e.g. 'Mikkel' = 6
+//Start is index of first byte (zero-indexed)
+//Accepts negative values if minus is includes
+//Only whole numbers
+int charToInt(char* input, int start, int maxLength){
+
+    char* temp = (char*) malloc(maxLength + 1);
+
+    //Isolate the chars from the input array.
+    for (int i = 0; i < maxLength; ++i) {
+        temp[i] = input[i+start];
+    }
+
+    free(temp);
+
+    //Convert PC Offset to int
+    return atoi(temp);
+
+}
+
