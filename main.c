@@ -15,6 +15,7 @@ int main() {
 
     testAll();
 
+    //det skal initiliseres
     char* input = (char*) malloc(31);
     char* output = (char*) calloc(1, 17);
     int exit = 0;
@@ -29,6 +30,7 @@ int main() {
         for (int i = 0; i < 30; ++i) {
 
             //Until first blank space
+            //todo hvordan alle disse
             if(input[i] == ' '|| input[i] == 110 || input[i] == 122 || input[i] == 112)
                 break;
             sum = sum + input[i];

@@ -24,7 +24,7 @@ void testADD1(){
 
     char* testID = "ADD1";
     char* input = "ADD R1, R2, R3";
-    char* output = (char*) malloc( 17);
+    char* output = (char*) calloc(1, 17);
 
     LD(input, output);
     char* expected = "0001001010000011";
@@ -36,12 +36,12 @@ void testADD1(){
 
 void testADD2(){
 
-    char* testID = "LD1";
-    char* input = "LD R1, #-3";
-    char* output = (char*) malloc( 17);
+    char* testID = "ADD2";
+    char* input = "LD R1, R2, #10";
+    char* output = (char*) calloc(1, 17);
 
     LD(input, output);
-    char* expected = "0010001111111101";
+    char* expected = "0001001010000101";
 
     free(output);
     equals(output, expected, testID);

@@ -22,12 +22,12 @@ void testNOT(){
 
 void testNOT1(){
 
-    char* testID = "LD1";
-    char* input = "LD R1, #-3";
-    char* output = (char*) malloc( 17);
+    char* testID = "NOT1";
+    char* input = "NOT R1, R2";
+    char* output = (char*) calloc(1, 17);
 
     LD(input, output);
-    char* expected = "0010001111111101";
+    char* expected = "1001001010111111";
 
     free(output);
     equals(output, expected, testID);
@@ -36,12 +36,12 @@ void testNOT1(){
 
 void testNOT2(){
 
-    char* testID = "LD1";
-    char* input = "LD R1, #-3";
-    char* output = (char*) malloc( 17);
+    char* testID = "NOT2";
+    char* input = "NOT R2, R1";
+    char* output = (char*) calloc(1, 17);
 
     LD(input, output);
-    char* expected = "0010001111111101";
+    char* expected = "1001010001111111";
 
     free(output);
     equals(output, expected, testID);

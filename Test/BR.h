@@ -23,11 +23,11 @@ void testBR(){
 void testBR1(){
 
     char* testID = "BR1";
-    char* input = "LD R1, #-3";
-    char* output = (char*) malloc( 17);
+    char* input = "BRnzp #10";
+    char* output = (char*) calloc(1, 17);
 
     LD(input, output);
-    char* expected = "0010001111111101";
+    char* expected = "0000111000001010";
 
     free(output);
     equals(output, expected, testID);
@@ -37,11 +37,11 @@ void testBR1(){
 void testBR2(){
 
     char* testID = "BR2";
-    char* input = "LD R1, #-3";
-    char* output = (char*) malloc( 17);
+    char* input = "BRnz #10";
+    char* output = (char*) calloc(1, 17);
 
     LD(input, output);
-    char* expected = "0010001111111101";
+    char* expected = "0000110000001010";
 
     free(output);
     equals(output, expected, testID);

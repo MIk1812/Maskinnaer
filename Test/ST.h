@@ -22,12 +22,12 @@ void testST(){
 
 void testST1(){
 
-    char* testID = "LD1";
-    char* input = "LD R1, #-3";
-    char* output = (char*) malloc( 17);
+    char* testID = "ST1";
+    char* input = "ST R1, #3";
+    char* output = (char*) calloc(1, 17);
 
     LD(input, output);
-    char* expected = "0010001111111101";
+    char* expected = "0011001000000011";
 
     free(output);
     equals(output, expected, testID);
@@ -36,12 +36,12 @@ void testST1(){
 
 void testST2(){
 
-    char* testID = "LD1";
-    char* input = "LD R1, #-3";
-    char* output = (char*) malloc( 17);
+    char* testID = "ST2";
+    char* input = "ST R1, #-3";
+    char* output = (char*) calloc(1, 17);
 
     LD(input, output);
-    char* expected = "0010001111111101";
+    char* expected = "0011001111111101";
 
     free(output);
     equals(output, expected, testID);

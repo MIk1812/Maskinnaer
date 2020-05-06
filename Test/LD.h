@@ -12,13 +12,11 @@
 
 void testLD1();
 void testLD2();
-void testLD3();
 
 void testLD(){
 
     testLD1();
     testLD2();
-    testLD3();
 
 }
 
@@ -26,7 +24,7 @@ void testLD1(){
 
     char* testID = "LD1";
     char* input = "LD R1, #-3";
-    char* output = (char*) malloc( 17);
+    char* output = (char*) calloc(1, 17);
 
     LD(input, output);
     char* expected = "0010001111111101";
@@ -36,25 +34,12 @@ void testLD1(){
 
 }
 
-void testLD3(){
-
-    char* testID = "LD3";
-    char* input = "LD R1, #-3";
-    char* output = (char*) malloc( 17);
-
-    LD(input, output);
-    char* expected = "0010001111111101";
-
-    free(output);
-    equals(output, expected, testID);
-
-}
 
 void testLD2(){
 
     char* testID = "LD2";
     char* input = "LD R1, #3";
-    char* output = (char*) malloc( 17);
+    char* output = (char*) calloc(1, 17);
 
     LD(input, output);
     char* expected = "0010001000000011";

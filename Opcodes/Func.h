@@ -68,9 +68,8 @@ int  getPCoffset (char* input){
     return pcVal;
 }
 
-//Length is number of chars, e.g. 'Mikkel' = 6
 //Start is index of first byte (zero-indexed)
-//Accepts negative values if minus is includes
+//Accepts negative values if minus is included
 //Only whole numbers
 int charToInt(char* input, int start, int maxLength){
 
