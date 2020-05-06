@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
+#include "Test/Start.h"
 #include "Opcodes/LD.h"
 #include "Opcodes/ADD.h"
 #include "Opcodes/BR.h"
@@ -11,6 +12,9 @@
 void takeInput(char input[]);
 
 int main() {
+
+    if(testAll() != true)
+        return 1;
 
     char* input = (char*) malloc(31);
     char* output = (char*) calloc(1, 17);

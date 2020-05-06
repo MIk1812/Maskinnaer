@@ -34,6 +34,8 @@ void updateRegBits(char* output, char reg, int start){
     if((reg & 4) > 0)
         output[start] = 1;
 }
+
+
 /**
  *
  * @param output: output arreyet som man manipulerer med.
