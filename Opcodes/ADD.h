@@ -36,10 +36,12 @@ void ADD(char input[], char output[]) {
         char imm[3];
         int immDigits = 0;
         for (int j = 13; j < 30 ; ++j) {
-            if(input[j]!='\n'){
+            if((input[j]>'0' && input[j]<'9') || input[j]=='-'){
                 imm[immDigits] = input[j];
                 immDigits++;
             }
+            else
+                break;
         }
 
         //iMM IDENTIFIER
@@ -50,5 +52,3 @@ void ADD(char input[], char output[]) {
         writeIntBits(output,immInt,15,5);
     }
 }
-
-

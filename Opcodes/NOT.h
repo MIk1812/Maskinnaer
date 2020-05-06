@@ -29,5 +29,4 @@ void NOT(char input[], char output[]){
     output[13] = 1;
     output[14] = 1;
     output[15] = 1;
-
 }
