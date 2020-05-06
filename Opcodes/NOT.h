@@ -8,31 +8,25 @@
 #endif //PROJEKT2_NOT_H
 
 void NOT(char input[], char output[]){
-    int bits[4] = {1,0,0,1};
-    for (int i = 0; i < 4; ++i) {
-        printf("%d", bits[i]);
-    }
 
-    int reg_bits[3] = {0, 0, 0};
-    //printer register DR1
-    char reg1 = input[5];
-    reg1 = reg1 - 48; //reset ASCII value
-    regbin(reg1, -1, reg_bits);
+    // Opcode
+    output[0] = 1;
+    output[1] = 0;
+    output[2] = 0;
+    output[3] = 1;
 
-    for (int l = 2; l >= 0; --l) {
-        printf("%d", reg_bits[l]);
-    }
-    //printer register SR1
-    char reg2 = input[9];
-    reg2 = reg2 - 48; //reset ASCII value
-    regbin(reg2, -1, reg_bits);
+    //Register DR
+    char dr = input[5];
+    updateRegBits(output,dr,4);
 
-    for (int l = 2; l >= 0; --l) {
-        printf("%d", reg_bits[l]);
-    }
-    int lastbits[6] = {1,1,1,1,1,1};
-    for (int i = 0; i < 6; ++i) {
-        printf("%d", lastbits[i]);
-    }
+    //Register SR1
+    char sr1 = input[9];
+    updateRegBits(output,sr1,7);
 
+    output[10] = 1;
+    output[11] = 1;
+    output[12] = 1;
+    output[13] = 1;
+    output[14] = 1;
+    output[15] = 1;
 }
