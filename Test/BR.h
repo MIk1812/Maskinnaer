@@ -26,7 +26,7 @@ void testBR1(){
     char* input = "BRnzp #10";
     char* output = (char*) calloc(1, 17);
 
-    LD(input, output);
+    BR(input, output);
     char* expected = "0000111000001010";
 
     free(output);
@@ -40,7 +40,7 @@ void testBR2(){
     char* input = "BRnz #10";
     char* output = (char*) calloc(1, 17);
 
-    LD(input, output);
+    BR(input, output);
     char* expected = "0000110000001010";
 
     free(output);

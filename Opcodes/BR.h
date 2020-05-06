@@ -9,7 +9,7 @@
 #endif //PROJEKT2_BR_H
 
 #include "Func.h"
-void Br(char* input, char* output) {
+void BR(char* input, char* output) {
     output[0] = 0;
     output[1] = 0;
     output[2] = 0;

@@ -26,7 +26,7 @@ void testNOT1(){
     char* input = "NOT R1, R2";
     char* output = (char*) calloc(1, 17);
 
-    LD(input, output);
+    NOT(input, output);
     char* expected = "1001001010111111";
 
     free(output);
@@ -40,7 +40,7 @@ void testNOT2(){
     char* input = "NOT R2, R1";
     char* output = (char*) calloc(1, 17);
 
-    LD(input, output);
+    NOT(input, output);
     char* expected = "1001010001111111";
 
     free(output);

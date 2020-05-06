@@ -56,7 +56,7 @@ int main() {
 
             //BR
             case 148:
-                Br(input,output);
+                BR(input, output);
                 break;
 
             //LDR

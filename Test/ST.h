@@ -26,7 +26,7 @@ void testST1(){
     char* input = "ST R1, #3";
     char* output = (char*) calloc(1, 17);
 
-    LD(input, output);
+    ST(input, output);
     char* expected = "0011001000000011";
 
     free(output);
@@ -40,7 +40,7 @@ void testST2(){
     char* input = "ST R1, #-3";
     char* output = (char*) calloc(1, 17);
 
-    LD(input, output);
+    ST(input, output);
     char* expected = "0011001111111101";
 
     free(output);
