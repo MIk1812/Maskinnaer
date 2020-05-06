@@ -16,7 +16,7 @@ char* takeInput(void);
 
 int main() {
 
-    testAll();
+    testEverything();
 
     char* output = (char*) calloc(1, outputSize +1);
     int exit = 0;
@@ -28,7 +28,7 @@ int main() {
 
         //Sum the ASCII values of the opcode's characters
         int sum = 0;
-        for (int i = 0; i < 30; ++i) {
+        for (int i = 0; i < inputSize; ++i) {
 
             //Until first blank space
             //todo hvordan alle disse

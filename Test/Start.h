@@ -15,7 +15,7 @@
 #include "ST.h"
 #include "NOT.h"
 
-void testAll(){
+void testEverything(){
 
     testLD();
     testADD();
