@@ -18,23 +18,26 @@ int main() {
 
     testEverything();
 
-    //Loads a file
+    //Initialize input and output
     FILE *inStream;
+    FILE *outputStream;
+    outputStream = fopen("/home/volkan/CLionProjects/projekt2/testout.txt","w");
     inStream = fopen("/home/volkan/CLionProjects/projekt2/testFil.txt","r");
-    if (inStream!=NULL){
+    if (inStream!=NULL&&outputStream!=NULL){
         printf("File read success!\n");
     }
     //Reads and saves in fromfile
-       char *fromFile = readFile(inStream);
+      // char *fromFile = readFile(inStream);
 
 
     char* output = (char*) calloc(1, outputSize +1);
 
     int exit = 0;
-    while(exit == 0){
+    while(exit < 4){
 
         //By giving the address of input, we can let takeInput modify it
-        char* input = takeInput();
+        //char* input = takeInput();
+        char* input = readFile(inStream);
 
         //Sum the ASCII values of the opcode's characters
         int sum = 0;
@@ -83,7 +86,11 @@ int main() {
 
         printf("%s", output);
 
-        exit = 1;
+
+        fprintf(outputStream,"%s",output);
+        fprintf(outputStream,"\n",output);
+
+        exit++;
 
     }
 
