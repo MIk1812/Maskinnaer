@@ -10,6 +10,7 @@
 #include <stdbool.h>
 
 #include "testLD.h"
+#include "testLDR.h"
 #include "testADD.h"
 #include "testBR.h"
 #include "testST.h"
@@ -18,6 +19,7 @@
 void testEverything(){
 
     testLD();
+    testLDR();
     testADD();
     testBR();
     testST();

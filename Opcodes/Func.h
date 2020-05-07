@@ -9,6 +9,7 @@
 #endif //PROJEKT2_FUNC_H
 
 //start determines which bits in bits[] are to be modified
+//Notice: writes from left to right
 void writeRegBits(char* output, char reg, int start){
 
     //Reset ASCII value. Upcasts reg to int
@@ -27,10 +28,10 @@ void writeRegBits(char* output, char reg, int start){
 
 
 /**
- *
- * @param output: output arreyet som man manipulerer med.
+ * Notice: writes from right to left
+ * @param output: output arreyet som man manipulerer med
  * @param intToWrite: selv int værdi som bliver konveteret til bits
- * @param start: start punktet i output array(funktionen kører fra højre mod venstre.
+ * @param start: start punktet i output array
  * @param numberOfBits: antalet bits man manipulerer
  */
 void writeIntBits(char* output, int intToWrite, int start, int numberOfBits){
