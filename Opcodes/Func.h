@@ -56,12 +56,10 @@ void nzp_Operation(char* input, char* output){
 
     for (int j = 2; j < 5 ; ++j) {
 
-
         if (input[j] == 'n')
                 output[4] = '1';
         else if(output[4] != '1')
             output[4] = '0';
-
 
         if(input[j]=='z') output[5]='1';
         else if(output[5] != '1') output[5]='0';
@@ -71,18 +69,6 @@ void nzp_Operation(char* input, char* output){
             output[6]='0';
 
     }
-}
-
-int getPCoffset(char* input){
-    int spaceIndex= 0;
-    for (int l = 0; l < 8 ; ++l) {
-        if (input[l] == '#')
-            break;
-        spaceIndex++;
-    }
-    int pcVal = input[spaceIndex+1];
-    pcVal = pcVal - 48; // resetting Ascii according to PC.
-    return pcVal;
 }
 
 //Accepts negative values if minus is included
