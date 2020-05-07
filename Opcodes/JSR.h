@@ -18,6 +18,7 @@ void JSR(char* input, char* output){
     output[1] = '1';
     output[2] = '0';
     output[3] = '0';
+
     output[4] = '1';
     
     int pcOffset = charsToInt(input, 5, 5);

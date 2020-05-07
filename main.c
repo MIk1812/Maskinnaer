@@ -92,6 +92,11 @@ int main() {
                 JSRR(input, output);
                 break;
 
+            //JMP
+            case 231:
+                JMP(input, output);
+                break;
+
         }
 
         printf("%s", output);

@@ -19,6 +19,7 @@
 #include "testLEA.h"
 #include "testJSR.h"
 #include "testJSRR.h"
+#include "testJMP.h"
 
 void testEverything(){
 
@@ -32,6 +33,7 @@ void testEverything(){
     testNOT();
     testJSR();
     testJSRR();
+    testJMP();
 
 }
 
