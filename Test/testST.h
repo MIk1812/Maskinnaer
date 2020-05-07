@@ -29,9 +29,9 @@ void testST1(){
     ST(input, output);
     char* expected = "0011001000000011";
 
-
     equals(output, expected, testID);
     free(output);
+
 }
 
 void testST2(){
@@ -43,7 +43,7 @@ void testST2(){
     ST(input, output);
     char* expected = "0011001111111101";
 
-
     equals(output, expected, testID);
     free(output);
+
 }

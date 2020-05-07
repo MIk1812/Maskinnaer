@@ -3,7 +3,6 @@
 #include <stdlib.h>
 
 #include "Test/Start.h"
-
 #include "Opcodes/LD.h"
 #include "Opcodes/ADD.h"
 #include "Opcodes/BR.h"
@@ -11,6 +10,8 @@
 #include "Opcodes/NOT.h"
 #include "Opcodes/STR.h"
 #include "Opcodes/STI.h"
+#include "Opcodes/LDR.h"
+#include "Opcodes/LDI.h"
 
 char* takeInput(void);
 
@@ -43,6 +44,21 @@ int main() {
         //Identify opcode
         switch(sum){
 
+            //LDR
+            case 226:
+                LDR(input, output);
+                break;
+
+            //LDI
+            case 217:
+                LDI(input, output);
+                break;
+
+            //LEA
+            case 210:
+                LEA(input, output);
+                break;
+
             //LD
             case 144:
                 LD(input, output);
@@ -63,10 +79,6 @@ int main() {
                 BR(input, output);
                 break;
 
-            //LDR
-            case 226:
-                break;
-
             //ST
             case 167:
                 ST(input, output);
@@ -78,6 +90,21 @@ int main() {
 
             case 249:
                 STR(input,output);
+                break;
+
+            //JSR
+            case 239:
+                JSR(input, output);
+                break;
+
+            //JSRR
+            case 321:
+                JSRR(input, output);
+                break;
+
+            //JMP
+            case 231:
+                JMP(input, output);
                 break;
 
         }

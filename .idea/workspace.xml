@@ -12,15 +12,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb59133d-8e42-43d6-9228-317878544a5e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Opcodes/STI.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Opcodes/STR.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/testSTR.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Opcodes/JMP.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Opcodes/JSR.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Opcodes/JSRR.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Opcodes/LDI.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Opcodes/LDR.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Opcodes/LEA.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/testJMP.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/testJSR.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/testJSRR.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/testLDI.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/testLDR.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/testLEA.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/testSTI.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Opcodes/BR.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/BR.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Opcodes/Func.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/Func.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Opcodes/ST.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/ST.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Opcodes/LD.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/LD.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/Start.h" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Start.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/testADD.h" beforeDir="false" afterPath="$PROJECT_DIR$/Test/testADD.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/testBR.h" beforeDir="false" afterPath="$PROJECT_DIR$/Test/testBR.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/testLD.h" beforeDir="false" afterPath="$PROJECT_DIR$/Test/testLD.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/testNOT.h" beforeDir="false" afterPath="$PROJECT_DIR$/Test/testNOT.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/testST.h" beforeDir="false" afterPath="$PROJECT_DIR$/Test/testST.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,22 +125,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1588845322966" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1588854079211">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1588855454706">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588854079211" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1588854079210">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588855454706" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1588855454705">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588854079210" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1588854079210">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588855454705" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1588855454705">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588854079210" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1588854079210">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588855454705" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1588855454705">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588854079210" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588855454705" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1588852440754">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -148,10 +161,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="481" y="128" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1588846123926" />
-    <state x="555" y="128" key="VCS.ChangeListViewerDialog" timestamp="1588845314739">
+    <state x="555" y="128" key="VCS.ChangeListViewerDialog" timestamp="1588855153565">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="555" y="128" key="VCS.ChangeListViewerDialog/0.0.1536.824@0.0.1536.824" timestamp="1588845314739" />
+    <state x="555" y="128" key="VCS.ChangeListViewerDialog/0.0.1536.824@0.0.1536.824" timestamp="1588855153565" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1588852836320">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

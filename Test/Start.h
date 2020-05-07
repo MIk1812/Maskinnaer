@@ -10,22 +10,35 @@
 #include <stdbool.h>
 
 #include "testLD.h"
+#include "testLDR.h"
 #include "testADD.h"
 #include "testBR.h"
 #include "testST.h"
+#include "testSTI.h"
 #include "testNOT.h"
 #include "testSTR.h"
+#include "testLDI.h"
+#include "testLEA.h"
+#include "testJSR.h"
+#include "testJSRR.h"
+#include "testJMP.h"
 
 void testEverything(){
 
-//    testLD();
+//    testNOT();
+    testLEA();
+    testLD();
+    testLDR();
+    testLDI();
+    testADD();
     testBR();
-//    testADD();
-//    testBR();
     testST();
     testSTR();
-
-//    testNOT();
+    testSTI();
+    testNOT();
+    testJSR();
+    testJSRR();
+    testJMP();
 
 }
 
