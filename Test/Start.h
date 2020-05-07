@@ -17,11 +17,11 @@
 
 void testEverything(){
 
-   // testLD();
-    testADD();
-   // testBR();
-  //  testST();
-   // testNOT();
+    testLD();
+//    testADD();
+//    testBR();
+//    testST();
+//    testNOT();
 
 }
 
