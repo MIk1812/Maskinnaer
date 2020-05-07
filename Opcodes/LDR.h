@@ -1,13 +1,14 @@
 //
 // Created by Mikkel Danielsen on 07/05/2020.
 //
+#pragma once
 
 #ifndef PROJEKT2_LDR_H
 #define PROJEKT2_LDR_H
 
 #endif //PROJEKT2_LDR_H
 
-#include "func.h"
+#include "Func.h"
 
 void LDR(char* input, char* output){
 

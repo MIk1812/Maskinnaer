@@ -16,9 +16,11 @@
 #include "testST.h"
 #include "testNOT.h"
 #include "testLDI.h"
+#include "testLEA.h"
 
 void testEverything(){
 
+    testLEA();
     testLD();
     testLDR();
     testLDI();

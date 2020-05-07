@@ -10,20 +10,20 @@
 
 //start determines which bits in bits[] are to be modified
 //Notice: writes from left to right
-void writeRegBits(char* output, char reg, int start){
+void writeRegBits(char* output, char reg, int firstIndex){
 
     //Reset ASCII value. Upcasts reg to int
     reg = reg - 48;
 
     //Update destination bits according to register
-    if((reg & 1) > 0) output[start+2] = '1';
-    else output[start+2] = '0';
+    if((reg & 1) > 0) output[firstIndex + 2] = '1';
+    else output[firstIndex+2] = '0';
 
-    if((reg & 2) > 0) output[start+1] = '1';
-    else output[start+1] = '0';
+    if((reg & 2) > 0) output[firstIndex + 1] = '1';
+    else output[firstIndex+1] = '0';
 
-    if((reg & 4) > 0) output[start] = '1';
-    else output[start] = '0';
+    if((reg & 4) > 0) output[firstIndex] = '1';
+    else output[firstIndex] = '0';
 }
 
 
@@ -34,7 +34,7 @@ void writeRegBits(char* output, char reg, int start){
  * @param start: start punktet i output array
  * @param numberOfBits: antalet bits man manipulerer
  */
-void writeIntBits(char* output, int intToWrite, int start, int numberOfBits){
+void writeIntBits(char* output, int intToWrite, int lastIndex, int numberOfBits){
 
     int bit=1;
 
@@ -42,11 +42,11 @@ void writeIntBits(char* output, int intToWrite, int start, int numberOfBits){
     for (int i = 0; i < numberOfBits ; ++i) {
 
         if((intToWrite & bit) > 0)
-            output[start] = '1';
+            output[lastIndex] = '1';
         else
-            output[start] = '0';
+            output[lastIndex] = '0';
 
-        start--;
+        lastIndex--;
         bit = bit*2;
     }
 

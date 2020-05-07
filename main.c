@@ -8,6 +8,8 @@
 #include "Opcodes/BR.h"
 #include "Opcodes/ST.h"
 #include "Opcodes/NOT.h"
+#include "Opcodes/LDR.h"
+#include "Opcodes/LDI.h"
 
 char* takeInput(void);
 
@@ -40,6 +42,21 @@ int main() {
         //Identify opcode
         switch(sum){
 
+            //LDR
+            case 226:
+                LDR(input, output);
+                break;
+
+            //LDI
+            case 217:
+                LDI(input, output);
+                break;
+
+            //LEA
+            case 210:
+                LEA(input, output);
+                break;
+
             //LD
             case 144:
                 LD(input, output);
@@ -58,10 +75,6 @@ int main() {
             //BR
             case 148:
                 BR(input, output);
-                break;
-
-            //LDR
-            case 226:
                 break;
 
             //ST
