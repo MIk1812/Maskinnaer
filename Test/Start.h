@@ -25,6 +25,7 @@
 #include "testRET.h"
 #include "testRTI.h"
 #include "testAND.h"
+#include "testTRAP.h"
 
 void testEverything(){
 
@@ -45,6 +46,7 @@ void testEverything(){
     testRET();
     testRTI();
     testAND();
+    testTRAP();
 
 }
 

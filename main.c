@@ -127,7 +127,10 @@ int main() {
                 ADD(input, output);
                 break;
 
-            //todo evt trap ..
+            //TRAP
+            case 35817600:
+                TRAP(input, output);
+                break;
 
         }
 

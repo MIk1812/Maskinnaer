@@ -12,18 +12,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6d5bf27-4a34-4576-b421-5d11eec78c96" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Opcodes/TRAP.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/testTRAP.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Opcodes/AND.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/AND.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Opcodes/BR.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/BR.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Opcodes/Func.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/Func.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Opcodes/JSR.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/JSR.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Opcodes/LD.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/LD.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Opcodes/LDI.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/LDI.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Opcodes/LDR.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/LDR.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Opcodes/LEA.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/LEA.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Opcodes/ST.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/ST.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Opcodes/STI.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/STI.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Opcodes/STR.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/STR.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Start.h" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Start.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +78,7 @@
       <workItem from="1588797318267" duration="1804000" />
       <workItem from="1588832507088" duration="448000" />
       <workItem from="1588834804994" duration="7589000" />
-      <workItem from="1588850625679" duration="12124000" />
+      <workItem from="1588850625679" duration="13138000" />
     </task>
     <task id="LOCAL-00001" summary="check">
       <created>1588324165005</created>
@@ -290,7 +283,28 @@
       <option name="project" value="LOCAL" />
       <updated>1588860809341</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Skrevet charsToInt2 som nu også tager hex. Man skal derfor også give funktionen prædikatet (X eller #) med. Jeg har udskiftet den gamle version af funktion af alle steder, og programmet kører fint.">
+      <created>1588863153397</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1588863153397</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Helt slettet den oprindelige charToInt">
+      <created>1588863187462</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1588863187462</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Fjernet PCoffset funktionen da den ikke bliver brug længere">
+      <created>1588863250315</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1588863250315</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,9 +324,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="check" />
-    <MESSAGE value="Implementeret testframework" />
-    <MESSAGE value="Skrevet charToInt om så den stopper så snart der ikke er flere tal" />
     <MESSAGE value="Tilføjet Volkans nye ADD og NOT funktioner" />
     <MESSAGE value="Slettet regBin function.&#10;Oprettet testfiler til ADD, BR, NOT og ST. Selve testene er ikke skrevet endnu" />
     <MESSAGE value="Ændret så vores testmetoder ikke returnerer bool, men blot printer ved fejl, så programmet fortsætter" />
@@ -335,41 +346,44 @@
     <MESSAGE value="Opdateret main så vi ikke differentiere på baggrund af sum men derimod produkt" />
     <MESSAGE value="Tjekket alle funktioner virker fra main" />
     <MESSAGE value="Skrevet, testet og implementeret AND" />
-    <option name="LAST_COMMIT_MESSAGE" value="Skrevet, testet og implementeret AND" />
+    <MESSAGE value="Skrevet charsToInt2 som nu også tager hex. Man skal derfor også give funktionen prædikatet (X eller #) med. Jeg har udskiftet den gamle version af funktion af alle steder, og programmet kører fint." />
+    <MESSAGE value="Helt slettet den oprindelige charToInt" />
+    <MESSAGE value="Fjernet PCoffset funktionen da den ikke bliver brug længere" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fjernet PCoffset funktionen da den ikke bliver brug længere" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1032" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588850528085">
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
     <state x="1032" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588850528085" />
-    <state x="794" y="179" key="CommitChangelistDialog2" timestamp="1588863187365">
+    <state x="794" y="179" key="CommitChangelistDialog2" timestamp="1588863250190">
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
     <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588345975415" />
-    <state x="794" y="179" key="CommitChangelistDialog2/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588863187365" />
-    <state width="1236" height="254" key="GridCell.Tab.0.bottom" timestamp="1588863060318">
-      <screen x="44" y="23" width="2516" height="1057" />
+    <state x="794" y="179" key="CommitChangelistDialog2/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588863250190" />
+    <state width="1236" height="254" key="GridCell.Tab.0.bottom" timestamp="1588864092988">
+      <screen x="42" y="23" width="2518" height="1057" />
     </state>
     <state width="746" height="177" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588348615681" />
-    <state width="1250" height="236" key="GridCell.Tab.0.bottom/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1588855951867" />
+    <state width="1236" height="254" key="GridCell.Tab.0.bottom/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1588864092988" />
     <state width="1236" height="254" key="GridCell.Tab.0.bottom/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588863060318" />
-    <state width="1236" height="254" key="GridCell.Tab.0.center" timestamp="1588863060317">
-      <screen x="44" y="23" width="2516" height="1057" />
+    <state width="1236" height="254" key="GridCell.Tab.0.center" timestamp="1588864092986">
+      <screen x="42" y="23" width="2518" height="1057" />
     </state>
     <state width="746" height="177" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588348615681" />
-    <state width="1250" height="236" key="GridCell.Tab.0.center/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1588855951866" />
+    <state width="1236" height="254" key="GridCell.Tab.0.center/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1588864092986" />
     <state width="1236" height="254" key="GridCell.Tab.0.center/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588863060317" />
-    <state width="1236" height="254" key="GridCell.Tab.0.left" timestamp="1588863060316">
-      <screen x="44" y="23" width="2516" height="1057" />
+    <state width="1236" height="254" key="GridCell.Tab.0.left" timestamp="1588864092986">
+      <screen x="42" y="23" width="2518" height="1057" />
     </state>
     <state width="746" height="177" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588348615681" />
-    <state width="1250" height="236" key="GridCell.Tab.0.left/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1588855951865" />
+    <state width="1236" height="254" key="GridCell.Tab.0.left/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1588864092986" />
     <state width="1236" height="254" key="GridCell.Tab.0.left/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588863060316" />
-    <state width="1236" height="254" key="GridCell.Tab.0.right" timestamp="1588863060317">
-      <screen x="44" y="23" width="2516" height="1057" />
+    <state width="1236" height="254" key="GridCell.Tab.0.right" timestamp="1588864092987">
+      <screen x="42" y="23" width="2518" height="1057" />
     </state>
     <state width="746" height="177" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588348615681" />
-    <state width="1250" height="236" key="GridCell.Tab.0.right/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1588855951866" />
+    <state width="1236" height="254" key="GridCell.Tab.0.right/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1588864092987" />
     <state width="1236" height="254" key="GridCell.Tab.0.right/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588863060317" />
     <state width="1236" height="356" key="GridCell.Tab.1.bottom" timestamp="1588860724493">
       <screen x="44" y="23" width="2516" height="1057" />
@@ -405,11 +419,11 @@
     </state>
     <state x="555" y="128" key="VCS.ChangeListViewerDialog/0.0.1536.824@0.0.1536.824" timestamp="1588330399963" />
     <state x="1209" y="354" key="VCS.ChangeListViewerDialog/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588858433757" />
-    <state x="635" y="209" key="Vcs.Push.Dialog.v2" timestamp="1588860822489">
+    <state x="635" y="209" key="Vcs.Push.Dialog.v2" timestamp="1588863255475">
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588346000176" />
-    <state x="635" y="209" key="Vcs.Push.Dialog.v2/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588860822489" />
+    <state x="635" y="209" key="Vcs.Push.Dialog.v2/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588863255475" />
     <state x="806" y="326" key="com.intellij.ide.util.TipDialog" timestamp="1588850628427">
       <screen x="44" y="23" width="2516" height="1057" />
     </state>
