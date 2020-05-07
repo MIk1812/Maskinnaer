@@ -24,6 +24,7 @@
 #include "testJMP.h"
 #include "testRET.h"
 #include "testRTI.h"
+#include "testAND.h"
 
 void testEverything(){
 
@@ -43,6 +44,7 @@ void testEverything(){
     testJMP();
     testRET();
     testRTI();
+    testAND();
 
 }
 

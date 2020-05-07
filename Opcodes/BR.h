@@ -9,6 +9,7 @@
 #endif //PROJEKT2_BR_H
 
 #include "Func.h"
+
 void BR(char* input, char* output) {
     output[0] = '0';
     output[1] = '0';

@@ -122,6 +122,13 @@ int main() {
                 RTI(input, output);
                 break;
 
+            //AND
+            case 344760:
+                ADD(input, output);
+                break;
+
+            //todo evt trap ..
+
         }
 
         printf("%s", output);
