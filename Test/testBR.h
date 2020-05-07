@@ -7,7 +7,7 @@
 
 #endif //PROJEKT2_BR_H
 
-#include "Func.h"
+#include "testFunc.h"
 #include "../Opcodes/BR.h"
 
 void testBR1();
@@ -29,9 +29,9 @@ void testBR1(){
     BR(input, output);
     char* expected = "0000111000001010";
 
-    free(output);
-    equals(output, expected, testID);
 
+    equals(output, expected, testID);
+    free(output);
 }
 
 void testBR2(){
@@ -43,7 +43,7 @@ void testBR2(){
     BR(input, output);
     char* expected = "0000110000001010";
 
-    free(output);
-    equals(output, expected, testID);
 
+    equals(output, expected, testID);
+    free(output);
 }

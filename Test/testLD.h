@@ -7,7 +7,7 @@
 
 #endif //PROJEKT2_LD_H
 
-#include "Func.h"
+#include "testFunc.h"
 #include "../Opcodes/LD.h"
 
 void testLD1();
@@ -29,9 +29,9 @@ void testLD1(){
     LD(input, output);
     char* expected = "0010001111111101";
 
-    free(output);
-    equals(output, expected, testID);
 
+    equals(output, expected, testID);
+    free(output);
 }
 
 
@@ -44,7 +44,7 @@ void testLD2(){
     LD(input, output);
     char* expected = "0010001000000011";
 
-    free(output);
-    equals(output, expected, testID);
 
+    equals(output, expected, testID);
+    free(output);
 }
