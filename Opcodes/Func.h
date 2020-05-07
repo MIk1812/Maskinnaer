@@ -106,3 +106,17 @@ int charsToInt(char* input, int start, int maxLength){
 
 }
 
+char* readFile(FILE* file){
+    int i = 0;
+    char* data = (char*) calloc(1,30 + 1);
+
+    while (fscanf(file,"%c",&data[i]) != EOF ){
+
+        printf("%c",data[i]);
+        i++;
+        if (data[i-1]=='\n' )
+            return data;
+    }
+
+    return data;
+}

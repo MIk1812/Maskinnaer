@@ -18,6 +18,16 @@ int main() {
 
     testEverything();
 
+    //Loads a file
+    FILE *inStream;
+    inStream = fopen("/home/volkan/CLionProjects/projekt2/testFil.txt","r");
+    if (inStream!=NULL){
+        printf("File read success!\n");
+    }
+    //Reads and saves in fromfile
+       char *fromFile = readFile(inStream);
+
+
     char* output = (char*) calloc(1, outputSize +1);
 
     int exit = 0;
@@ -76,6 +86,8 @@ int main() {
         exit = 1;
 
     }
+
+
 
 }
 
