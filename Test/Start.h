@@ -14,7 +14,9 @@
 #include "testADD.h"
 #include "testBR.h"
 #include "testST.h"
+#include "testSTI.h"
 #include "testNOT.h"
+#include "testSTR.h"
 #include "testLDI.h"
 #include "testLEA.h"
 #include "testJSR.h"
@@ -25,6 +27,7 @@
 
 void testEverything(){
 
+//    testNOT();
     testLEA();
     testLD();
     testLDR();
@@ -32,6 +35,8 @@ void testEverything(){
     testADD();
     testBR();
     testST();
+    testSTR();
+    testSTI();
     testNOT();
     testJSR();
     testJSRR();

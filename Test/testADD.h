@@ -57,7 +57,7 @@ void testADD3(){
     char* output = (char*) calloc(1, 17);
 
     ADD(input, output);
-    char* expected = "0001001010111010";
+    char* expected = "0001001010110110";
 
     equals(output, expected, testID);
     free(output);

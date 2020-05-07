@@ -8,6 +8,8 @@
 #include "Opcodes/BR.h"
 #include "Opcodes/ST.h"
 #include "Opcodes/NOT.h"
+#include "Opcodes/STR.h"
+#include "Opcodes/STI.h"
 #include "Opcodes/LDR.h"
 #include "Opcodes/LDI.h"
 
@@ -33,12 +35,13 @@ int main() {
         for (int i = 0; i < inputSize; ++i) {
 
             //Until first blank space
+            //grund til at vi tjekker ekstra input er fordi vi bare har brug for summen af BR og ikke ekstra input som n / z / p.
             if(input[i] == ' '|| input[i] == 110 || input[i] == 122 || input[i] == 112)
                 break;
 
             int toMultiply = *(input+i);
             sum = sum * toMultiply;
-            
+
         }
 
         //Identify opcode
@@ -82,6 +85,14 @@ int main() {
             //ST
             case 6972:
                 ST(input, output);
+                break;
+
+            case 240:
+                STI(input,output);
+                break;
+
+            case 249:
+                STR(input,output);
                 break;
 
             //JSR
