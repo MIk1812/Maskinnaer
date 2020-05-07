@@ -22,96 +22,112 @@ int main() {
 
     testEverything();
 
-    char* output = (char*) calloc(1, outputSize +1);
-
     int exit = 0;
     while(exit == 0){
+
+        char* output = (char*) calloc(1, outputSize +1);
 
         //By giving the address of input, we can let takeInput modify it
         char* input = takeInput();
 
         //Sum the ASCII values of the opcode's characters
-        int sum = 0;
+        int sum = 1;
         for (int i = 0; i < inputSize; ++i) {
 
             //Until first blank space
             //grund til at vi tjekker ekstra input er fordi vi bare har brug for summen af BR og ikke ekstra input som n / z / p.
-            if(input[i] == ' '|| input[i] == 110 || input[i] == 122 || input[i] == 112)
+            if(input[i] == ' '|| input[i] == 110 || input[i] == 122 || input[i] == 112 || input[i] == '\0')
                 break;
-            sum = sum + input[i];
+
+            int toMultiply = *(input+i);
+            sum = sum * toMultiply;
+
         }
 
         //Identify opcode
         switch(sum){
 
             //LDR
-            case 226:
+            case 423776:
                 LDR(input, output);
                 break;
 
             //LDI
-            case 217:
+            case 377264:
                 LDI(input, output);
                 break;
 
             //LEA
-            case 210:
+            case 340860:
                 LEA(input, output);
                 break;
 
             //LD
-            case 144:
+            case 5168:
                 LD(input, output);
                 break;
 
             //ADD
-            case 201:
+            case 300560:
                 ADD(input, output);
                 break;
 
             //NOT
-            case 241:
+            case 517608:
                 NOT(input, output);
                 break;
 
             //BR
-            case 148:
+            case 5412:
                 BR(input, output);
                 break;
 
             //ST
-            case 167:
+            case 6972:
                 ST(input, output);
                 break;
 
-            case 240:
+            //STI
+            case 508956:
                 STI(input,output);
                 break;
 
-            case 249:
+            //STR
+            case 571704:
                 STR(input,output);
                 break;
 
             //JSR
-            case 239:
+            case 503644:
                 JSR(input, output);
                 break;
 
             //JSRR
-            case 321:
+            case 41298808:
                 JSRR(input, output);
                 break;
 
             //JMP
-            case 231:
+            case 455840:
                 JMP(input, output);
+                break;
+
+            //RET
+            case 475272:
+                RET(input, output);
+                break;
+
+            //RTI
+            case 502824:
+                RTI(input, output);
                 break;
 
         }
 
         printf("%s", output);
 
-        exit = 1;
+        free(output);
+        exit = 0;
 
     }
 

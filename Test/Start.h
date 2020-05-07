@@ -22,6 +22,8 @@
 #include "testJSR.h"
 #include "testJSRR.h"
 #include "testJMP.h"
+#include "testRET.h"
+#include "testRTI.h"
 
 void testEverything(){
 
@@ -39,6 +41,8 @@ void testEverything(){
     testJSR();
     testJSRR();
     testJMP();
+    testRET();
+    testRTI();
 
 }
 
