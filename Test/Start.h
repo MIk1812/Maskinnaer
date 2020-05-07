@@ -15,11 +15,13 @@
 #include "testBR.h"
 #include "testST.h"
 #include "testNOT.h"
+#include "testLDI.h"
 
 void testEverything(){
 
     testLD();
     testLDR();
+    testLDI();
     testADD();
     testBR();
     testST();
