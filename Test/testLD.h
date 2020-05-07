@@ -29,7 +29,6 @@ void testLD1(){
     LD(input, output);
     char* expected = "0010001111111101";
 
-
     equals(output, expected, testID);
     free(output);
 }
@@ -43,7 +42,6 @@ void testLD2(){
 
     LD(input, output);
     char* expected = "0010001000000011";
-
 
     equals(output, expected, testID);
     free(output);

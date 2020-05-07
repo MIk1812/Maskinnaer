@@ -48,6 +48,7 @@ void writeIntBits(char* output, int intToWrite, int start, int numberOfBits){
         start--;
         bit = bit*2;
     }
+
 }
 
 void nzp_Operation(char* input, char* output){
@@ -96,10 +97,12 @@ int charsToInt(char* input, int start, int maxLength){
         temp[i] = charRead;
     }
 
+
+    int out = atoi(temp);
     free(temp);
 
     //Convert PC Offset to int
-    return atoi(temp);
+    return out;
 
 }
 

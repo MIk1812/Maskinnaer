@@ -44,7 +44,6 @@ void testADD2(){
     ADD(input, output);
     char* expected = "0001001010000101";
 
-
     equals(output, expected, testID);
     free(output);
 }
