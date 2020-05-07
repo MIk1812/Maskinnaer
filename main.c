@@ -21,13 +21,14 @@ int main() {
     //Initialize input and output
     FILE *inStream;
     FILE *outputStream;
-    outputStream = fopen("/home/volkan/CLionProjects/projekt2/testout.txt","w");
-    inStream = fopen("/home/volkan/CLionProjects/projekt2/testFil.txt","r");
+    outputStream = fopen("C:\\Users\\volka\\CLionProjects\\projekt2\\testout.txt","w");
+    inStream = fopen("C:\\Users\\volka\\CLionProjects\\projekt2\\testFil.txt","r");
     if (inStream!=NULL&&outputStream!=NULL){
         printf("File read success!\n");
     }
     //Reads and saves in fromfile
-      // char *fromFile = readFile(inStream);
+       //char *fromFile = readFile(inStream);
+
 
 
     char* output = (char*) calloc(1, outputSize +1);
@@ -39,6 +40,8 @@ int main() {
         //char* input = takeInput();
         char* input = readFile(inStream);
 
+        directives(input,output);
+
         //Sum the ASCII values of the opcode's characters
         int sum = 0;
         for (int i = 0; i < inputSize; ++i) {
@@ -49,6 +52,8 @@ int main() {
                 break;
             sum = sum + input[i];
         }
+
+
 
         //Identify opcode
         switch(sum){

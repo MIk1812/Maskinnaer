@@ -1,3 +1,4 @@
+.ORIG x3050
 ADD R1, R2, R3
 ADD R1, R2, #10
 ADD R1, R2, #-10
