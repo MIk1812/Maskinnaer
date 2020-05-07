@@ -25,7 +25,7 @@ void BR(char* input, char* output) {
         count++;
     }
 
-    int pcoff = charsToInt2(input,count,4);
+    int pcoff = charsToInt(input, count, 4);
     writeIntBits(output,pcoff,15,9);
 
 }

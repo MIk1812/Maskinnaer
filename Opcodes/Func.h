@@ -85,38 +85,12 @@ int getPCoffset(char* input){
     return pcVal;
 }
 
-//int charsToInt(char* input, int start, int maxLength){
-//
-//    char* temp = (char*) calloc(1,maxLength + 1);
-//
-//    //Isolate the chars from the input array.
-//    for (int i = 0; i < maxLength; ++i) {
-//
-//        char charRead = input[i+start];
-//
-//        if( !((charRead >= '0' && charRead <= '9') || charRead == '-') )
-//            break;
-//
-//        temp[i] = charRead;
-//    }
-//
-//    int out = atoi(temp);
-//    free(temp);
-//
-//    //Convert PC Offset to int
-//    return out;
-//
-//    //        if( !((charRead >= '0' && charRead <= '9') || charRead == '-' || charRead >= 'A' && charRead <= 'Z') )
-////            break;
-//
-//}
-
 //Accepts negative values if minus is included
 //Only whole numbers
 //Only capitilized letters
 //firstIndex must include predicate '#' or 'x'
 //maxLength er tallets maximale længde tal som digits. Better safe than sorry.
-int charsToInt2(char* input, int firstIndex, int maxLength){
+int charsToInt(char* input, int firstIndex, int maxLength){
 
     char* temp = (char*) calloc(1,maxLength + 1);
 
