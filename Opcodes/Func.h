@@ -55,14 +55,19 @@ void nzp_Operation(char* input, char* output){
 
     for (int j = 2; j < 5 ; ++j) {
 
-        if(input[j]=='n') output[4]='1';
-        else output[4]='0';
+
+        if (input[j] == 'n')
+                output[4] = '1';
+        else if(output[4] != '1')
+            output[4] = '0';
+
 
         if(input[j]=='z') output[5]='1';
-        else output[5]='0';
+        else if(output[5] != '1') output[5]='0';
 
         if(input[j]=='p') output[6]='1';
-        else output[6]='0';
+        else if (output[6]!='1')
+            output[6]='0';
 
     }
 }

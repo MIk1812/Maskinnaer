@@ -3,11 +3,14 @@
 #include <stdlib.h>
 
 #include "Test/Start.h"
+
 #include "Opcodes/LD.h"
 #include "Opcodes/ADD.h"
 #include "Opcodes/BR.h"
 #include "Opcodes/ST.h"
 #include "Opcodes/NOT.h"
+#include "Opcodes/STR.h"
+#include "Opcodes/STI.h"
 
 char* takeInput(void);
 
@@ -67,6 +70,14 @@ int main() {
             //ST
             case 167:
                 ST(input, output);
+                break;
+
+            case 240:
+                STI(input,output);
+                break;
+
+            case 249:
+                STR(input,output);
                 break;
 
         }

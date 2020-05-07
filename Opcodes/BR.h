@@ -17,20 +17,14 @@ void BR(char* input, char* output) {
 
     // set correct operation bit n,z,p
     nzp_Operation(input, output);
+    int count = 0; // count til '#' to read where pcoff begins.
+    for (int i = 0; i < 30 ; ++i) {
+        if(input[i] =='#')
+            break;
+        count++;
+    }
 
+    int pcoff = charsToInt(input,count+1,4);
+    writeIntBits(output,pcoff,15,9);
 
-//    int PCoff[9]={0,0,0,0,0,0,0,0,0};
-//    //finding the index of space after BRnzp
-//    int spaceIndex= 0;
-//    for (int l = 0; l < 8 ; ++l) {
-//        if (input[l] == ' ')
-//            break;
-//        spaceIndex++;
-//    }
-//    int pcVal = input[spaceIndex+2];
-//    pcVal = pcVal - 48; // resetting Ascii according to PC.
-//    regbin(pcVal,-1,PCoff);
-//    for (int m = 8; m >= 0 ; --m) {
-//        printf("%d", PCoff[m]);
-//    }
 }

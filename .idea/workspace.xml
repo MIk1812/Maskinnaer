@@ -12,7 +12,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb59133d-8e42-43d6-9228-317878544a5e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Opcodes/STI.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Opcodes/STR.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/testSTR.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Opcodes/BR.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/BR.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Opcodes/Func.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/Func.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Opcodes/ST.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/ST.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Start.h" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Start.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +48,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\buttt\Google Drive\projekt2\Opcodes" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="projekt2" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="projekt2" TARGET_NAME="projekt2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="projekt2" RUN_TARGET_NAME="projekt2">
       <method v="2">
@@ -57,45 +71,94 @@
       <option name="presentableId" value="Default" />
       <updated>1588804254308</updated>
       <workItem from="1588804262044" duration="679000" />
-      <workItem from="1588844869364" duration="243000" />
+      <workItem from="1588844869364" duration="7522000" />
+      <workItem from="1588852503066" duration="1475000" />
     </task>
+    <task id="LOCAL-00001" summary="check">
+      <created>1588845239927</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588845239928</updated>
+    </task>
+    <task id="LOCAL-00002" summary="commit">
+      <created>1588845284381</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588845284381</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="check" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="393" y="7" key="CommitChangelistDialog2" timestamp="1588845233677">
+    <state x="361" y="71" key="#New_File_Extensions" timestamp="1588851255607">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588845233677" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1588804951777">
+    <state x="361" y="71" key="#New_File_Extensions/0.0.1536.824@0.0.1536.824" timestamp="1588851255607" />
+    <state x="393" y="7" key="CommitChangelistDialog2" timestamp="1588854141623">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588804951777" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1588804951777">
+    <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588854141623" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1588845322966">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588804951777" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1588804951777">
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1588845322966" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1588854079211">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588804951777" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1588804951777">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588854079211" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1588854079210">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588804951777" />
-    <state x="555" y="128" key="VCS.ChangeListViewerDialog" timestamp="1588845264563">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588854079210" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1588854079210">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="555" y="128" key="VCS.ChangeListViewerDialog/0.0.1536.824@0.0.1536.824" timestamp="1588845264563" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1588844869729">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588854079210" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1588854079210">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588844869729" />
-    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588845248591">
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588854079210" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1588852440754">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1588845248591" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588852440754" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1588852440754">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588852440754" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1588852440754">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588852440754" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1588852440754">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588852440754" />
+    <state x="481" y="128" key="MultipleFileMergeDialog" timestamp="1588846123926">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="481" y="128" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1588846123926" />
+    <state x="555" y="128" key="VCS.ChangeListViewerDialog" timestamp="1588845314739">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="555" y="128" key="VCS.ChangeListViewerDialog/0.0.1536.824@0.0.1536.824" timestamp="1588845314739" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1588852836320">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588852836320" />
+    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588849980457">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1588849980457" />
   </component>
 </project>

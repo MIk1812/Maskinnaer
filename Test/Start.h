@@ -14,13 +14,17 @@
 #include "testBR.h"
 #include "testST.h"
 #include "testNOT.h"
+#include "testSTR.h"
 
 void testEverything(){
 
-    testLD();
+//    testLD();
+    testBR();
 //    testADD();
 //    testBR();
-//    testST();
+    testST();
+    testSTR();
+
 //    testNOT();
 
 }
