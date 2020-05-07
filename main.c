@@ -29,73 +29,86 @@ int main() {
         char* input = takeInput();
 
         //Sum the ASCII values of the opcode's characters
-        int sum = 0;
+        int sum = 1;
         for (int i = 0; i < inputSize; ++i) {
 
             //Until first blank space
-            //todo hvordan alle disse
             if(input[i] == ' '|| input[i] == 110 || input[i] == 122 || input[i] == 112)
                 break;
-            sum = sum + input[i];
+
+            int toMultiply = *(input+i);
+            sum = sum * toMultiply;
+            
         }
 
         //Identify opcode
         switch(sum){
 
             //LDR
-            case 226:
+            case 423776:
                 LDR(input, output);
                 break;
 
             //LDI
-            case 217:
+            case 377264:
                 LDI(input, output);
                 break;
 
             //LEA
-            case 210:
+            case 340860:
                 LEA(input, output);
                 break;
 
             //LD
-            case 144:
+            case 5168:
                 LD(input, output);
                 break;
 
             //ADD
-            case 201:
+            case 300560:
                 ADD(input, output);
                 break;
 
             //NOT
-            case 241:
+            case 517608:
                 NOT(input, output);
                 break;
 
             //BR
-            case 148:
+            case 5412:
                 BR(input, output);
                 break;
 
             //ST
-            case 167:
+            case 6972:
                 ST(input, output);
                 break;
 
             //JSR
-            case 239:
+            case 503644:
                 JSR(input, output);
                 break;
 
             //JSRR
-            case 321:
+            case 41298808:
                 JSRR(input, output);
                 break;
 
             //JMP
-            case 231:
+            case 455840:
                 JMP(input, output);
                 break;
+
+            //RET
+            case 475272:
+                JMP(input, output);
+                break;
+
+            //RTI
+            case 502824:
+                RTI(input, output);
+                break;
+
 
         }
 
