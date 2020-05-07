@@ -29,9 +29,9 @@ void testNOT1(){
     NOT(input, output);
     char* expected = "1001001010111111";
 
-
     equals(output, expected, testID);
     free(output);
+
 }
 
 void testNOT2(){
@@ -43,7 +43,7 @@ void testNOT2(){
     NOT(input, output);
     char* expected = "1001010001111111";
 
-
     equals(output, expected, testID);
     free(output);
+
 }

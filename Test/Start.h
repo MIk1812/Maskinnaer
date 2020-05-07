@@ -18,10 +18,10 @@
 void testEverything(){
 
     testLD();
-//    testADD();
-//    testBR();
-//    testST();
-//    testNOT();
+    testADD();
+    testBR();
+    testST();
+    testNOT();
 
 }
 

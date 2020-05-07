@@ -97,7 +97,6 @@ int charsToInt(char* input, int start, int maxLength){
         temp[i] = charRead;
     }
 
-
     int out = atoi(temp);
     free(temp);
 
