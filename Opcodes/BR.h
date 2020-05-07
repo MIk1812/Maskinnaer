@@ -9,6 +9,7 @@
 #endif //PROJEKT2_BR_H
 
 #include "Func.h"
+
 void BR(char* input, char* output) {
     output[0] = '0';
     output[1] = '0';
@@ -24,7 +25,7 @@ void BR(char* input, char* output) {
         count++;
     }
 
-    int pcoff = charsToInt(input,count+1,4);
+    int pcoff = charsToInt(input, count, 4);
     writeIntBits(output,pcoff,15,9);
 
 }

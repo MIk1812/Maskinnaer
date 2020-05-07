@@ -56,12 +56,10 @@ void nzp_Operation(char* input, char* output){
 
     for (int j = 2; j < 5 ; ++j) {
 
-
         if (input[j] == 'n')
                 output[4] = '1';
         else if(output[4] != '1')
             output[4] = '0';
-
 
         if(input[j]=='z') output[5]='1';
         else if(output[5] != '1') output[5]='0';
@@ -73,41 +71,44 @@ void nzp_Operation(char* input, char* output){
     }
 }
 
-int getPCoffset(char* input){
-    int spaceIndex= 0;
-    for (int l = 0; l < 8 ; ++l) {
-        if (input[l] == '#')
-            break;
-        spaceIndex++;
-    }
-    int pcVal = input[spaceIndex+1];
-    pcVal = pcVal - 48; // resetting Ascii according to PC.
-    return pcVal;
-}
-
-//Start is index of first byte (zero-indexed)
 //Accepts negative values if minus is included
 //Only whole numbers
-int charsToInt(char* input, int start, int maxLength){
+//Only capitilized letters
+//firstIndex must include predicate '#' or 'x'
+//maxLength er tallets maximale længde tal som digits. Better safe than sorry.
+int charsToInt(char* input, int firstIndex, int maxLength){
 
     char* temp = (char*) calloc(1,maxLength + 1);
 
     //Isolate the chars from the input array.
-    for (int i = 0; i < maxLength; ++i) {
+    for (int i = 1; i < maxLength + 1; ++i) {
 
-        char charRead = input[i+start];
+        char charRead = input[i + firstIndex];
 
-        if( !((charRead >= '0' && charRead <= '9') || charRead == '-') )
+        if(charRead == NULL || charRead == ' ')
             break;
 
-        temp[i] = charRead;
+        temp[i-1] = charRead;
     }
 
-    int out = atoi(temp);
-    free(temp);
+    //Do the proper conversion
+    if(input[firstIndex] == '#'){
 
-    //Convert PC Offset to int
-    return out;
+        //Convert PC Offset to int
+        int out = atoi(temp);
+        free(temp);
+
+        return out;
+
+    } else {
+
+        //Convert PC Offset to int
+        int out = (int)strtol(temp, NULL, 16);
+        free(temp);
+
+        return out;
+
+    }
 
 }
 

@@ -17,6 +17,6 @@ void STI(char* input, char* output) {
     char reg = input[5];
 
     writeRegBits(output, reg, 4);
-    int pcoff = charsToInt(input, 9, 4);
+    int pcoff = charsToInt(input, 8, 4);
     writeIntBits(output, pcoff, 15, 9);
 }
