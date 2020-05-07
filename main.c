@@ -22,10 +22,10 @@ int main() {
 
     testEverything();
 
-    char* output = (char*) calloc(1, outputSize +1);
-
     int exit = 0;
     while(exit == 0){
+
+        char* output = (char*) calloc(1, outputSize +1);
 
         //By giving the address of input, we can let takeInput modify it
         char* input = takeInput();
@@ -36,7 +36,7 @@ int main() {
 
             //Until first blank space
             //grund til at vi tjekker ekstra input er fordi vi bare har brug for summen af BR og ikke ekstra input som n / z / p.
-            if(input[i] == ' '|| input[i] == 110 || input[i] == 122 || input[i] == 112)
+            if(input[i] == ' '|| input[i] == 110 || input[i] == 122 || input[i] == 112 || input[i] == '\0')
                 break;
 
             int toMultiply = *(input+i);
@@ -87,11 +87,13 @@ int main() {
                 ST(input, output);
                 break;
 
-            case 240:
+            //STI
+            case 508956:
                 STI(input,output);
                 break;
 
-            case 249:
+            //STR
+            case 571704:
                 STR(input,output);
                 break;
 
@@ -112,7 +114,7 @@ int main() {
 
             //RET
             case 475272:
-                JMP(input, output);
+                RET(input, output);
                 break;
 
             //RTI
@@ -120,12 +122,12 @@ int main() {
                 RTI(input, output);
                 break;
 
-
         }
 
         printf("%s", output);
 
-        exit = 1;
+        free(output);
+        exit = 0;
 
     }
 
