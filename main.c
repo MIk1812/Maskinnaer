@@ -82,6 +82,16 @@ int main() {
                 ST(input, output);
                 break;
 
+            //JSR
+            case 239:
+                JSR(input, output);
+                break;
+
+            //JSRR
+            case 321:
+                JSRR(input, output);
+                break;
+
         }
 
         printf("%s", output);

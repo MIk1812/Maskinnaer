@@ -17,6 +17,8 @@
 #include "testNOT.h"
 #include "testLDI.h"
 #include "testLEA.h"
+#include "testJSR.h"
+#include "testJSRR.h"
 
 void testEverything(){
 
@@ -28,6 +30,8 @@ void testEverything(){
     testBR();
     testST();
     testNOT();
+    testJSR();
+    testJSRR();
 
 }
 
