@@ -7,7 +7,7 @@
 
 #endif //PROJEKT2_ADD_H
 
-#include "Func.h"
+#include "testFunc.h"
 #include "../Opcodes/ADD.h"
 
 void testADD1();
@@ -29,8 +29,9 @@ void testADD1(){
     ADD(input, output);
     char* expected = "0001001010000011";
 
-    free(output);
+
     equals(output, expected, testID);
+    free(output);
 
 }
 
@@ -43,7 +44,7 @@ void testADD2(){
     ADD(input, output);
     char* expected = "0001001010000101";
 
-    free(output);
-    equals(output, expected, testID);
 
+    equals(output, expected, testID);
+    free(output);
 }

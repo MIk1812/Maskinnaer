@@ -9,19 +9,19 @@
 
 #include <stdbool.h>
 
-#include "LD.h"
-#include "ADD.h"
-#include "BR.h"
-#include "ST.h"
-#include "NOT.h"
+#include "testLD.h"
+#include "testADD.h"
+#include "testBR.h"
+#include "testST.h"
+#include "testNOT.h"
 
 void testEverything(){
 
-    testLD();
+   // testLD();
     testADD();
-    testBR();
-    testST();
-    testNOT();
+   // testBR();
+  //  testST();
+   // testNOT();
 
 }
 
