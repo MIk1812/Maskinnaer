@@ -85,29 +85,70 @@ int getPCoffset(char* input){
     return pcVal;
 }
 
-//Start is index of first byte (zero-indexed)
+//int charsToInt(char* input, int start, int maxLength){
+//
+//    char* temp = (char*) calloc(1,maxLength + 1);
+//
+//    //Isolate the chars from the input array.
+//    for (int i = 0; i < maxLength; ++i) {
+//
+//        char charRead = input[i+start];
+//
+//        if( !((charRead >= '0' && charRead <= '9') || charRead == '-') )
+//            break;
+//
+//        temp[i] = charRead;
+//    }
+//
+//    int out = atoi(temp);
+//    free(temp);
+//
+//    //Convert PC Offset to int
+//    return out;
+//
+//    //        if( !((charRead >= '0' && charRead <= '9') || charRead == '-' || charRead >= 'A' && charRead <= 'Z') )
+////            break;
+//
+//}
+
 //Accepts negative values if minus is included
 //Only whole numbers
-int charsToInt(char* input, int start, int maxLength){
+//Only capitilized letters
+//firstIndex must include predicate '#' or 'x'
+//maxLength er tallets maximale længde tal som digits. Better safe than sorry.
+int charsToInt2(char* input, int firstIndex, int maxLength){
 
     char* temp = (char*) calloc(1,maxLength + 1);
 
     //Isolate the chars from the input array.
-    for (int i = 0; i < maxLength; ++i) {
+    for (int i = 1; i < maxLength + 1; ++i) {
 
-        char charRead = input[i+start];
+        char charRead = input[i + firstIndex];
 
-        if( !((charRead >= '0' && charRead <= '9') || charRead == '-') )
+        if(charRead == NULL || charRead == ' ')
             break;
 
-        temp[i] = charRead;
+        temp[i-1] = charRead;
     }
 
-    int out = atoi(temp);
-    free(temp);
+    //Do the proper conversion
+    if(input[firstIndex] == '#'){
 
-    //Convert PC Offset to int
-    return out;
+        //Convert PC Offset to int
+        int out = atoi(temp);
+        free(temp);
+
+        return out;
+
+    } else {
+
+        //Convert PC Offset to int
+        int out = (int)strtol(temp, NULL, 16);
+        free(temp);
+
+        return out;
+
+    }
 
 }
 

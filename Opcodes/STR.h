@@ -15,7 +15,7 @@ void STR(char* input, char* output) {
     writeRegBits(output,Sreg,4);
     char BaseR = input[9]; //
     writeRegBits(output,BaseR,7);
-    int pcoff = charsToInt(input,13,3);
+    int pcoff = charsToInt2(input,12,3);
     writeIntBits(output,pcoff,15,6);
 
 }

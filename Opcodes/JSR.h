@@ -21,7 +21,7 @@ void JSR(char* input, char* output){
 
     output[4] = '1';
     
-    int pcOffset = charsToInt(input, 5, 5);
+    int pcOffset = charsToInt2(input, 4, 5);
 
     writeIntBits(output, pcOffset, 15, 11);
 

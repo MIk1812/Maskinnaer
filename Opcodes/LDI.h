@@ -23,7 +23,7 @@ void LDI(char* input, char* output) {
 
     writeRegBits(output, regDst, 4);
 
-    int pcOffset = charsToInt(input, 9, 4);
+    int pcOffset = charsToInt2(input, 8, 4);
 
     writeIntBits(output, pcOffset, 15, 9);
 

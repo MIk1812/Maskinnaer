@@ -40,7 +40,7 @@ void AND(char* input, char* output){
 
         output[10] = '1';
 
-        int pcOffset = charsToInt(input, 13, 3);
+        int pcOffset = charsToInt2(input, 12, 3);
 
         writeIntBits(output, pcOffset, 15, 5);
 

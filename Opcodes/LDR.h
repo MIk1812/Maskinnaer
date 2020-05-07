@@ -25,7 +25,7 @@ void LDR(char* input, char* output){
     writeRegBits(output, regDst, 4);
     writeRegBits(output, regBase, 7);
 
-    int pcOffset = charsToInt(input, 13,3);
+    int pcOffset = charsToInt2(input, 12,3);
 
     writeIntBits(output, pcOffset, 15, 6);
 
