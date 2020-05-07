@@ -35,7 +35,7 @@ int main() {
         for (int i = 0; i < inputSize; ++i) {
 
             //Until first blank space
-            //todo hvordan alle disse
+            //grund til at vi tjekker ekstra input er fordi vi bare har brug for summen af BR og ikke ekstra input som n / z / p.
             if(input[i] == ' '|| input[i] == 110 || input[i] == 122 || input[i] == 112)
                 break;
             sum = sum + input[i];
