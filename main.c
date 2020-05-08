@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "Test/Start.h"
+#include "Tests/Start.h"
 #include "Functionality/FuncIO.h"
 #include "Opcodes/LD.h"
 #include "Opcodes/ADD.h"
@@ -28,20 +28,16 @@ int main() {
     inStream = fopen("../fileIn.txt","r");
 
     if (inStream != NULL && outputStream != NULL){
-        printf("File read success!\n");
+        printf("\nFile read success!\n");
     }
 
-    //Reads and saves in fromfile
-    //char* fromFile = readNextLine(inStream);
-
     int exit = 0;
-    while(exit < 4){
+    while(exit == 0){
 
         char* output = (char*) calloc(1, outputSize +1);
 
-        //By giving the address of input, we can let takeInput modify it
         //char* input = takeInput();
-        char* input = readNextLine(inStream, inputSize);
+        char* input = readNextLine(inStream, inputSize, &exit);
 
         //Multiply the ASCII values of the opcode's characters in order to differentiate them
         int sum = 1;
@@ -153,14 +149,13 @@ int main() {
         }
 
         printf("\n%s", input);
+        if(exit == 1) printf("\n");
         printf("%s\n", output);
 
         fprintf(outputStream, "%s\n", output);
 
         free(input);
         free(output);
-
-        exit++;
 
     }
 

@@ -48,6 +48,8 @@ void testEverything(){
     testAND();
     testTRAP();
 
+    printf("\nTests completed successfully");
+
 }
 
 

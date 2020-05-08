@@ -7,7 +7,7 @@
 
 #endif //PROJEKT2_FUNCIO_H
 
-char* readNextLine(FILE* file, int inputSize){
+char* readNextLine(FILE* file, int inputSize, int* statusEOF){
 
     int i = 0;
     char* data = (char*) calloc(1,inputSize + 1);
@@ -19,6 +19,7 @@ char* readNextLine(FILE* file, int inputSize){
             return data;
     }
 
+    *statusEOF = 1;
     return data;
 }
 
