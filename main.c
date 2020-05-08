@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 #include "Test/Start.h"
+#include "FuncIO.h"
 #include "Opcodes/LD.h"
 #include "Opcodes/ADD.h"
 #include "Opcodes/BR.h"
@@ -25,16 +26,15 @@ int main() {
     //Initialize input and output
     FILE *inStream;
     FILE *outputStream;
-    outputStream = fopen("C:\\Users\\volka\\CLionProjects\\projekt2\\testout.txt","w");
-    inStream = fopen("C:\\Users\\volka\\CLionProjects\\projekt2\\testFil.txt","r");
-    if (inStream!=NULL&&outputStream!=NULL){
+    outputStream = fopen("../fileOut.txt","w");
+    inStream = fopen("../fileIn.txt","r");
+
+    if (inStream != NULL && outputStream != NULL){
         printf("File read success!\n");
     }
+
     //Reads and saves in fromfile
-       //char *fromFile = readFile(inStream);
-
-
-    char* output = (char*) calloc(1, outputSize +1);
+    //char* fromFile = readNextLine(inStream);
 
     int exit = 0;
     while(exit < 4){
@@ -43,11 +43,11 @@ int main() {
 
         //By giving the address of input, we can let takeInput modify it
         //char* input = takeInput();
-        char* input = readFile(inStream);
+        char* input = readNextLine(inStream, inputSize);
 
         directives(input,output);
 
-        //Sum the ASCII values of the opcode's characters
+        //Multiply the ASCII values of the opcode's characters in order to differentiate them
         int sum = 1;
         for (int i = 0; i < inputSize; ++i) {
 
@@ -60,8 +60,6 @@ int main() {
             sum = sum * toMultiply;
 
         }
-
-
 
         //Identify opcode
         switch(sum){
@@ -153,16 +151,17 @@ int main() {
 
         }
 
-        printf("%s", output);
 
-        fprintf(outputStream,"%s",output);
-        fprintf(outputStream,"\n",output);
+        printf("\n%s", input);
+        printf("%s\n", output);
+
+        fprintf(outputStream, "%s\n", output);
 
         exit++;
-
+        free(output);
     }
-  
-  free(output);
+
+
 
 }
 
