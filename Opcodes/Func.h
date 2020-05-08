@@ -9,31 +9,32 @@
 #endif //PROJEKT2_FUNC_H
 
 //start determines which bits in bits[] are to be modified
-void writeRegBits(char* output, char reg, int start){
+//Notice: writes from left to right
+void writeRegBits(char* output, char reg, int firstIndex){
 
     //Reset ASCII value. Upcasts reg to int
     reg = reg - 48;
 
     //Update destination bits according to register
-    if((reg & 1) > 0) output[start+2] = '1';
-    else output[start+2] = '0';
+    if((reg & 1) > 0) output[firstIndex + 2] = '1';
+    else output[firstIndex+2] = '0';
 
-    if((reg & 2) > 0) output[start+1] = '1';
-    else output[start+1] = '0';
+    if((reg & 2) > 0) output[firstIndex + 1] = '1';
+    else output[firstIndex+1] = '0';
 
-    if((reg & 4) > 0) output[start] = '1';
-    else output[start] = '0';
+    if((reg & 4) > 0) output[firstIndex] = '1';
+    else output[firstIndex] = '0';
 }
 
 
 /**
- *
- * @param output: output arreyet som man manipulerer med.
+ * Notice: writes from right to left
+ * @param output: output arreyet som man manipulerer med
  * @param intToWrite: selv int værdi som bliver konveteret til bits
- * @param start: start punktet i output array(funktionen kører fra højre mod venstre.
+ * @param start: start punktet i output array
  * @param numberOfBits: antalet bits man manipulerer
  */
-void writeIntBits(char* output, int intToWrite, int start, int numberOfBits){
+void writeIntBits(char* output, int intToWrite, int lastIndex, int numberOfBits){
 
     int bit=1;
 
@@ -41,11 +42,11 @@ void writeIntBits(char* output, int intToWrite, int start, int numberOfBits){
     for (int i = 0; i < numberOfBits ; ++i) {
 
         if((intToWrite & bit) > 0)
-            output[start] = '1';
+            output[lastIndex] = '1';
         else
-            output[start] = '0';
+            output[lastIndex] = '0';
 
-        start--;
+        lastIndex--;
         bit = bit*2;
     }
 
@@ -55,54 +56,59 @@ void nzp_Operation(char* input, char* output){
 
     for (int j = 2; j < 5 ; ++j) {
 
-        if(input[j]=='n') output[4]='1';
-        else output[4]='0';
+        if (input[j] == 'n')
+                output[4] = '1';
+        else if(output[4] != '1')
+            output[4] = '0';
 
         if(input[j]=='z') output[5]='1';
-        else output[5]='0';
+        else if(output[5] != '1') output[5]='0';
 
         if(input[j]=='p') output[6]='1';
-        else output[6]='0';
+        else if (output[6]!='1')
+            output[6]='0';
 
     }
 }
 
-int getPCoffset(char* input){
-    int spaceIndex= 0;
-    for (int l = 0; l < 8 ; ++l) {
-        if (input[l] == '#')
-            break;
-        spaceIndex++;
-    }
-    int pcVal = input[spaceIndex+1];
-    pcVal = pcVal - 48; // resetting Ascii according to PC.
-    return pcVal;
-}
-
-//Start is index of first byte (zero-indexed)
 //Accepts negative values if minus is included
 //Only whole numbers
-int charsToInt(char* input, int start, int maxLength){
+//Only capitilized letters
+//firstIndex must include predicate '#' or 'x'
+//maxLength er tallets maximale længde tal som digits. Better safe than sorry.
+int charsToInt(char* input, int firstIndex, int maxLength){
 
     char* temp = (char*) calloc(1,maxLength + 1);
 
     //Isolate the chars from the input array.
-    for (int i = 0; i < maxLength; ++i) {
+    for (int i = 1; i < maxLength + 1; ++i) {
 
-        char charRead = input[i+start];
+        char charRead = input[i + firstIndex];
 
-        if( !((charRead >= '0' && charRead <= '9') || charRead == '-') )
+        if(charRead == NULL || charRead == ' ')
             break;
 
-        temp[i] = charRead;
+        temp[i-1] = charRead;
     }
 
+    //Do the proper conversion
+    if(input[firstIndex] == '#'){
 
-    int out = atoi(temp);
-    free(temp);
+        //Convert PC Offset to int
+        int out = atoi(temp);
+        free(temp);
 
-    //Convert PC Offset to int
-    return out;
+        return out;
+
+    } else {
+
+        //Convert PC Offset to int
+        int out = (int)strtol(temp, NULL, 16);
+        free(temp);
+
+        return out;
+
+    }
 
 }
 

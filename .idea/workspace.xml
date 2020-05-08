@@ -29,12 +29,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1747044-7da1-462a-a173-c547bd07e22b" name="Default Changelist" comment="ADD og NOT er rettet efter nye funktion kald.">
+    <list default="true" id="d6d5bf27-4a34-4576-b421-5d11eec78c96" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Opcodes/TRAP.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/testTRAP.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Opcodes/Func.h" beforeDir="false" afterPath="$PROJECT_DIR$/Opcodes/Func.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Start.h" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Start.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testFil.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testFil.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testout.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,9 +84,14 @@
       <created>1588835313567</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1588835313567</updated>
-      <workItem from="1588835316796" duration="1203000" />
-      <workItem from="1588844587230" duration="9547000" />
+      <updated>1587994316771</updated>
+      <workItem from="1587994324498" duration="262000" />
+      <workItem from="1588069859389" duration="704000" />
+      <workItem from="1588284164677" duration="2946000" />
+      <workItem from="1588797318267" duration="1804000" />
+      <workItem from="1588832507088" duration="448000" />
+      <workItem from="1588834804994" duration="7589000" />
+      <workItem from="1588850625679" duration="13138000" />
     </task>
     <task id="LOCAL-00001" summary="ændret navne i test mappen">
       <created>1588845131035</created>
@@ -109,7 +114,140 @@
       <option name="project" value="LOCAL" />
       <updated>1588852925325</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00014" summary="Rettet at test/func.h printede forkert expected value">
+      <created>1588797732229</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1588797732229</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Rettet lille fejl i Test ADD2, og rette lille fejl i charToInt">
+      <created>1588798226851</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1588798226851</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Ændret i terminologi enkelte steder">
+      <created>1588798974276</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1588798974276</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Rettet free fejl i charsToInt">
+      <created>1588846058624</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1588846058624</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Tilføjet add3 test">
+      <created>1588846707595</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1588846707595</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Skrevet LDR + test">
+      <created>1588848676148</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1588848676148</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Skrevet LDI + test">
+      <created>1588849250358</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1588849250358</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Skrevet LEA + test og oprettet LEA, LDI og LDR i main">
+      <created>1588851945989</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1588851945989</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Skrevet, testet om implementeret JSR og JSRR i main">
+      <created>1588853376533</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1588853376534</updated>
+    </task>
+    <task id="LOCAL-00023" summary="JMP skrevet, testet og implementeret">
+      <created>1588853800362</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1588853800362</updated>
+    </task>
+    <task id="LOCAL-00024" summary="RET og RTI skrevet, testet og implementeret">
+      <created>1588854252913</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1588854252913</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Opdateret main så vi ikke differentiere på baggrund af sum men derimod produkt">
+      <created>1588858390927</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1588858390927</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Opdateret main så vi ikke differentiere på baggrund af sum men derimod produkt">
+      <created>1588858406445</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1588858406445</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Opdateret main så vi ikke differentiere på baggrund af sum men derimod produkt">
+      <created>1588858423975</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1588858423975</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Tjekket alle funktioner virker fra main">
+      <created>1588859134718</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1588859134718</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Skrevet, testet og implementeret AND">
+      <created>1588860809341</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1588860809341</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Skrevet charsToInt2 som nu også tager hex. Man skal derfor også give funktionen prædikatet (X eller #) med. Jeg har udskiftet den gamle version af funktion af alle steder, og programmet kører fint.">
+      <created>1588863153397</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1588863153397</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Helt slettet den oprindelige charToInt">
+      <created>1588863187462</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1588863187462</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Fjernet PCoffset funktionen da den ikke bliver brug længere">
+      <created>1588863250315</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1588863250315</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,89 +266,137 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ændret navne i test mappen" />
-    <MESSAGE value="Scan fra fil er implementeret" />
-    <option name="LAST_COMMIT_MESSAGE" value="Scan fra fil er implementeret" />
+    <MESSAGE value="Tilføjet Volkans nye ADD og NOT funktioner" />
+    <MESSAGE value="Slettet regBin function.&#10;Oprettet testfiler til ADD, BR, NOT og ST. Selve testene er ikke skrevet endnu" />
+    <MESSAGE value="Ændret så vores testmetoder ikke returnerer bool, men blot printer ved fejl, så programmet fortsætter" />
+    <MESSAGE value="Lavet 2 test til alle funktionerne. Lige nu fejler næsten alle af en eller anden årsag" />
+    <MESSAGE value="Fandt fejlen der gjorde, at testene fejlede" />
+    <MESSAGE value="Lavet både output of input om til calloc - det andet kan give problemer" />
+    <MESSAGE value="Defineret input og output size i stedet for at vi skriver dem hver gang" />
+    <MESSAGE value="STOR ÆNDRING: har lavet om, så vi kun indsætter chars i chars char array. Det giver meget bedre mening. Det er nemmere at debugge og det er nemmere at printe. Alle testene virker som før." />
+    <MESSAGE value="Rettet at test/func.h printede forkert expected value" />
+    <MESSAGE value="Rettet lille fejl i Test ADD2, og rette lille fejl i charToInt" />
+    <MESSAGE value="Ændret i terminologi enkelte steder" />
+    <MESSAGE value="Rettet free fejl i charsToInt" />
+    <MESSAGE value="Tilføjet add3 test" />
+    <MESSAGE value="Skrevet LDR + test" />
+    <MESSAGE value="Skrevet LDI + test" />
+    <MESSAGE value="Skrevet LEA + test og oprettet LEA, LDI og LDR i main" />
+    <MESSAGE value="Skrevet, testet om implementeret JSR og JSRR i main" />
+    <MESSAGE value="JMP skrevet, testet og implementeret" />
+    <MESSAGE value="RET og RTI skrevet, testet og implementeret" />
+    <MESSAGE value="Opdateret main så vi ikke differentiere på baggrund af sum men derimod produkt" />
+    <MESSAGE value="Tjekket alle funktioner virker fra main" />
+    <MESSAGE value="Skrevet, testet og implementeret AND" />
+    <MESSAGE value="Skrevet charsToInt2 som nu også tager hex. Man skal derfor også give funktionen prædikatet (X eller #) med. Jeg har udskiftet den gamle version af funktion af alle steder, og programmet kører fint." />
+    <MESSAGE value="Helt slettet den oprindelige charToInt" />
+    <MESSAGE value="Fjernet PCoffset funktionen da den ikke bliver brug længere" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fjernet PCoffset funktionen da den ikke bliver brug længere" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2942" y="537" width="506" height="400" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588847876292">
-      <screen x="1920" y="0" width="2560" height="1440" />
+    <state x="1032" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588850528085">
+      <screen x="44" y="23" width="2516" height="1057" />
     </state>
-    <state x="2942" y="537" width="506" height="400" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.2560.1440/0.209.1920.1080@1920.0.2560.1440" timestamp="1588847876292" />
-    <state width="425" height="472" key="DebuggerActiveHint" timestamp="1588856820421">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="1032" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588850528085" />
+    <state x="794" y="179" key="CommitChangelistDialog2" timestamp="1588863250190">
+      <screen x="44" y="23" width="2516" height="1057" />
     </state>
-    <state width="425" height="472" key="DebuggerActiveHint/0.0.2560.1400/-1920.130.1920.1040@0.0.2560.1400" timestamp="1588856820421" />
-    <state width="425" height="485" key="DebuggerActiveHint/1920.0.2560.1440/0.209.1920.1080@1920.0.2560.1440" timestamp="1588851587250" />
-    <state width="2500" height="488" key="GridCell.Tab.0.bottom" timestamp="1588858292675">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588345975415" />
+    <state x="794" y="179" key="CommitChangelistDialog2/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588863250190" />
+    <state width="1236" height="254" key="GridCell.Tab.0.bottom" timestamp="1588864092988">
+      <screen x="42" y="23" width="2518" height="1057" />
     </state>
-    <state width="2500" height="488" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.130.1920.1040@0.0.2560.1400" timestamp="1588858292675" />
-    <state width="1878" height="352" key="GridCell.Tab.0.bottom/1920.0.2560.1440/0.209.1920.1080@0.209.1920.1080" timestamp="1588836518945" />
-    <state width="2518" height="395" key="GridCell.Tab.0.bottom/1920.0.2560.1440/0.209.1920.1080@1920.0.2560.1440" timestamp="1588853681971" />
-    <state width="2500" height="488" key="GridCell.Tab.0.center" timestamp="1588858292675">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="746" height="177" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588348615681" />
+    <state width="1236" height="254" key="GridCell.Tab.0.bottom/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1588864092988" />
+    <state width="1236" height="254" key="GridCell.Tab.0.bottom/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588863060318" />
+    <state width="1236" height="254" key="GridCell.Tab.0.center" timestamp="1588864092986">
+      <screen x="42" y="23" width="2518" height="1057" />
     </state>
-    <state width="2500" height="488" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.130.1920.1040@0.0.2560.1400" timestamp="1588858292675" />
-    <state width="1878" height="352" key="GridCell.Tab.0.center/1920.0.2560.1440/0.209.1920.1080@0.209.1920.1080" timestamp="1588836518945" />
-    <state width="2518" height="395" key="GridCell.Tab.0.center/1920.0.2560.1440/0.209.1920.1080@1920.0.2560.1440" timestamp="1588853681971" />
-    <state width="2500" height="488" key="GridCell.Tab.0.left" timestamp="1588858292675">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="746" height="177" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588348615681" />
+    <state width="1236" height="254" key="GridCell.Tab.0.center/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1588864092986" />
+    <state width="1236" height="254" key="GridCell.Tab.0.center/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588863060317" />
+    <state width="1236" height="254" key="GridCell.Tab.0.left" timestamp="1588864092986">
+      <screen x="42" y="23" width="2518" height="1057" />
     </state>
-    <state width="2500" height="488" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.130.1920.1040@0.0.2560.1400" timestamp="1588858292675" />
-    <state width="1878" height="352" key="GridCell.Tab.0.left/1920.0.2560.1440/0.209.1920.1080@0.209.1920.1080" timestamp="1588836518945" />
-    <state width="2518" height="395" key="GridCell.Tab.0.left/1920.0.2560.1440/0.209.1920.1080@1920.0.2560.1440" timestamp="1588853681971" />
-    <state width="2500" height="488" key="GridCell.Tab.0.right" timestamp="1588858292675">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="746" height="177" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588348615681" />
+    <state width="1236" height="254" key="GridCell.Tab.0.left/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1588864092986" />
+    <state width="1236" height="254" key="GridCell.Tab.0.left/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588863060316" />
+    <state width="1236" height="254" key="GridCell.Tab.0.right" timestamp="1588864092987">
+      <screen x="42" y="23" width="2518" height="1057" />
     </state>
-    <state width="2500" height="488" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.130.1920.1040@0.0.2560.1400" timestamp="1588858292675" />
-    <state width="1878" height="352" key="GridCell.Tab.0.right/1920.0.2560.1440/0.209.1920.1080@0.209.1920.1080" timestamp="1588836518945" />
-    <state width="2518" height="395" key="GridCell.Tab.0.right/1920.0.2560.1440/0.209.1920.1080@1920.0.2560.1440" timestamp="1588853681971" />
-    <state width="2500" height="488" key="GridCell.Tab.1.bottom" timestamp="1588858293062">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="746" height="177" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588348615681" />
+    <state width="1236" height="254" key="GridCell.Tab.0.right/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1588864092987" />
+    <state width="1236" height="254" key="GridCell.Tab.0.right/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588863060317" />
+    <state width="1236" height="356" key="GridCell.Tab.1.bottom" timestamp="1588860724493">
+      <screen x="44" y="23" width="2516" height="1057" />
     </state>
-    <state width="2500" height="488" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1920.130.1920.1040@0.0.2560.1400" timestamp="1588858293062" />
-    <state width="1878" height="352" key="GridCell.Tab.1.bottom/1920.0.2560.1440/0.209.1920.1080@0.209.1920.1080" timestamp="1588836518945" />
-    <state width="2518" height="459" key="GridCell.Tab.1.bottom/1920.0.2560.1440/0.209.1920.1080@1920.0.2560.1440" timestamp="1588853627738" />
-    <state width="2500" height="488" key="GridCell.Tab.1.center" timestamp="1588858293062">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1250" height="356" key="GridCell.Tab.1.bottom/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1588845556943" />
+    <state width="1236" height="356" key="GridCell.Tab.1.bottom/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588860724493" />
+    <state width="1236" height="356" key="GridCell.Tab.1.center" timestamp="1588860724493">
+      <screen x="44" y="23" width="2516" height="1057" />
     </state>
-    <state width="2500" height="488" key="GridCell.Tab.1.center/0.0.2560.1400/-1920.130.1920.1040@0.0.2560.1400" timestamp="1588858293062" />
-    <state width="1878" height="352" key="GridCell.Tab.1.center/1920.0.2560.1440/0.209.1920.1080@0.209.1920.1080" timestamp="1588836518945" />
-    <state width="2518" height="459" key="GridCell.Tab.1.center/1920.0.2560.1440/0.209.1920.1080@1920.0.2560.1440" timestamp="1588853627738" />
-    <state width="2500" height="488" key="GridCell.Tab.1.left" timestamp="1588858293062">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1250" height="356" key="GridCell.Tab.1.center/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1588845556942" />
+    <state width="1236" height="356" key="GridCell.Tab.1.center/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588860724493" />
+    <state width="1236" height="356" key="GridCell.Tab.1.left" timestamp="1588860724492">
+      <screen x="44" y="23" width="2516" height="1057" />
     </state>
-    <state width="2500" height="488" key="GridCell.Tab.1.left/0.0.2560.1400/-1920.130.1920.1040@0.0.2560.1400" timestamp="1588858293062" />
-    <state width="1878" height="352" key="GridCell.Tab.1.left/1920.0.2560.1440/0.209.1920.1080@0.209.1920.1080" timestamp="1588836518945" />
-    <state width="2518" height="459" key="GridCell.Tab.1.left/1920.0.2560.1440/0.209.1920.1080@1920.0.2560.1440" timestamp="1588853627738" />
-    <state width="2500" height="488" key="GridCell.Tab.1.right" timestamp="1588858293062">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1250" height="356" key="GridCell.Tab.1.left/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1588845556941" />
+    <state width="1236" height="356" key="GridCell.Tab.1.left/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588860724492" />
+    <state width="1236" height="356" key="GridCell.Tab.1.right" timestamp="1588860724493">
+      <screen x="44" y="23" width="2516" height="1057" />
     </state>
-    <state width="2500" height="488" key="GridCell.Tab.1.right/0.0.2560.1400/-1920.130.1920.1040@0.0.2560.1400" timestamp="1588858293062" />
-    <state width="1878" height="352" key="GridCell.Tab.1.right/1920.0.2560.1440/0.209.1920.1080@0.209.1920.1080" timestamp="1588836518945" />
-    <state width="2518" height="459" key="GridCell.Tab.1.right/1920.0.2560.1440/0.209.1920.1080@1920.0.2560.1440" timestamp="1588853627738" />
-    <state x="2171" y="142" width="2048" height="1189" key="MergeDialog" timestamp="1588846100866">
-      <screen x="1920" y="0" width="2560" height="1440" />
+    <state width="1250" height="356" key="GridCell.Tab.1.right/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1588845556942" />
+    <state width="1236" height="356" key="GridCell.Tab.1.right/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588860724493" />
+    <state x="548" y="118" key="MergeDialog" timestamp="1588858480330">
+      <screen x="44" y="23" width="2516" height="1057" />
     </state>
-    <state x="2171" y="142" width="2048" height="1189" key="MergeDialog/1920.0.2560.1440/0.209.1920.1080@1920.0.2560.1440" timestamp="1588846100866" />
-    <state x="2795" y="469" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1588845208321">
-      <screen x="1920" y="0" width="2560" height="1440" />
+    <state x="548" y="118" key="MergeDialog/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588858480330" />
+    <state x="1320" y="274" key="MultipleFileMergeDialog" timestamp="1588858483063">
+      <screen x="44" y="23" width="2516" height="1057" />
     </state>
-    <state x="2795" y="469" width="800" height="535" key="Vcs.Push.Dialog.v2/1920.0.2560.1440/0.209.1920.1080@1920.0.2560.1440" timestamp="1588845208321" />
-    <state x="2994" y="649" width="412" height="175" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588846078648">
-      <screen x="1920" y="0" width="2560" height="1440" />
+    <state x="1319" y="274" key="MultipleFileMergeDialog/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1588845233723" />
+    <state x="1320" y="274" key="MultipleFileMergeDialog/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588858483063" />
+    <state x="1209" y="354" key="VCS.ChangeListViewerDialog" timestamp="1588858433757">
+      <screen x="44" y="23" width="2516" height="1057" />
     </state>
-    <state x="2994" y="649" width="412" height="175" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.2560.1440/0.209.1920.1080@1920.0.2560.1440" timestamp="1588846078648" />
+    <state x="555" y="128" key="VCS.ChangeListViewerDialog/0.0.1536.824@0.0.1536.824" timestamp="1588330399963" />
+    <state x="1209" y="354" key="VCS.ChangeListViewerDialog/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588858433757" />
+    <state x="635" y="209" key="Vcs.Push.Dialog.v2" timestamp="1588863255475">
+      <screen x="44" y="23" width="2516" height="1057" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588346000176" />
+    <state x="635" y="209" key="Vcs.Push.Dialog.v2/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588863255475" />
+    <state x="806" y="326" key="com.intellij.ide.util.TipDialog" timestamp="1588850628427">
+      <screen x="44" y="23" width="2516" height="1057" />
+    </state>
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588352699435" />
+    <state x="806" y="326" key="com.intellij.ide.util.TipDialog/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588850628427" />
+    <state x="991" y="445" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588858437627">
+      <screen x="44" y="23" width="2516" height="1057" />
+    </state>
+    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1588345983453" />
+    <state x="990" y="445" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1588845220970" />
+    <state x="991" y="445" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588858437627" />
+    <state x="1735" y="283" width="782" height="550" key="find.popup" timestamp="1588862900394">
+      <screen x="44" y="23" width="2516" height="1057" />
+    </state>
+    <state x="1735" y="283" width="782" height="550" key="find.popup/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588862900394" />
+    <state x="502" y="204" key="git4idea.merge.GitPullDialog" timestamp="1588326502704">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="502" y="204" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1588326502704" />
+    <state x="1022" y="188" key="refactoring.ChangeSignatureDialog" timestamp="1588787383547">
+      <screen x="44" y="23" width="2516" height="1057" />
+    </state>
+    <state x="1022" y="188" key="refactoring.ChangeSignatureDialog/517.1103.1440.877/44.23.2516.1057@44.23.2516.1057" timestamp="1588787383547" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.c</url>
-          <line>42</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/Test/testAND.h</url>
+          <line>27</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

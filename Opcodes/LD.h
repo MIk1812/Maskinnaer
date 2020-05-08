@@ -12,7 +12,6 @@
 
 void LD(char* input, char* output){
 
-    //todo, vi skal sætte chars ind!
     output[0] = '0';
     output[1] = '0';
     output[2] = '1';
@@ -22,7 +21,7 @@ void LD(char* input, char* output){
 
     writeRegBits(output, reg, 4);
 
-    int pcOffset = charsToInt(input, 8, 4);
+    int pcOffset = charsToInt(input, 7, 4);
 
     writeIntBits(output, pcOffset, 15, 9);
 

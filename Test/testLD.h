@@ -31,6 +31,7 @@ void testLD1(){
 
     equals(output, expected, testID);
     free(output);
+
 }
 
 
@@ -45,4 +46,5 @@ void testLD2(){
 
     equals(output, expected, testID);
     free(output);
+
 }

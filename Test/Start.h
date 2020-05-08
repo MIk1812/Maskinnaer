@@ -10,18 +10,43 @@
 #include <stdbool.h>
 
 #include "testLD.h"
+#include "testLDR.h"
 #include "testADD.h"
 #include "testBR.h"
 #include "testST.h"
+#include "testSTI.h"
 #include "testNOT.h"
+#include "testSTR.h"
+#include "testLDI.h"
+#include "testLEA.h"
+#include "testJSR.h"
+#include "testJSRR.h"
+#include "testJMP.h"
+#include "testRET.h"
+#include "testRTI.h"
+#include "testAND.h"
+#include "testTRAP.h"
 
 void testEverything(){
 
+    testNOT();
+    testLEA();
     testLD();
+    testLDR();
+    testLDI();
     testADD();
     testBR();
     testST();
+    testSTR();
+    testSTI();
     testNOT();
+    testJSR();
+    testJSRR();
+    testJMP();
+    testRET();
+    testRTI();
+    testAND();
+    testTRAP();
 
 }
 

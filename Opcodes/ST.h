@@ -17,9 +17,8 @@ void ST(char* input, char* output){
     char reg = input[4];
 
     writeRegBits(output, reg, 4);
-    int pcOff = getPCoffset(input);
-
-    writeIntBits(output,pcOff,15,9);
+    int pcoff = charsToInt(input, 7, 4);
+    writeIntBits(output,pcoff,15,9);
 
 //    int LabelBits[9]={0,0,0,0,0,0,0,0,0};
 //
