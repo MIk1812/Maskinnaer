@@ -15,18 +15,18 @@ char* readNextLine(FILE* file, int inputSize){
     while (fscanf(file, "%c", &data[i]) != EOF ){
 
         i++;
-        if (data[i-1]=='\n' )
+        if (data[i-1] == '\n' )
             return data;
     }
 
     return data;
 }
 
-void directives(char* input, char* output){
+void directives(char* input, char* output, int inputSize){
 
     int dotPlace = 0;
-    for (int j = 0; j < 30 ; ++j) {
-        if (input[j]=='.')
+    for (int j = 0; j < inputSize ; ++j) {
+        if (input[j] == '.')
             break;
         else dotPlace++;
     }
@@ -41,7 +41,7 @@ void directives(char* input, char* output){
             char hex[4];
 
             int x = 0;
-            for (int j = 0; j < 30 ; ++j) {
+            for (int j = 0; j < inputSize ; ++j) {
                 if (input[j]=='x')
                     break;
                 else x++;
@@ -53,4 +53,17 @@ void directives(char* input, char* output){
             writeIntBits(output,value,15,12);
 
     }
+}
+
+char* takeInput(int inputSize) {
+
+    char* input = (char*) calloc(1, inputSize + 1);
+
+    //Space for 30 characters. Scanf reads until \n
+    scanf("%30[^\n]s", input);
+
+    //Clears line (\n)
+    scanf("%*c");
+
+    return input;
 }

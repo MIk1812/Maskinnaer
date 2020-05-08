@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdbool.h>
 #include <stdlib.h>
 
 #include "Test/Start.h"
@@ -13,8 +12,6 @@
 #include "Opcodes/STI.h"
 #include "Opcodes/LDR.h"
 #include "Opcodes/LDI.h"
-
-char* takeInput(void);
 
 #define inputSize 30
 #define outputSize 16
@@ -45,7 +42,7 @@ int main() {
         //char* input = takeInput();
         char* input = readNextLine(inStream, inputSize);
 
-        directives(input,output);
+        directives(input, output, inputSize);
 
         //Multiply the ASCII values of the opcode's characters in order to differentiate them
         int sum = 1;
@@ -151,32 +148,21 @@ int main() {
 
         }
 
-
         printf("\n%s", input);
         printf("%s\n", output);
 
         fprintf(outputStream, "%s\n", output);
 
-        exit++;
+        free(input);
         free(output);
+
+        exit++;
+
     }
 
-
-
 }
 
-char* takeInput(void) {
 
-    char* input = (char*) calloc(1,inputSize + 1);
-
-    //Space for 30 characters. Scanf reads until \n
-    scanf("%30[^\n]s", input);
-
-    //Clears line (\n)
-    scanf("%*c");
-
-    return input;
-}
 
 
 
