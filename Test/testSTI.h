@@ -7,7 +7,7 @@
 
 #endif //PROJEKT2_STI_H
 
-#include "testFunc.h"
+#include "../Functionality/FuncTest.h"
 #include "../Opcodes/STI.h"
 
 void testSTI1();

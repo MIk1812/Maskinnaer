@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 #include "Test/Start.h"
-#include "FuncIO.h"
+#include "Functionality/FuncIO.h"
 #include "Opcodes/LD.h"
 #include "Opcodes/ADD.h"
 #include "Opcodes/BR.h"
@@ -12,6 +12,7 @@
 #include "Opcodes/STI.h"
 #include "Opcodes/LDR.h"
 #include "Opcodes/LDI.h"
+#include "Pseudo-Ops/ORIG.h"
 
 #define inputSize 30
 #define outputSize 16
@@ -42,8 +43,6 @@ int main() {
         //char* input = takeInput();
         char* input = readNextLine(inStream, inputSize);
 
-        directives(input, output, inputSize);
-
         //Multiply the ASCII values of the opcode's characters in order to differentiate them
         int sum = 1;
         for (int i = 0; i < inputSize; ++i) {
@@ -60,6 +59,11 @@ int main() {
 
         //Identify opcode
         switch(sum){
+
+            //.ORIG
+            case 1544471804:
+                ORIG(input, output);
+                break;
 
             //LDR
             case 423776:

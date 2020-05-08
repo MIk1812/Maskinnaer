@@ -3,7 +3,7 @@
 #define PROJEKT2_STM_H
 
 #endif //PROJEKT2_STM_H
-#include "Func.h"
+#include "../Functionality/FuncOpcodes.h"
 
 void STR(char* input, char* output) {
     output[0] = '0';

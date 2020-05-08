@@ -8,7 +8,7 @@
 #endif //PROJEKT2_JMP_H
 
 #pragma once
-#include "Func.h"
+#include "../Functionality/FuncOpcodes.h"
 
 void JMP(char* input, char* output) {
 

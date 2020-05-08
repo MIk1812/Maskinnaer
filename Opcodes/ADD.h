@@ -8,7 +8,7 @@
 
 #endif //PROJEKT2_ADD_H
 
-#include "Func.h"
+#include "../Functionality/FuncOpcodes.h"
 
 void ADD(char input[], char output[]) {
     // Opcode

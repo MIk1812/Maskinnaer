@@ -8,7 +8,7 @@
 
 #endif //PROJEKT2_BR_H
 
-#include "Func.h"
+#include "../Functionality/FuncOpcodes.h"
 
 void BR(char* input, char* output) {
     output[0] = '0';

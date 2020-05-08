@@ -8,7 +8,7 @@
 
 #endif //PROJEKT2_LD_H
 
-#include "Func.h"
+#include "../Functionality/FuncOpcodes.h"
 
 void LD(char* input, char* output){
 

@@ -7,7 +7,7 @@
 
 #endif //PROJEKT2_ADD_H
 
-#include "testFunc.h"
+#include "../Functionality/FuncTest.h"
 #include "../Opcodes/ADD.h"
 
 void testADD1();

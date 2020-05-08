@@ -7,7 +7,7 @@
 #define PROJEKT2_STI_H
 
 #endif //PROJEKT2_STI_H
-#include "Func.h"
+#include "../Functionality/FuncOpcodes.h"
 void STI(char* input, char* output) {
     output[0] = '1';
     output[1] = '0';

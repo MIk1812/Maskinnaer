@@ -8,7 +8,7 @@
 #endif //PROJEKT2_AND_H
 
 #pragma once
-#include "Func.h"
+#include "../Functionality/FuncOpcodes.h"
 
 void AND(char* input, char* output){
 

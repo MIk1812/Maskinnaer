@@ -7,7 +7,7 @@
 
 #endif //PROJEKT2_JSR_H
 
-#include "testFunc.h"
+#include "../Functionality/FuncTest.h"
 #include "../Opcodes/JSR.h"
 
 void testJSR1();

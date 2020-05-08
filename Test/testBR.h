@@ -7,7 +7,7 @@
 
 #endif //PROJEKT2_BR_H
 
-#include "testFunc.h"
+#include "../Functionality/FuncTest.h"
 #include "../Opcodes/BR.h"
 
 void testBR1();
