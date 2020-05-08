@@ -13,6 +13,8 @@
 #include "Opcodes/LDR.h"
 #include "Opcodes/LDI.h"
 #include "Pseudo-Ops/ORIG.h"
+#include "Pseudo-Ops/FILL.h"
+#include "Pseudo-Ops/BLKW.h"
 
 #define inputSize 30
 #define outputSize 16
@@ -59,6 +61,15 @@ int main() {
             //.ORIG
             case 1544471804:
                 ORIG(input, output);
+                break;
+
+            //.FILL
+            case 1357706560:
+                FILL(input,output);
+                break;
+            //.BLKW
+            case 1505552400:
+                BLKW(input,output);
                 break;
 
             //LDR
