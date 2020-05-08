@@ -23,13 +23,24 @@ int main() {
 
     testEverything();
 
+    int numberOfLabels = countNumberOfLabels(fileIn, inputSize);
+
+    //To hold pointers to all the Labels
+    char** labels = (char**) calloc(1, numberOfLabels);
+
+    for (int i = 0; i < numberOfLabels; ++i) {
+        *(labels+i) = (char*) calloc(1, inputSize);
+    }
+
+    //To hold all the locations
+    int* locations = (int*) calloc(1, numberOfLabels);
+
+    createSymbolTable(fileIn, inputSize, labels, locations);
+
     FILE *inStream;
     FILE *outputStream;
 
-    createSymbolTable(fileIn, inputSize);
 
-
-//
 //    //Initialize input and output
 //    outputStream = fopen(fileOut,"w");
 //    inStream = fopen(fileIn,"r");
@@ -54,10 +65,15 @@ int main() {
 //
 //        //Identify opcode
 //        switch(sum){
-//
 //            case 1544471804:
 //                ORIG(input, output);
 //                break;
+//
+//            case 1357706560: //.FILL
+//            case 1505552400: //.BLKW
+//            case 16834896: //.END
+//            case -823617216: //.STRINGZ
+//
 //            case 423776:
 //                LDR(input, output);
 //                break;
@@ -128,6 +144,7 @@ int main() {
 //
 //        fprintf(outputStream, "%s\n", output);
 //
+//        //todo free symboltable
 //        free(input);
 //        free(output);
 //

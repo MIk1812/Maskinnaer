@@ -44,7 +44,7 @@ int countNumberOfLabels(char* filePath, int inputSize){
             count++;
     }
 
-//    free(str);
+    free(str);
     return count;
 
 }
@@ -67,7 +67,6 @@ bool isLabel(char* line, int firstIndex, int inputSize, char* stringTested){
 
     switch(product){
 
-        //todo mangler de sidste opcodes !!
         case 1544471804:
         case 423776:
         case 377264:
@@ -93,41 +92,43 @@ bool isLabel(char* line, int firstIndex, int inputSize, char* stringTested){
         case 502824:
         case 344760:
         case 35817600:
+        case 1357706560: //.FILL
+        case 1505552400: //.BLKW
+        case 16834896: //.END
+        case -823617216: //.STRINGZ
             return false;
         default:
             return true;
     }
 }
 
-
-char** createSymbolTable(char* filePath, int inputSize){
-
-    int numberOfLabels = countNumberOfLabels(filePath, inputSize);
-    char** symbolTable = (char**) calloc(2, numberOfLabels);
+//Indirect return through char** labels and int* locations
+void createSymbolTable(char* filePath, int inputSize, char** labels, int* locations){
 
     FILE* inStream;
     inStream = fopen(filePath,"r");
 
     int lineNumber = 0;
     int statusEOF = 0;
+    int labelCounter = 0;
+
     while(statusEOF == 0){
 
-        int symbolTableIndex = 0;
+        char* currentLine = readNextLine(inStream, inputSize, &statusEOF);
         char* currentLabel = (char*) calloc(1, inputSize);
-        char* input = readNextLine(inStream, inputSize, &statusEOF);
 
-        if(isLabel(input, 0, inputSize, currentLabel)){
+        if( isLabel(currentLine, 0, inputSize, currentLabel) ){
 
-            printf("\ncurrentLabel: %s\n", currentLabel);
+            for (int i = 0; i < inputSize; ++i) {
+                *(*(labels + labelCounter)+i) = *(currentLabel+i);
+            }
 
-//            symbolTable[symbolTableIndex][0] = currentLabel;
-//            symbolTable[symbolTableIndex][1] = lineNumber;
+            *(locations + labelCounter) = lineNumber;
+
+            labelCounter++;
         }
-
         lineNumber++;
     }
-
-    return symbolTable;
 }
 
 //Multiplies the ASCII values of chars from firstIndex to ' ' or '\0'.
