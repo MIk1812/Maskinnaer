@@ -26,6 +26,7 @@
 #include "testRTI.h"
 #include "testAND.h"
 #include "testTRAP.h"
+#include "testORIG.h"
 
 void testEverything(){
 
@@ -47,6 +48,7 @@ void testEverything(){
     testRTI();
     testAND();
     testTRAP();
+    testORIG();
 
     printf("\nTests completed successfully");
 
