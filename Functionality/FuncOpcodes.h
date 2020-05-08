@@ -110,3 +110,9 @@ int charsToInt(char* input, int firstIndex, int maxLength){
     }
 
 }
+
+int singleCharToInt (char* input, int firstIndex){
+    char alpha = input[firstIndex+1];
+    int alphabet = (int)alpha;
+    return alphabet;
+}

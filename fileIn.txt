@@ -3,3 +3,6 @@ ADD R1, R2, R3
 ADD R1, R2, #10
 ADD R1, R2, #-10
 NOT R1, R2
+BRnzp #-2
+ST R1, #3
+.STRINGZ "hey your"

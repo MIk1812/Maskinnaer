@@ -13,6 +13,7 @@
 #include "Opcodes/LDR.h"
 #include "Opcodes/LDI.h"
 #include "Pseudo-Ops/ORIG.h"
+#include "Pseudo-Ops/STRINGZ.h"
 
 #define inputSize 30
 #define outputSize 16
@@ -36,11 +37,11 @@ int main() {
 
         char* output = (char*) calloc(1, outputSize +1);
 
-        //char* input = takeInput();
+       // char* input = takeInput(inputSize);
         char* input = readNextLine(inStream, inputSize, &exit);
 
         //Multiply the ASCII values of the opcode's characters in order to differentiate them
-        int sum = 1;
+        long long sum = 1;
         for (int i = 0; i < inputSize; ++i) {
 
             //Until first blank space
@@ -61,6 +62,9 @@ int main() {
                 ORIG(input, output);
                 break;
 
+            case 956857760389440 :
+                STRINGZ(input,output,outputStream);
+                break;
             //LDR
             case 423776:
                 LDR(input, output);
@@ -148,11 +152,15 @@ int main() {
 
         }
 
-        printf("\n%s", input);
-        if(exit == 1) printf("\n");
-        printf("%s\n", output);
 
-        fprintf(outputStream, "%s\n", output);
+        if(sum != 956857760389440) {
+            printf("\n%s", input);
+            if(exit == 1) printf("\n");
+            printf("%s\n", output);
+            fprintf(outputStream, "%s\n", output);
+        }
+
+
 
         free(input);
         free(output);
