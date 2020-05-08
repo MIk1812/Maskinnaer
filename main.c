@@ -21,6 +21,8 @@ int main() {
 
     testEverything();
 
+//    createSymbolTable(inputSize);
+
     //Initialize input and output
     FILE *inStream;
     FILE *outputStream;
@@ -40,18 +42,20 @@ int main() {
         char* input = readNextLine(inStream, inputSize, &exit);
 
         //Multiply the ASCII values of the opcode's characters in order to differentiate them
-        int sum = 1;
-        for (int i = 0; i < inputSize; ++i) {
+        int sum = multiplyChars(input, 0, inputSize);
 
-            //Until first blank space
-            //grund til at vi tjekker ekstra input er fordi vi bare har brug for summen af BR og ikke ekstra input som n / z / p.
-            if(input[i] == ' '|| input[i] == 110 || input[i] == 122 || input[i] == 112 || input[i] == '\0')
-                break;
-
-            int toMultiply = *(input+i);
-            sum = sum * toMultiply;
-
-        }
+//        int sum = 1;
+//        for (int i = 0; i < inputSize; ++i) {
+//
+//            //Until first blank space
+//            //grund til at vi tjekker ekstra input er fordi vi bare har brug for summen af BR og ikke ekstra input som n / z / p.
+//            if(input[i] == ' '|| input[i] == 110 || input[i] == 122 || input[i] == 112 || input[i] == '\0')
+//                break;
+//
+//            int toMultiply = *(input+i);
+//            sum = sum * toMultiply;
+//
+//        }
 
         //Identify opcode
         switch(sum){
@@ -160,8 +164,6 @@ int main() {
     }
 
 }
-
-
 
 
 
