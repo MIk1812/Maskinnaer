@@ -7,7 +7,7 @@
 
 #endif //PROJEKT2_LD_H
 
-#include "testFunc.h"
+#include "../Functionality/FuncTest.h"
 #include "../Opcodes/LD.h"
 
 void testLD1();

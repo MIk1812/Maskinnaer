@@ -8,7 +8,7 @@
 #endif //PROJEKT2_JSR_H
 
 #pragma once
-#include "Func.h"
+#include "../Functionality/FuncOpcodes.h"
 
 void JSR(char* input, char* output){
 

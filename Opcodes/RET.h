@@ -8,7 +8,7 @@
 #endif //PROJEKT2_RET_H
 
 #pragma once
-#include "Func.h"
+#include "../Functionality/FuncOpcodes.h"
 
 void RET(char* input, char* output){
 

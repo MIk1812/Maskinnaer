@@ -7,7 +7,7 @@
 
 #endif //PROJEKT2_STR_H
 
-#include "testFunc.h"
+#include "../Functionality/FuncTest.h"
 #include "../Opcodes/STR.h"
 
 void testSTR1();

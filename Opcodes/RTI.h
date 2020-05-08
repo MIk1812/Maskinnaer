@@ -8,7 +8,7 @@
 #endif //PROJEKT2_RTI_H
 
 #pragma once
-#include "Func.h"
+#include "../Functionality/FuncOpcodes.h"
 
 void RTI(char* input, char* output){
 

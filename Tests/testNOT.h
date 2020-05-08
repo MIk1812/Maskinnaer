@@ -7,7 +7,7 @@
 
 #endif //PROJEKT2_NOT_H
 
-#include "testFunc.h"
+#include "../Functionality/FuncTest.h"
 #include "../Opcodes/NOT.h"
 
 void testNOT1();

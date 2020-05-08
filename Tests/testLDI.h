@@ -8,7 +8,7 @@
 #endif //PROJEKT2_TESTLDI_H
 
 
-#include "testFunc.h"
+#include "../Functionality/FuncTest.h"
 #include "../Opcodes/LDI.h"
 
 void testLDI1();

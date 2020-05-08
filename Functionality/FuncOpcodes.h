@@ -73,7 +73,6 @@ void nzp_Operation(char* input, char* output){
 
 //Accepts negative values if minus is included
 //Only whole numbers
-//Only capitilized letters
 //firstIndex must include predicate '#' or 'x'
 //maxLength er tallets maximale længde tal som digits. Better safe than sorry.
 int charsToInt(char* input, int firstIndex, int maxLength){
@@ -91,7 +90,7 @@ int charsToInt(char* input, int firstIndex, int maxLength){
         temp[i-1] = charRead;
     }
 
-    //Do the proper conversion
+    //Do the proper conversion (hex or deci)
     if(input[firstIndex] == '#'){
 
         //Convert PC Offset to int
@@ -111,4 +110,3 @@ int charsToInt(char* input, int firstIndex, int maxLength){
     }
 
 }
-

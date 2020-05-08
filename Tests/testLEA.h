@@ -7,7 +7,7 @@
 
 #endif //PROJEKT2_TESTLDR_H
 
-#include "testFunc.h"
+#include "../Functionality/FuncTest.h"
 #include "../Opcodes/LEA.h"
 
 

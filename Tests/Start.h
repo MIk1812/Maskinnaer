@@ -29,7 +29,7 @@
 
 void testEverything(){
 
-//    testNOT();
+    testNOT();
     testLEA();
     testLD();
     testLDR();
@@ -47,6 +47,8 @@ void testEverything(){
     testRTI();
     testAND();
     testTRAP();
+
+    printf("\nTests completed successfully");
 
 }
 

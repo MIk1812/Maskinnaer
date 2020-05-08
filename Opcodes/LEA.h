@@ -8,7 +8,7 @@
 
 #endif //PROJEKT2_LEA_H
 
-#include "Func.h"
+#include "../Functionality/FuncOpcodes.h"
 
 void LEA(char* input, char* output){
 

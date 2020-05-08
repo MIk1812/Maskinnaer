@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include <stdbool.h>
 #include <stdlib.h>
 
-#include "Test/Start.h"
+#include "Tests/Start.h"
+#include "Functionality/FuncIO.h"
 #include "Opcodes/LD.h"
 #include "Opcodes/ADD.h"
 #include "Opcodes/BR.h"
@@ -12,8 +12,7 @@
 #include "Opcodes/STI.h"
 #include "Opcodes/LDR.h"
 #include "Opcodes/LDI.h"
-
-char* takeInput(void);
+#include "Pseudo-Ops/ORIG.h"
 
 #define inputSize 30
 #define outputSize 16
@@ -22,15 +21,25 @@ int main() {
 
     testEverything();
 
+    //Initialize input and output
+    FILE *inStream;
+    FILE *outputStream;
+    outputStream = fopen("../fileOut.txt","w");
+    inStream = fopen("../fileIn.txt","r");
+
+    if (inStream != NULL && outputStream != NULL){
+        printf("\nFile read success!\n");
+    }
+
     int exit = 0;
     while(exit == 0){
 
         char* output = (char*) calloc(1, outputSize +1);
 
-        //By giving the address of input, we can let takeInput modify it
-        char* input = takeInput();
+        //char* input = takeInput();
+        char* input = readNextLine(inStream, inputSize, &exit);
 
-        //Sum the ASCII values of the opcode's characters
+        //Multiply the ASCII values of the opcode's characters in order to differentiate them
         int sum = 1;
         for (int i = 0; i < inputSize; ++i) {
 
@@ -46,6 +55,11 @@ int main() {
 
         //Identify opcode
         switch(sum){
+
+            //.ORIG
+            case 1544471804:
+                ORIG(input, output);
+                break;
 
             //LDR
             case 423776:
@@ -134,27 +148,20 @@ int main() {
 
         }
 
-        printf("%s", output);
+        printf("\n%s", input);
+        if(exit == 1) printf("\n");
+        printf("%s\n", output);
 
+        fprintf(outputStream, "%s\n", output);
+
+        free(input);
         free(output);
-        exit = 0;
 
     }
 
 }
 
-char* takeInput(void) {
 
-    char* input = (char*) calloc(1,inputSize + 1);
-
-    //Space for 30 characters. Scanf reads until \n
-    scanf("%30[^\n]s", input);
-
-    //Clears line (\n)
-    scanf("%*c");
-
-    return input;
-}
 
 
 

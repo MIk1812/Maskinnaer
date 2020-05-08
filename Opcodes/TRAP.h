@@ -8,7 +8,7 @@
 #endif //PROJEKT2_TRAP_H
 
 #pragma once
-#include "Func.h"
+#include "../Functionality/FuncOpcodes.h"
 
 void TRAP(char* input, char* output){
 

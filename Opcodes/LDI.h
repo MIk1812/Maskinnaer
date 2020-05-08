@@ -8,7 +8,7 @@
 
 #endif //PROJEKT2_LDI_H
 
-#include "Func.h"
+#include "../Functionality/FuncOpcodes.h"
 
 void LDI(char* input, char* output) {
 
