@@ -29,7 +29,7 @@
 
 void testEverything(){
 
-//    testNOT();
+    testNOT();
     testLEA();
     testLD();
     testLDR();

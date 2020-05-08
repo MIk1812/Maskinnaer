@@ -22,13 +22,30 @@ int main() {
 
     testEverything();
 
+    //Initialize input and output
+    FILE *inStream;
+    FILE *outputStream;
+    outputStream = fopen("C:\\Users\\volka\\CLionProjects\\projekt2\\testout.txt","w");
+    inStream = fopen("C:\\Users\\volka\\CLionProjects\\projekt2\\testFil.txt","r");
+    if (inStream!=NULL&&outputStream!=NULL){
+        printf("File read success!\n");
+    }
+    //Reads and saves in fromfile
+       //char *fromFile = readFile(inStream);
+
+
+    char* output = (char*) calloc(1, outputSize +1);
+
     int exit = 0;
-    while(exit == 0){
+    while(exit < 4){
 
         char* output = (char*) calloc(1, outputSize +1);
 
         //By giving the address of input, we can let takeInput modify it
-        char* input = takeInput();
+        //char* input = takeInput();
+        char* input = readFile(inStream);
+
+        directives(input,output);
 
         //Sum the ASCII values of the opcode's characters
         int sum = 1;
@@ -43,6 +60,8 @@ int main() {
             sum = sum * toMultiply;
 
         }
+
+
 
         //Identify opcode
         switch(sum){
@@ -136,10 +155,14 @@ int main() {
 
         printf("%s", output);
 
-        free(output);
-        exit = 0;
+        fprintf(outputStream,"%s",output);
+        fprintf(outputStream,"\n",output);
+
+        exit++;
 
     }
+  
+  free(output);
 
 }
 
