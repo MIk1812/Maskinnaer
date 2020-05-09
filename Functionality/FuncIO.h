@@ -7,6 +7,8 @@
 
 #endif //PROJEKT2_FUNCIO_H
 
+#pragma once
+
 int multiplyChars(char* input, int firstIndex, int inputSize);
 bool isLabel(char* line, int firstIndex, int inputSize, char* labelToReturn);
 
@@ -49,18 +51,28 @@ int countNumberOfLabels(char* filePath, int inputSize){
 
 }
 
-//The method also returns the chars it tests, and therefor requires char* stringTested
-bool isLabel(char* line, int firstIndex, int inputSize, char* stringTested){
+char* isolateChars(char* string, int firstIndex, int inputSize){
+
+    char* out = (char*) calloc(1, inputSize);
 
     //First, copy the chars to stringTested
     for (int i = firstIndex; i < inputSize; ++i) {
 
         //Until first blank space
-        if(line[i] == ' ' || line[i] == '\0')
+        if(string[i] == ' ' || string[i] == '\0' || string[i] == '\n')
             break;
 
-        stringTested[i] = line[i];
+        out[i-firstIndex] = string[i];
     }
+
+    return out;
+}
+
+//The method also returns the chars it tests, and therefor requires char* stringTested
+bool isLabel(char* line, int firstIndex, int inputSize, char* stringTested){
+
+    //First, copy the chars to stringTested
+    stringTested = isolateChars(line, firstIndex, inputSize);
 
     //Multiply the ASCII values of the characters in the first word in order to differentiate them
     int product = multiplyChars(line, firstIndex, inputSize);
@@ -88,8 +100,8 @@ bool isLabel(char* line, int firstIndex, int inputSize, char* stringTested){
         case 503644:
         case 41298808:
         case 455840:
-        case 475272:
-        case 502824:
+        case 475272: //RET
+        case 502824: //RTI
         case 344760:
         case 35817600:
         case 1357706560: //.FILL
@@ -115,7 +127,7 @@ void createSymbolTable(char* filePath, int inputSize, char** labels, int* locati
     while(statusEOF == 0){
 
         char* currentLine = readNextLine(inStream, inputSize, &statusEOF);
-        char* currentLabel = (char*) calloc(1, inputSize);
+        char* currentLabel;
 
         if( isLabel(currentLine, 0, inputSize, currentLabel) ){
 
@@ -138,7 +150,7 @@ int multiplyChars(char* input, int firstIndex, int inputSize){
     for (int i = firstIndex; i < inputSize; ++i) {
 
         //Until first blank space
-        if(input[i] == ' '|| input[i] == '\0')
+        if(input[i] == ' '|| input[i] == '\0' || input[i] == '\n')
             break;
 
         int toMultiply = *(input+i);

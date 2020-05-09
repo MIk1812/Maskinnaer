@@ -26,7 +26,7 @@ void testLD1(){
     char* input = "LD R1, #-3";
     char* output = (char*) calloc(1, 17);
 
-    LD(input, output);
+    LD(input, output, 0, NULL, 0, NULL, 30);
     char* expected = "0010001111111101";
 
     equals(output, expected, testID);
@@ -41,7 +41,7 @@ void testLD2(){
     char* input = "LD R1, #3";
     char* output = (char*) calloc(1, 17);
 
-    LD(input, output);
+    LD(input, output, 0, NULL, 0, NULL, 30);
     char* expected = "0010001000000011";
 
     equals(output, expected, testID);

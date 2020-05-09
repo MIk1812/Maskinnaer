@@ -28,7 +28,7 @@ void testADD1(){
     char* input = "ADD R1, R2, R3";
     char* output = (char*) calloc(1, 17);
 
-    ADD(input, output);
+    ADD(input, output, 0);
     char* expected = "0001001010000011";
 
     equals(output, expected, testID);
@@ -42,7 +42,7 @@ void testADD2(){
     char* input = "ADD R1, R2, #10";
     char* output = (char*) calloc(1, 17);
 
-    ADD(input, output);
+    ADD(input, output, 0);
     char* expected = "0001001010101010";
 
     equals(output, expected, testID);
@@ -56,7 +56,7 @@ void testADD3(){
     char* input = "ADD R1, R2, #-10";
     char* output = (char*) calloc(1, 17);
 
-    ADD(input, output);
+    ADD(input, output, 0);
     char* expected = "0001001010110110";
 
     equals(output, expected, testID);
