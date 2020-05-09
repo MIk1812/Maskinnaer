@@ -26,7 +26,7 @@ void testSTI1(){
     char* input = "STI R1, #3";
     char* output = (char*) calloc(1, 17);
 
-    STI(input, output);
+    STI(input, output,NULL);
     char* expected = "1011001000000011";
 
     equals(output, expected, testID);
@@ -40,7 +40,7 @@ void testSTI2(){
     char* input = "STI R1, #-3";
     char* output = (char*) calloc(1, 17);
 
-    STI(input, output);
+    STI(input, output,NULL);
     char* expected = "1011001111111101";
 
     equals(output, expected, testID);

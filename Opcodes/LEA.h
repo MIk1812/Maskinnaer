@@ -10,7 +10,7 @@
 
 #include "../Functionality/FuncOpcodes.h"
 
-void LEA(char* input, char* output){
+void LEA(char* input, char* output, int fistIndex){
 
     //LEA R1, #10
 
@@ -19,11 +19,11 @@ void LEA(char* input, char* output){
     output[2] = '1';
     output[3] = '0';
 
-    char regDst = input[5];
+    char regDst = input[5+fistIndex];
 
     writeRegBits(output, regDst, 4);
 
-    int pcOffset = charsToInt(input, 8, 4);
+    int pcOffset = charsToInt(input, 8+fistIndex, 4);
 
     writeIntBits(output, pcOffset, 15, 9);
 

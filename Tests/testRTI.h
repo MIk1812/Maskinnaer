@@ -24,7 +24,7 @@ void testRTI1(){
     char* input = "RTI";
     char* output = (char*) calloc(1, 17);
 
-    RTI(input, output);
+    RTI(input, output,NULL);
     char* expected = "1000000000000000";
 
     equals(output, expected, testID);

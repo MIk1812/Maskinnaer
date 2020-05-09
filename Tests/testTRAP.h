@@ -26,7 +26,7 @@ void testTRAP1(){
     char* input = "TRAP #34";
     char* output = (char*) calloc(1, 17);
 
-    TRAP(input, output);
+    TRAP(input, output,NULL);
     char* expected = "1111000000100010";
 
 
@@ -40,7 +40,7 @@ void testTRAP2(){
     char* input = "TRAP x22";
     char* output = (char*) calloc(1, 17);
 
-    TRAP(input, output);
+    TRAP(input, output,NULL);
     char* expected = "1111000000100010";
 
 

@@ -26,7 +26,7 @@ void testSTR1(){
     char* input = "STR R1, R2, #3";
     char* output = (char*) calloc(1, 17);
 
-    STR(input, output);
+    STR(input, output,NULL);
     char* expected = "0111001010000011";
 
 
@@ -40,7 +40,7 @@ void testSTR2(){
     char* input = "STR R1, R3, #-3";
     char* output = (char*) calloc(1, 17);
 
-    STR(input, output);
+    STR(input, output,NULL);
     char* expected = "0111001011111101";
 
 

@@ -20,7 +20,7 @@
 #define inputSize 30
 #define outputSize 16
 #define fileIn "../fileIn.txt"
-#define fileOut "../fileOut.txt"
+//#define fileOut "../fileOut.txt"
 
 int main() {
 
@@ -56,7 +56,7 @@ int main() {
     FILE *outputStream;
 
     //Initialize input and output
-    outputStream = fopen(fileOut,"w");
+    outputStream = fopen("../fileOut.txt","w");
     inStream = fopen(fileIn,"r");
 
     if (inStream != NULL && outputStream != NULL){
@@ -122,7 +122,7 @@ int main() {
             case 1505552400:
                 blocks = BLKW(input, output);
                 break;
-            case 168348960:
+            case 16834896:
                 END(input, &exit);
                 break;
             case 423776:
@@ -132,7 +132,7 @@ int main() {
                 LDI(input, output);
                 break;
             case 340860:
-                LEA(input, output);
+                LEA(input, output,firstIndex);
                 break;
             case 5168:
                 LD(input, output, firstIndex, labels, numberOfLabels, locations, inputSize);
@@ -141,7 +141,7 @@ int main() {
                 ADD(input, output, firstIndex);
                 break;
             case 517608:
-                NOT(input, output);
+                NOT(input, output,firstIndex);
                 break;
 
             //Various BR(nzp) statements
@@ -157,13 +157,13 @@ int main() {
                 break;
 
             case 6972:
-                ST(input, output);
+                ST(input, output,firstIndex);
                 break;
             case 508956:
-                STI(input, output);
+                STI(input, output,firstIndex);
                 break;
             case 571704:
-                STR(input, output);
+                STR(input, output,firstIndex);
                 break;
             case 503644:
                 JSR(input, output);
@@ -178,10 +178,10 @@ int main() {
                 RET(input, output);
                 break;
             case 502824:
-                RTI(input, output);
+                RTI(input, output,firstIndex);
                 break;
             case 35817600:
-                TRAP(input, output);
+                TRAP(input, output,firstIndex);
                 break;
             case 344760:
                 AND(input, output);
@@ -200,7 +200,6 @@ int main() {
 
     }else{
             printf("%s\n", output);
-
             fprintf(outputStream, "%s\n", output);
         }
 
@@ -211,10 +210,8 @@ int main() {
         blocks = 0;
 
     }
-
-    free(labels);
-    free(locations);
-
+       // free(labels);
+       // free(locations);
 }
 
 
