@@ -10,7 +10,7 @@
 #pragma once
 #include "../Functionality/FuncOpcodes.h"
 
-void JSRR(char* input, char* output){
+void JSRR(char* input, char* output, int firstIndex){
 
     //JSRR R4
 
@@ -23,7 +23,7 @@ void JSRR(char* input, char* output){
     output[5] = '0';
     output[6] = '0';
 
-    char regDst = input[6];
+    char regDst = input[6+firstIndex];
 
     writeRegBits(output, regDst, 7);
 

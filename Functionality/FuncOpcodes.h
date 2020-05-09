@@ -54,9 +54,9 @@ void writeIntBits(char* output, int intToWrite, int lastIndex, int numberOfBits)
 
 }
 
-void nzp_Operation(char* input, char* output){
+void nzp_Operation(char* input, char* output, int firstIndex){
 
-    for (int j = 2; j < 5 ; ++j) {
+    for (int j = 2+firstIndex; j < 5+firstIndex ; ++j) {
 
         if (input[j] == 'n')
                 output[4] = '1';
@@ -137,4 +137,10 @@ void writeLabelBits(LineInfo li, int labelIndex, int labelBits, int lastIndex){
 
     writeIntBits(li.output, pcOffset, lastIndex, labelBits);
 
+}
+
+int singleCharToInt (char* input, int firstIndex){
+    char alpha = input[firstIndex+1];
+    int alphabet = (int)alpha;
+    return alphabet;
 }

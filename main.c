@@ -17,6 +17,7 @@
 #include "Pseudo-Ops/BLKW.h"
 #include "Pseudo-Ops/END.h"
 #include "Structs.h"
+#include "Pseudo-Ops/STRINGZ.h"
 
 #define inputSize 30
 #define outputSize 16
@@ -128,7 +129,7 @@ int main() {
                 ORIG(input, output);
                 break;
 
-            case -823617216: //.STRINGZ
+            case 16834896: //.END
 
             case 1357706560:
                 FILL(input, output,firstIndex);
@@ -136,14 +137,18 @@ int main() {
             case 1505552400:
                 blocks = BLKW(input, output,firstIndex);
                 break;
-            case 16834896:
+            case 168348960:
                 END(input, &exit, firstIndex);
                 break;
+            case -823617216 :
+                STRINGZ(input, output, outputStream,inputSize,firstIndex);
+                break;
+                //LDR
             case 423776:
-                LDR(input, output);
+                LDR(input, output,firstIndex);
                 break;
             case 377264:
-                LDI(input, output);
+                LDI(input, output,firstIndex);
                 break;
             case 340860:
                 LEA(li);
@@ -158,7 +163,7 @@ int main() {
                 NOT(input, output,firstIndex);
                 break;
 
-            //Various BR(nzp) statements
+                //Various BR(nzp) statements
             case 5412:
             case 595320:
             case 72629040:
@@ -167,7 +172,7 @@ int main() {
             case 660264:
             case 73949568:
             case 606144:
-                BR(input, output);
+                BR(input, output, firstIndex);
                 break;
 
             case 6972:
@@ -180,13 +185,13 @@ int main() {
                 STR(li);
                 break;
             case 503644:
-                JSR(input, output);
+                JSR(input, output,firstIndex);
                 break;
             case 41298808:
-                JSRR(input, output);
+                JSRR(input, output,firstIndex);
                 break;
             case 455840:
-                JMP(input, output);
+                JMP(input, output, firstIndex);
                 break;
             case 475272:
                 RET(input, output);
@@ -198,33 +203,39 @@ int main() {
                 TRAP(input, output,firstIndex);
                 break;
             case 344760:
-                AND(input, output);
+                AND(input, output, firstIndex);
                 break;
         }
 
-        printf("\n%s", input);
-        if (exit == 1) printf("\n");
+        if (sum != -823617216) {
+            printf("\n%s", input);
+            if (exit == 1) printf("\n");
 
-        if (blocks > 0) {
-            for (int i = 0; i < blocks ; ++i) {
+
+            if (blocks > 0) {
+                // lineCount = lineCount-1;
+                int getlines = 0;
+                for (int i = 0; i < blocks; ++i) {
+                    printf("%s\n", output);
+                    fprintf(outputStream, "%s\n", output);
+                }
+
+            } else {
                 printf("%s\n", output);
-
                 fprintf(outputStream, "%s\n", output);
             }
-
-        }else{
-            printf("%s\n", output);
-            fprintf(outputStream, "%s\n", output);
         }
 
         lineCount++;
 
-        free(input);
-        free(output);
-        blocks = 0;
+            free(input);
+            free(output);
+            blocks = 0;
+
 
     }
 
     free(labels);
     free(locations);
+        printf("%d",lineCount);
 }

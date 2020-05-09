@@ -10,7 +10,7 @@
 #pragma once
 #include "../Functionality/FuncOpcodes.h"
 
-void JMP(char* input, char* output) {
+void JMP(char* input, char* output, int firstIndex) {
 
     //JMP R4
 
@@ -23,7 +23,7 @@ void JMP(char* input, char* output) {
     output[5] = '0';
     output[6] = '0';
 
-    char regDst = input[5];
+    char regDst = input[5+firstIndex];
 
     writeRegBits(output, regDst, 7);
 

@@ -26,7 +26,7 @@ void testLDR1(){
     char* input = "LDR R1, R2, #29";
     char* output = (char*) calloc(1, sizeof(char) * 17);
 
-    LDR(input, output);
+    LDR(input, output,0);
     char* expected = "0110001010011101";
 
     equals(output, expected, testID);
@@ -40,7 +40,7 @@ void testLDR2(){
     char* input = "LDR R1, R2, #-10";
     char* output = (char*) calloc(1, sizeof(char) * 17);
 
-    LDR(input, output);
+    LDR(input, output,0);
     char* expected = "0110001010110110";
 
     equals(output, expected, testID);

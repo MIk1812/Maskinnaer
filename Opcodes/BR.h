@@ -10,22 +10,24 @@
 
 #include "../Functionality/FuncOpcodes.h"
 
-void BR(char* input, char* output) {
+void BR(char* input, char* output, int firstIndex) {
     output[0] = '0';
     output[1] = '0';
     output[2] = '0';
     output[3] = '0';
 
     // set correct operation bit n,z,p
-    nzp_Operation(input, output);
+    nzp_Operation(input, output,firstIndex);
     int count = 0; // count til '#' to read where pcoff begins.
     for (int i = 0; i < 30 ; ++i) {
         if(input[i] =='#')
             break;
         count++;
     }
+    char labelOrNot = input[count];
 
-    int pcoff = charsToInt(input, count, 4);
-    writeIntBits(output,pcoff,15,9);
-
+    if(labelOrNot == '#') {
+        int pcoff = charsToInt(input, count, 4);
+        writeIntBits(output, pcoff, 15, 9);
+    }
 }
