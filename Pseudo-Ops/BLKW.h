@@ -2,15 +2,14 @@
 // Created by volkan on 08/05/2020.
 //
 
-#ifndef PROJEKT2_FILL_H
-#define PROJEKT2_FILL_H
+#ifndef PROJEKT2_BLKW_H
+#define PROJEKT2_BLKW_H
 
-#endif //PROJEKT2_FILL_H
-#pragma once
+#endif //PROJEKT2_BLKW_H
 #include "../Functionality/FuncOpcodes.h"
 
 
-void FILL(char* input, char* output){
+int BLKW(char* input, char* output){
 
     // Calculates the place of dot
     int xorhash = 0;
@@ -22,8 +21,7 @@ void FILL(char* input, char* output){
     }
 
 
-    int pcOffset = charsToInt(input, xorhash, 6);
-
-    writeIntBits(output, pcOffset, 15, 16);
-
+    int memoryBlocks = charsToInt(input, xorhash, 6);
+    writeIntBits(output, 0, 15, 16);
+    return memoryBlocks;
 }

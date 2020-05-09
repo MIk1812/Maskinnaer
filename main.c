@@ -13,55 +13,122 @@
 #include "Opcodes/LDR.h"
 #include "Opcodes/LDI.h"
 #include "Pseudo-Ops/ORIG.h"
+#include "Pseudo-Ops/FILL.h"
+#include "Pseudo-Ops/BLKW.h"
+#include "Pseudo-Ops/END.h"
 #include "Pseudo-Ops/STRINGZ.h"
 
 #define inputSize 30
 #define outputSize 16
+#define fileIn "../fileIn.txt"
+#define fileOut "../fileOut.txt"
 
 int main() {
 
     testEverything();
 
-    //Initialize input and output
+    int numberOfLabels = countNumberOfLabels(fileIn, inputSize);
+
+    char** labels;
+    int* locations;
+
+    //If we have any pointers
+    if(numberOfLabels > 0){
+
+        //To hold pointers to all the Labels
+        labels = (char**) calloc(1, numberOfLabels);
+
+        for (int i = 0; i < numberOfLabels; ++i) {
+            *(labels+i) = (char*) calloc(1, inputSize);
+        }
+
+        //To hold all the locations
+        locations = (int*) calloc(1, numberOfLabels);
+
+        //Initialise with null
+        for (int j = 0; j < numberOfLabels; ++j)
+            *(locations+j) = 3;
+
+        createSymbolTable(fileIn, inputSize, labels, locations);
+    }
+
+
     FILE *inStream;
     FILE *outputStream;
-    outputStream = fopen("../fileOut.txt","w");
-    inStream = fopen("../fileIn.txt","r");
+
+    //Initialize input and output
+    outputStream = fopen(fileOut,"w");
+    inStream = fopen(fileIn,"r");
 
     if (inStream != NULL && outputStream != NULL){
         printf("\nFile read success!\n");
     }
 
+    //Marks when EOF is reached
     int exit = 0;
+
+    //To track what line number we are currently on
+    int lineCount = 0;
+
+    //To track how many labels we have passed
+    int labelCount = 0;
+
+
+    //Until EOF
     while(exit == 0){
+
+        //Marks the index of the opcode
+        int firstIndex = 0;
 
         char* output = (char*) calloc(1, outputSize +1);
 
-       // char* input = takeInput(inputSize);
-        char* input = readNextLine(inStream, inputSize, &exit);
+        //char* input = takeInput();
+        char *input = readNextLine(inStream, inputSize, &exit);
+        int blocks = 0;
+
+        //If we have any labels, change firstIndex accordingly
+        if(numberOfLabels > 0 ){
+
+            //If we are currently on a line with a label referencing it
+            if(lineCount == *(locations + labelCount)){
+
+                labelCount++;
+
+                //Skip the label via firstIndex
+                do{
+                    char currentChar = input[firstIndex];
+                    if(currentChar == ' ' || currentChar == '\0' || currentChar == '\n'){
+                        firstIndex++;
+                        break;
+                    }
+                    else firstIndex++;
+                } while(true);
+            }
+        }
 
         //Multiply the ASCII values of the opcode's characters in order to differentiate them
-        long long sum = 1;
-        for (int i = 0; i < inputSize; ++i) {
-
-            //Until first blank space
-            //grund til at vi tjekker ekstra input er fordi vi bare har brug for summen af BR og ikke ekstra input som n / z / p.
-            if(input[i] == ' '|| input[i] == 110 || input[i] == 122 || input[i] == 112 || input[i] == '\0')
-                break;
-
-            int toMultiply = *(input+i);
-            sum = sum * toMultiply;
-
-        }
+        int sum = multiplyChars(input, firstIndex, inputSize);
 
         //Identify opcode
         switch(sum){
-
-            //.ORIG
             case 1544471804:
                 ORIG(input, output);
                 break;
 
+            case 1357706560: //.FILL
+            case 1505552400: //.BLKW
+            case 16834896: //.END
+            case -823617216: //.STRINGZ
+
+            case 1357706560:
+                FILL(input, output);
+                break;
+            case 1505552400:
+                blocks = BLKW(input, output);
+                break;
+            case 168348960:
+                END(input, &exit);
+                break;
             case 956857760389440 :
                 STRINGZ(input,output,outputStream);
                 break;
@@ -69,89 +136,83 @@ int main() {
             case 423776:
                 LDR(input, output);
                 break;
-
-            //LDI
             case 377264:
                 LDI(input, output);
                 break;
-
-            //LEA
             case 340860:
                 LEA(input, output);
                 break;
-
-            //LD
             case 5168:
-                LD(input, output);
+                LD(input, output, firstIndex, labels, numberOfLabels, locations, inputSize);
                 break;
-
-            //ADD
             case 300560:
-                ADD(input, output);
+                ADD(input, output, firstIndex);
                 break;
-
-            //NOT
             case 517608:
                 NOT(input, output);
                 break;
 
-            //BR
+            //Various BR(nzp) statements
             case 5412:
+            case 595320:
+            case 72629040:
+            case 66675840:
+            case -455482112:
+            case 660264:
+            case 73949568:
+            case 606144:
                 BR(input, output);
                 break;
 
-            //ST
             case 6972:
                 ST(input, output);
                 break;
-
-            //STI
             case 508956:
-                STI(input,output);
+                STI(input, output);
                 break;
-
-            //STR
             case 571704:
-                STR(input,output);
+                STR(input, output);
                 break;
-
-            //JSR
             case 503644:
                 JSR(input, output);
                 break;
-
-            //JSRR
             case 41298808:
                 JSRR(input, output);
                 break;
-
-            //JMP
             case 455840:
                 JMP(input, output);
                 break;
-
-            //RET
             case 475272:
                 RET(input, output);
                 break;
-
-            //RTI
             case 502824:
                 RTI(input, output);
                 break;
-
-            //AND
-            case 344760:
-                ADD(input, output);
-                break;
-
-            //TRAP
             case 35817600:
                 TRAP(input, output);
                 break;
-
+            case 344760:
+                AND(input, output);
+                break;
         }
 
+        printf("\n%s", input);
+        if (exit == 1) printf("\n");
+
+        if (blocks > 0) {
+            for (int i = 0; i < blocks ; ++i) {
+                printf("%s\n", output);
+
+                fprintf(outputStream, "%s\n", output);
+            }
+
+    }else{
+            printf("%s\n", output);
+
+            fprintf(outputStream, "%s\n", output);
+        }
+
+        lineCount++;
 
         if(sum != 956857760389440) {
             printf("\n%s", input);
@@ -164,12 +225,14 @@ int main() {
 
         free(input);
         free(output);
+        blocks = 0;
 
     }
 
+    free(labels);
+    free(locations);
+
 }
-
-
 
 
 
