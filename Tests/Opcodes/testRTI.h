@@ -7,8 +7,8 @@
 
 #endif //PROJEKT2_RESTRTI_H
 
-#include "../Functionality/FuncTest.h"
-#include "../Opcodes/RTI.h"
+#include "../../Functionality/FuncTest.h"
+#include "../../Opcodes/RTI.h"
 
 void testRTI1();
 

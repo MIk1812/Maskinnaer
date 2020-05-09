@@ -1,58 +1,60 @@
 //
-// Created by Mikkel Danielsen on 07/05/2020.
+// Created by Mikkel Danielsen on 06/05/2020.
 //
 
-#ifndef PROJEKT2_TESTLDI_H
-#define PROJEKT2_TESTLDI_H
+#ifndef PROJEKT2_LD_H
+#define PROJEKT2_LD_H
 
-#endif //PROJEKT2_TESTLDI_H
+#endif //PROJEKT2_LD_H
 
+#include "../../Functionality/FuncTest.h"
+#include "../../Opcodes/LD.h"
+#include "struct.h"
 
-#include "../Functionality/FuncTest.h"
-#include "../Opcodes/LDI.h"
+void testLD1();
+void testLD2();
+void testLD3();
 
-void testLDI1();
-void testLDI2();
-void testLDI3();
+void testLD(){
 
-void testLDI(){
-
-    testLDI1();
-    testLDI2();
-    testLDI3();
+    testLD1();
+    testLD2();
+    testLD3();
 
 }
 
-void testLDI1(){
-    
-    char* testID = "LDI1";
+void testLD1(){
+
+    char* testID = "LD1";
 
     LineInfo li;
-    li.input = "LDI R7, #212";
+    li.input = "LD R1, #-3";
     li.output = (char*) calloc(1, sizeof(char) * 17);
     li.firstIndex = 0;
     li.lineLength = 30;
 
-    LDI(li);
-    char* expected = "1010111011010100";
+    LD(li);
+    char* expected = "0010001111111101";
 
     equals(li.output, expected, testID);
     free(li.output);
 
 }
 
-void testLDI2(){
 
-    char* testID = "LDI2";
+void testLD2(){
+
+    char* testID = "LD2";
 
     LineInfo li;
-    li.input = "LDI R3, #-193";
+    li.input = "LD R1, #3";
     li.output = (char*) calloc(1, sizeof(char) * 17);
     li.firstIndex = 0;
     li.lineLength = 30;
 
-    LDI(li);
-    char* expected = "1010011100111111";
+    LD(li);
+
+    char* expected = "0010001000000011";
 
     equals(li.output, expected, testID);
     free(li.output);
@@ -60,12 +62,12 @@ void testLDI2(){
 }
 
 //Test labels
-void testLDI3(){
+void testLD3(){
 
-    char* testID = "LDI3";
+    char* testID = "LD3";
 
     LineInfo li;
-    li.input = "label3 LDI R1, label7";
+    li.input = "label3 LD R1, label7";
     li.output = (char*) calloc(1, sizeof(char) * 17);
     li.firstIndex = 7;
     li.lineLength = 30;
@@ -83,8 +85,8 @@ void testLDI3(){
     li.symbolTable.numberOfLabels = 2;
     li.lineCount = 4;
 
-    LDI(li);
-    char* expected = "1010001000000010";
+    LD(li);
+    char* expected = "0010001000000010";
 
     equals(li.output, expected, testID);
     free(li.output);

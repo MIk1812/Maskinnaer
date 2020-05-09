@@ -7,8 +7,8 @@
 
 #endif //PROJEKT2_JMP_H
 
-#include "../Functionality/FuncTest.h"
-#include "../Opcodes/JMP.h"
+#include "../../Functionality/FuncTest.h"
+#include "../../Opcodes/JMP.h"
 
 void testJMP1();
 void testJMP2();

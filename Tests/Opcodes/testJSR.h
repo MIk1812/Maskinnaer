@@ -2,69 +2,71 @@
 // Created by Mikkel Danielsen on 07/05/2020.
 //
 
-#ifndef PROJEKT2_TESTLDR_H
-#define PROJEKT2_TESTLDR_H
+#ifndef PROJEKT2_JSR_H
+#define PROJEKT2_JSR_H
 
-#endif //PROJEKT2_TESTLDR_H
+#endif //PROJEKT2_JSR_H
 
-#include "../Functionality/FuncTest.h"
-#include "../Opcodes/LDR.h"
+#include "../../Functionality/FuncTest.h"
+#include "../../Opcodes/JSR.h"
 
-void testLDR1();
-void testLDR2();
-void testLDR3();
+void testJSR1();
+void testJSR2();
+void testJSR3();
 
-void testLDR(){
+void testJSR(){
 
-    testLDR1();
-    testLDR2();
-    testLDR3();
+    testJSR1();
+    testJSR2();
+    testJSR3();
 
 }
 
-void testLDR1(){
+void testJSR1(){
 
-    char* testID = "LDR1";
+    char* testID = "JSR1";
 
     LineInfo li;
-    li.input = "LDR R1, R2, #29";
+    li.input = "JSR #932";
     li.output = (char*) calloc(1, sizeof(char) * 17);
     li.firstIndex = 0;
     li.lineLength = 30;
 
-    LDR(li);
-    char* expected = "0110001010011101";
+    JSR(li);
+    char* expected = "0100101110100100";
 
     equals(li.output, expected, testID);
     free(li.output);
 
 }
 
-void testLDR2(){
 
-    char* testID = "LDR2";
+void testJSR2(){
+
+    char* testID = "JSR2";
 
     LineInfo li;
-    li.input = "LDR R1, R2, #-10";
+    li.input = "JSR #-336";
     li.output = (char*) calloc(1, sizeof(char) * 17);
     li.firstIndex = 0;
     li.lineLength = 30;
 
-    LDR(li);
-    char* expected = "0110001010110110";
+    JSR(li);
+    char* expected = "0100111010110000";
 
     equals(li.output, expected, testID);
     free(li.output);
 
 }
+
 
 //Test labels
-void testLDR3(){
+void testJSR3(){
 
-    char* testID = "LDR3";
+    char* testID = "JSR3";
 
     LineInfo li;
-    li.input = "label3 LDR R1, R2, label7";
+    li.input = "label3 JSR label7";
     li.output = (char*) calloc(1, sizeof(char) * 17);
     li.firstIndex = 7;
     li.lineLength = 30;
@@ -82,8 +84,8 @@ void testLDR3(){
     li.symbolTable.numberOfLabels = 2;
     li.lineCount = 4;
 
-    LDR(li);
-    char* expected = "0110001010000010";
+    JSR(li);
+    char* expected = "0100100000000010";
 
     equals(li.output, expected, testID);
     free(li.output);

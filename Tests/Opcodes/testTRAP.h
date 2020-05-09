@@ -7,8 +7,8 @@
 
 #endif //PROJEKT2_TESTTRAP_H
 
-#include "../Functionality/FuncTest.h"
-#include "../Opcodes/TRAP.h"
+#include "../../Functionality/FuncTest.h"
+#include "../../Opcodes/TRAP.h"
 
 void testTRAP1();
 void testTRAP2();

@@ -7,8 +7,8 @@
 
 #endif //PROJEKT2_TESTAND_H
 
-#include "../Functionality/FuncTest.h"
-#include "../Opcodes/AND.h"
+#include "../../Functionality/FuncTest.h"
+#include "../../Opcodes/AND.h"
 
 void testAND1();
 void testAND2();

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "Tests/Start.h"
+#include "Tests/Opcodes/Start.h"
 #include "Functionality/FuncIO.h"
 #include "Opcodes/LD.h"
 #include "Opcodes/ADD.h"

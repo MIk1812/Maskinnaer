@@ -26,8 +26,8 @@
 #include "testRTI.h"
 #include "testAND.h"
 #include "testTRAP.h"
-#include "testORIG.h"
-#include "testSTRINGZ.h"
+#include "../Pseudo-Ops/testORIG.h"
+#include "../Pseudo-Ops/testSTRINGZ.h"
 
 
 void testEverything(){

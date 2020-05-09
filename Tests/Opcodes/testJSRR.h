@@ -7,8 +7,8 @@
 
 #endif //PROJEKT2_JSRRR_H
 
-#include "../Functionality/FuncTest.h"
-#include "../Opcodes/JSRR.h"
+#include "../../Functionality/FuncTest.h"
+#include "../../Opcodes/JSRR.h"
 
 void testJSRR1();
 void testJSRR2();

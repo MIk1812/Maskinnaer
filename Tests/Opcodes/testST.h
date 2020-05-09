@@ -2,66 +2,68 @@
 // Created by Mikkel Danielsen on 06/05/2020.
 //
 
-#ifndef PROJEKT2_STR_H
-#define PROJEKT2_STR_H
+#ifndef PROJEKT2_ST_H
+#define PROJEKT2_ST_H
 
-#endif //PROJEKT2_STR_H
+#endif //PROJEKT2_ST_H
 
-#include "../Functionality/FuncTest.h"
-#include "../Opcodes/STR.h"
+#include "../../Functionality/FuncTest.h"
+#include "../../Opcodes/ST.h"
 
-void testSTR1();
-void testSTR2();
+void testST1();
+void testST2();
+void testST3();
 
-void testSTR(){
+void testST(){
 
-    testSTR1();
-    testSTR2();
+    testST1();
+    testST2();
+    testST3();
 
 }
 
-void testSTR1(){
+void testST1(){
 
-    char* testID = "STI1";
+    char* testID = "ST1";
 
     LineInfo li;
-    li.input = "STR R1, R2, #3";
+    li.input = "ST R1, #3";
     li.output = (char*) calloc(1, sizeof(char) * 17);
     li.firstIndex = 0;
     li.lineLength = 30;
 
-    STR(li);
-    char* expected = "0111001010000011";
+    ST(li);
+    char* expected = "0011001000000011";
 
     equals(li.output, expected, testID);
     free(li.output);
-    
+
 }
 
-void testSTR2(){
+void testST2(){
 
-    char* testID = "STI2";
+    char* testID = "ST2";
 
     LineInfo li;
-    li.input = "STR R1, R3, #-3";
+    li.input = "ST R1, #-3";
     li.output = (char*) calloc(1, sizeof(char) * 17);
     li.firstIndex = 0;
     li.lineLength = 30;
 
-    STR(li);
-    char* expected = "0111001011111101";
+    ST(li);
+    char* expected = "0011001111111101";
 
     equals(li.output, expected, testID);
     free(li.output);
-    
+
 }
 
-void testSTR3(){
+void testST3(){
 
-    char* testID = "STR3";
+    char* testID = "ST3";
 
     LineInfo li;
-    li.input = "label3 STR R1, R2, label7";
+    li.input = "label3 ST R1, label7";
     li.output = (char*) calloc(1, sizeof(char) * 17);
     li.firstIndex = 7;
     li.lineLength = 30;
@@ -79,10 +81,10 @@ void testSTR3(){
     li.symbolTable.numberOfLabels = 2;
     li.lineCount = 4;
 
-    STI(li);
-    char* expected = "0111001010000010";
+    ST(li);
+    char* expected = "0011001000000010";
 
     equals(li.output, expected, testID);
     free(li.output);
-
+    
 }

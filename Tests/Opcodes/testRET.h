@@ -7,8 +7,8 @@
 
 #endif //PROJEKT2_TESTRET_H
 
-#include "../Functionality/FuncTest.h"
-#include "../Opcodes/RET.h"
+#include "../../Functionality/FuncTest.h"
+#include "../../Opcodes/RET.h"
 
 void testRET1();
 

@@ -7,8 +7,8 @@
 
 #endif //PROJEKT2_TESTORIG_H
 
-#include "../Functionality/FuncTest.h"
-#include "../Pseudo-Ops/ORIG.h"
+#include "../../Functionality/FuncTest.h"
+#include "../../Pseudo-Ops/ORIG.h"
 
 void testORIG1();
 

@@ -1,72 +1,67 @@
 //
-// Created by Mikkel Danielsen on 07/05/2020.
+// Created by Mikkel Danielsen on 06/05/2020.
 //
 
-#ifndef PROJEKT2_JSR_H
-#define PROJEKT2_JSR_H
+#ifndef PROJEKT2_STR_H
+#define PROJEKT2_STR_H
 
-#endif //PROJEKT2_JSR_H
+#endif //PROJEKT2_STR_H
 
-#include "../Functionality/FuncTest.h"
-#include "../Opcodes/JSR.h"
+#include "../../Functionality/FuncTest.h"
+#include "../../Opcodes/STR.h"
 
-void testJSR1();
-void testJSR2();
-void testJSR3();
+void testSTR1();
+void testSTR2();
 
-void testJSR(){
+void testSTR(){
 
-    testJSR1();
-    testJSR2();
-    testJSR3();
+    testSTR1();
+    testSTR2();
 
 }
 
-void testJSR1(){
+void testSTR1(){
 
-    char* testID = "JSR1";
+    char* testID = "STI1";
 
     LineInfo li;
-    li.input = "JSR #932";
+    li.input = "STR R1, R2, #3";
     li.output = (char*) calloc(1, sizeof(char) * 17);
     li.firstIndex = 0;
     li.lineLength = 30;
 
-    JSR(li);
-    char* expected = "0100101110100100";
+    STR(li);
+    char* expected = "0111001010000011";
 
     equals(li.output, expected, testID);
     free(li.output);
-
+    
 }
 
+void testSTR2(){
 
-void testJSR2(){
-
-    char* testID = "JSR2";
+    char* testID = "STI2";
 
     LineInfo li;
-    li.input = "JSR #-336";
+    li.input = "STR R1, R3, #-3";
     li.output = (char*) calloc(1, sizeof(char) * 17);
     li.firstIndex = 0;
     li.lineLength = 30;
 
-    JSR(li);
-    char* expected = "0100111010110000";
+    STR(li);
+    char* expected = "0111001011111101";
 
     equals(li.output, expected, testID);
     free(li.output);
-
+    
 }
 
+void testSTR3(){
 
-//Test labels
-void testJSR3(){
-
-    char* testID = "JSR3";
+    char* testID = "STR3";
 
     LineInfo li;
-    li.input = "label3 JSR label7";
+    li.input = "label3 STR R1, R2, label7";
     li.output = (char*) calloc(1, sizeof(char) * 17);
     li.firstIndex = 7;
     li.lineLength = 30;
@@ -84,8 +79,8 @@ void testJSR3(){
     li.symbolTable.numberOfLabels = 2;
     li.lineCount = 4;
 
-    JSR(li);
-    char* expected = "0100100000000010";
+    STI(li);
+    char* expected = "0111001010000010";
 
     equals(li.output, expected, testID);
     free(li.output);

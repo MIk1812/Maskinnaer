@@ -1,69 +1,71 @@
 //
-// Created by Mikkel Danielsen on 06/05/2020.
+// Created by Mikkel Danielsen on 07/05/2020.
 //
 
-#ifndef PROJEKT2_STI_H
-#define PROJEKT2_STI_H
+#ifndef PROJEKT2_TESTLDR_H
+#define PROJEKT2_TESTLDR_H
 
-#endif //PROJEKT2_STI_H
+#endif //PROJEKT2_TESTLDR_H
 
-#include "../Functionality/FuncTest.h"
-#include "../Opcodes/STI.h"
+#include "../../Functionality/FuncTest.h"
+#include "../../Opcodes/LEA.h"
 
-void testSTI1();
-void testSTI2();
-void testSTI3();
 
-void testSTI(){
+void testLEA1();
+void testLEA2();
+void testLEA3();
 
-    testSTI1();
-    testSTI2();
-    testSTI3();
+void testLEA(){
+
+    testLEA1();
+    testLEA2();
+    testLEA3();
 
 }
 
-void testSTI1(){
+void testLEA1(){
 
-    char* testID = "STI1";
+    char* testID = "LEA1";
 
     LineInfo li;
-    li.input = "STI R1, #3";
+    li.input = "LEA R1, #13";
     li.output = (char*) calloc(1, sizeof(char) * 17);
     li.firstIndex = 0;
     li.lineLength = 30;
 
-    STI(li);
-    char* expected = "1011001000000011";
+    LEA(li);
+    char* expected = "1110001000001101";
 
     equals(li.output, expected, testID);
     free(li.output);
 
 }
 
-void testSTI2(){
+void testLEA2(){
 
-    char* testID = "STI2";
+    char* testID = "LEA2";
 
     LineInfo li;
-    li.input = "STI R1, #-3";
+    li.input = "LEA R3, #-26";
     li.output = (char*) calloc(1, sizeof(char) * 17);
     li.firstIndex = 0;
     li.lineLength = 30;
 
-    STI(li);
-    char* expected = "1011001111111101";
+    LEA(li);
+    char* expected = "1110011111100110";
 
     equals(li.output, expected, testID);
     free(li.output);
-    
+
 }
 
-void testSTI3(){
+//Test labels
+void testLEA3(){
 
-    char* testID = "STI3";
+    char* testID = "LEA3";
 
     LineInfo li;
-    li.input = "label3 STI R1, label7";
+    li.input = "label3 LEA R3, label7";
     li.output = (char*) calloc(1, sizeof(char) * 17);
     li.firstIndex = 7;
     li.lineLength = 30;
@@ -81,8 +83,8 @@ void testSTI3(){
     li.symbolTable.numberOfLabels = 2;
     li.lineCount = 4;
 
-    STI(li);
-    char* expected = "1011001000000010";
+    LEA(li);
+    char* expected = "1110011000000010";
 
     equals(li.output, expected, testID);
     free(li.output);

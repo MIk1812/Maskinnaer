@@ -1,57 +1,58 @@
 //
-// Created by Mikkel Danielsen on 06/05/2020.
+// Created by Mikkel Danielsen on 07/05/2020.
 //
 
-#ifndef PROJEKT2_BR_H
-#define PROJEKT2_BR_H
+#ifndef PROJEKT2_TESTLDI_H
+#define PROJEKT2_TESTLDI_H
 
-#endif //PROJEKT2_BR_H
+#endif //PROJEKT2_TESTLDI_H
 
-#include "../Functionality/FuncTest.h"
-#include "../Opcodes/BR.h"
 
-void testBR1();
-void testBR2();
-void testBR3();
+#include "../../Functionality/FuncTest.h"
+#include "../../Opcodes/LDI.h"
 
-void testBR(){
+void testLDI1();
+void testLDI2();
+void testLDI3();
 
-    testBR1();
-    testBR2();
-    testBR3();
+void testLDI(){
+
+    testLDI1();
+    testLDI2();
+    testLDI3();
 
 }
 
-void testBR1(){
-
-    char* testID = "BR1";
+void testLDI1(){
+    
+    char* testID = "LDI1";
 
     LineInfo li;
-    li.input = "BRnzp #10";
+    li.input = "LDI R7, #212";
     li.output = (char*) calloc(1, sizeof(char) * 17);
     li.firstIndex = 0;
     li.lineLength = 30;
 
-    BR(li);
-    char* expected = "0000111000001010";
+    LDI(li);
+    char* expected = "1010111011010100";
 
     equals(li.output, expected, testID);
     free(li.output);
 
 }
 
-void testBR2(){
+void testLDI2(){
 
-    char* testID = "BR2";
+    char* testID = "LDI2";
 
     LineInfo li;
-    li.input = "BRnz #10";
+    li.input = "LDI R3, #-193";
     li.output = (char*) calloc(1, sizeof(char) * 17);
     li.firstIndex = 0;
     li.lineLength = 30;
 
-    BR(li);
-    char* expected = "0000110000001010";
+    LDI(li);
+    char* expected = "1010011100111111";
 
     equals(li.output, expected, testID);
     free(li.output);
@@ -59,12 +60,12 @@ void testBR2(){
 }
 
 //Test labels
-void testBR3(){
+void testLDI3(){
 
-    char* testID = "BR3";
+    char* testID = "LDI3";
 
     LineInfo li;
-    li.input = "label3 BRp label7";
+    li.input = "label3 LDI R1, label7";
     li.output = (char*) calloc(1, sizeof(char) * 17);
     li.firstIndex = 7;
     li.lineLength = 30;
@@ -82,8 +83,8 @@ void testBR3(){
     li.symbolTable.numberOfLabels = 2;
     li.lineCount = 4;
 
-    BR(li);
-    char* expected = "0000001000000010";
+    LDI(li);
+    char* expected = "1010001000000010";
 
     equals(li.output, expected, testID);
     free(li.output);
