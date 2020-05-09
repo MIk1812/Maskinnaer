@@ -34,7 +34,7 @@ void LEA(char* input, char* output, int firstIndex, char** labels, int numberOfL
     } else{
 
         //Isolate label from input
-        char* inputLabel = (char*) calloc(1, inputSize);
+        char* inputLabel = (char*) calloc(1, sizeof(char) * inputSize);
         isolateChars(input,  8 + firstIndex, inputSize, inputLabel);
 
         int matchIndex = NULL;

@@ -39,7 +39,7 @@ void LD(char* input, char* output, int firstIndex, char** labels, int numberOfLa
     } else{
 
         //Isolate label from input
-        char* inputLabel = (char*) calloc(1, inputSize);
+        char* inputLabel = (char*) calloc(1, sizeof(char)* inputSize);
         isolateChars(input,  7 + firstIndex, inputSize, inputLabel);
 
         int matchIndex = NULL;

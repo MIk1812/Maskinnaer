@@ -22,7 +22,7 @@ void testRET1(){
 
     char* testID = "RET1";
     char* input = "RET";
-    char* output = (char*) calloc(1, 17);
+    char* output = (char*) calloc(1, sizeof(char) * 17);
 
     RET(input, output);
     char* expected = "1100000111000000";

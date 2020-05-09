@@ -22,7 +22,7 @@ void testRTI1(){
 
     char* testID = "RTI1";
     char* input = "RTI";
-    char* output = (char*) calloc(1, 17);
+    char* output = (char*) calloc(1, sizeof(char) * 17);
 
     RTI(input, output,NULL);
     char* expected = "1000000000000000";

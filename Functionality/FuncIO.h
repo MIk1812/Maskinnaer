@@ -39,7 +39,7 @@ int countNumberOfLabels(char* filePath, int inputSize){
     int statusEOF = 0;
     while(statusEOF == 0){
 
-        char* str = (char*) calloc(1, inputSize);
+        char* str = (char*) calloc(1, sizeof(char) * inputSize);
 
         char* nextLine = readNextLine(inStream, inputSize, &statusEOF);
         bool opcodeStatus = isLabel(nextLine, 0, inputSize, str);
@@ -126,7 +126,7 @@ void createSymbolTable(char* filePath, int inputSize, char** labels, int* locati
     while(statusEOF == 0){
 
         char* currentLine = readNextLine(inStream, inputSize, &statusEOF);
-        char* currentLabel = (char*) calloc(1, inputSize);
+        char* currentLabel = (char*) calloc(1, sizeof(char) * inputSize);
 
         //If current line contains a label
         if( isLabel(currentLine, 0, inputSize, currentLabel) ){
@@ -164,7 +164,7 @@ int multiplyChars(char* input, int firstIndex, int inputSize){
 
 char* takeInput(int inputSize) {
 
-    char* input = (char*) calloc(1, inputSize + 1);
+    char* input = (char*) calloc(1, sizeof(char) * inputSize + 1);
 
     //Space for 30 characters. Scanf reads until \n
     scanf("%30[^\n]s", input);

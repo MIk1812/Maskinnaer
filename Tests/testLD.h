@@ -19,10 +19,9 @@ void testLD(){
     testLD1();
     testLD2();
 
-    char labels[2][30] = {
-            "labelNotToUse",
-            "labelToUse"
-    };
+    char* label1 = "labelNotToUse";
+    char* label2 = "labelToUse";
+    char** labels[] = {label1, label2};
 
     int* locations = {3,7};
 
@@ -34,7 +33,7 @@ void testLD1(){
 
     char* testID = "LD1";
     char* input = "LD R1, #-3";
-    char* output = (char*) calloc(1, 17);
+    char* output = (char*) calloc(1, sizeof(char) * 17);
 
     LD(input, output, 0, NULL, 0, NULL, 30);
     char* expected = "0010001111111101";
@@ -49,7 +48,7 @@ void testLD2(){
 
     char* testID = "LD2";
     char* input = "LD R1, #3";
-    char* output = (char*) calloc(1, 17);
+    char* output = (char*) calloc(1, sizeof(char) * 17);
 
     LD(input, output, 0, NULL, 0, NULL, 30);
     char* expected = "0010001000000011";
@@ -61,10 +60,10 @@ void testLD2(){
 
 
 void testLD3(char** labels, int* locations){
-//
+
 //    char* testID = "LD3";
 //    char* input = "labelNotToUse LD R1, labelToUse";
-//    char* output = (char*) calloc(1, 17);
+//    char* output = (char*) calloc(1, sizeof(char) * 17);
 //
 //    LD(input, output, 14, labels, 2, locations, 30);
 //    char* expected = "0010001000000011";
