@@ -9,52 +9,62 @@
 #endif //PROJEKT2_LEA_H
 
 #include "../Functionality/FuncOpcodes.h"
+#include "../Functionality/FuncIO.h"
 
-void LEA(char* input, char* output, int firstIndex, char** labels, int numberOfLabels, int* locations, int inputSize, int lineCount){
+void LEA(LineInfo li){
 
     //LEA R1, #10
 
-    output[0] = '1';
-    output[1] = '1';
-    output[2] = '1';
-    output[3] = '0';
+    int regIndex = 5;
+    int pcOffsetIndex = 8;
+    int pcOffsetLength = 4;
+    int pcOffsetBits = 9;
+    int lastIndex = 15;
 
-    char regDst = input[5+firstIndex];
+    li.output[0] = '1';
+    li.output[1] = '1';
+    li.output[2] = '1';
+    li.output[3] = '0';
 
-    writeRegBits(output, regDst, 4);
 
-    char labelOrNot = input[firstIndex + 8];
+    char regDst = li.input[regIndex+li.firstIndex];
+
+    writeRegBits(li.output, regDst, pcOffsetLength);
+
+    char labelOrNot = li.input[li.firstIndex + pcOffsetIndex];
 
     //Test wether or not instruction contains label reference
     if(labelOrNot == '#' || labelOrNot == 'x' || labelOrNot == 'X'){
 
-        int pcOffset = charsToInt(input, 8 + firstIndex, 4);
-        writeIntBits(output, pcOffset, 15, 9);
+        int pcOffset = charsToInt(li.input, 8 + li.firstIndex, pcOffsetLength);
+        writeIntBits(li.output, pcOffset, lastIndex, pcOffsetBits);
 
     } else{
 
-        //Isolate label from input
-        char* inputLabel = (char*) calloc(1, sizeof(char) * inputSize);
-        isolateChars(input,  8 + firstIndex, inputSize, inputLabel);
+        writeLabelBits(li, pcOffsetIndex, pcOffsetBits, lastIndex);
 
-        int matchIndex = NULL;
-
-        //Go through labels to find match
-        for (int i = 0; i < numberOfLabels; ++i) {
-
-            char* currentLabel = *(labels + i);
-
-            //If we have a match
-            if(strcmp(currentLabel, inputLabel) == 0){
-                matchIndex = i;
-                break;
-            }
-        }
-
-        int addOfLabel = locations[matchIndex];
-        int pcOffset = addOfLabel - lineCount - 1;
-
-        writeIntBits(output, pcOffset, 15, 9);
+//        //Isolate label from input
+//        char* inputLabel = (char*) calloc(1, sizeof(char) * li.lineLength);
+//        isolateChars(li.input,  8 + li.firstIndex, li.lineLength, inputLabel);
+//
+//        int matchIndex = NULL;
+//
+//        //Go through labels to find match
+//        for (int i = 0; i < li.symbolTable.numberOfLabels; ++i) {
+//
+//            char* currentLabel = *(li.symbolTable.labels + i);
+//
+//            //If we have a match
+//            if(strcmp(currentLabel, inputLabel) == 0){
+//                matchIndex = i;
+//                break;
+//            }
+//        }
+//
+//        int addOfLabel = li.symbolTable.locations[matchIndex];
+//        int pcOffset = addOfLabel - li.lineCount - 1;
+//
+//        writeIntBits(li.output, pcOffset, 15, 9);
     }
 
 

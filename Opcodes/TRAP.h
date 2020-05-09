@@ -10,7 +10,7 @@
 #pragma once
 #include "../Functionality/FuncOpcodes.h"
 
-void TRAP(char* input, char* output,int firstIndex){
+void TRAP(char* input, char* output, int firstIndex){
 
     //TRAP x22
     //TRAP #34

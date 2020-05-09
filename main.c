@@ -16,11 +16,13 @@
 #include "Pseudo-Ops/FILL.h"
 #include "Pseudo-Ops/BLKW.h"
 #include "Pseudo-Ops/END.h"
+#include "Structs.h"
 
 #define inputSize 30
 #define outputSize 16
 #define fileIn "../fileIn.txt"
 #define fileOut "../fileOut.txt"
+
 
 int main() {
 
@@ -51,6 +53,11 @@ int main() {
         createSymbolTable(fileIn, inputSize, labels, locations);
     }
 
+    SymbolTable symbolTable;
+    symbolTable.labels = labels;
+    symbolTable.numberOfLabels = numberOfLabels;
+    symbolTable.locations = locations;
+
     FILE *inStream;
     FILE *outputStream;
 
@@ -74,13 +81,20 @@ int main() {
     //Until EOF
     while(exit == 0){
 
+        LineInfo li;
+        li.symbolTable = symbolTable;
+        li.lineLength = inputSize;
+        li.lineCount = lineCount;
+
         //Marks the index of the opcode
         int firstIndex = 0;
 
         char* output = (char*) calloc(1, sizeof(char) * (outputSize+1));
+        li.output = output;
 
         //char* input = takeInput();
         char *input = readNextLine(inStream, inputSize, &exit);
+        li.input = input;
         int blocks = 0;
 
         //If we have any labels, change firstIndex accordingly
@@ -103,6 +117,8 @@ int main() {
             }
         }
 
+        li.firstIndex = firstIndex;
+
         //Multiply the ASCII values of the opcode's characters in order to differentiate them
         int sum = multiplyChars(input, firstIndex, inputSize);
 
@@ -121,7 +137,7 @@ int main() {
                 blocks = BLKW(input, output,firstIndex);
                 break;
             case 16834896:
-                END(input, &exit,firstIndex);
+                END(input, &exit, firstIndex);
                 break;
             case 423776:
                 LDR(input, output);
@@ -130,10 +146,10 @@ int main() {
                 LDI(input, output);
                 break;
             case 340860:
-                LEA(input, output,firstIndex, labels, numberOfLabels, locations, inputSize, lineCount);
+                LEA(li);
                 break;
             case 5168:
-                LD(input, output, firstIndex, labels, numberOfLabels, locations, inputSize, lineCount);
+                LD(li);
                 break;
             case 300560:
                 ADD(input, output, firstIndex);
@@ -208,6 +224,7 @@ int main() {
         blocks = 0;
 
     }
-        free(labels);
-        free(locations);
+
+    free(labels);
+    free(locations);
 }
