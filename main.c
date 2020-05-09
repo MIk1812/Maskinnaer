@@ -219,8 +219,8 @@ int main() {
 
         }
     }
-       // free(labels);
-       // free(locations);
+        free(labels);
+        free(locations);
 }
 
 

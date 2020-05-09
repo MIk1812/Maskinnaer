@@ -36,7 +36,6 @@ void STRINGZ(char* input, char* output, FILE *outputStream, int firstIndex){
         writeIntBits(output,pcoff, 15, 16);
         printf("%s\n", output);
         fprintf(outputStream, "%s\n", output);
-
     }
-
 }
+

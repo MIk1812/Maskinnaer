@@ -1,4 +1,12 @@
 .ORIG x3050
-Label .STRINGZ "hey you"
-BRnzp #4
+label BRnzp #10
+JMP R4
+JSR #932
+.STRINGZ "HEY"
+JSR #932
+
+
+
+
+
 
