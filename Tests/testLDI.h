@@ -13,11 +13,13 @@
 
 void testLDI1();
 void testLDI2();
+void testLDI3();
 
 void testLDI(){
 
     testLDI1();
     testLDI2();
+    testLDI3();
 
 }
 
@@ -82,7 +84,7 @@ void testLDI3(){
     li.lineCount = 4;
 
     LDI(li);
-    char* expected = "1010011000000010";
+    char* expected = "1010001000000010";
 
     equals(li.output, expected, testID);
     free(li.output);

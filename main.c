@@ -145,7 +145,7 @@ int main() {
                 break;
                 //LDR
             case 423776:
-                LDR(input, output,firstIndex);
+                LDR(li);
                 break;
             case 377264:
                 LDI(li);

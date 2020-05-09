@@ -10,23 +10,44 @@
 
 #include "../Functionality/FuncOpcodes.h"
 
-void LDR(char* input, char* output, int firstIndex){
+void LDR(LineInfo li){
 
     //LDR R1, R2, #3
+    //LDR R1, R2, LABEL
 
-    output[0] = '0';
-    output[1] = '1';
-    output[2] = '1';
-    output[3] = '0';
+    int regIndexInput1 = 5;
+    int regIndexOutput1 = 4;
 
-    char regDst = input[5+firstIndex];
-    char regBase = input[9+firstIndex];
+    int regIndexInput2 = 9;
+    int regIndexOutput2 = 7;
 
-    writeRegBits(output, regDst, 4);
-    writeRegBits(output, regBase, 7);
+    int labelIndexInput = 12;
+    int labelLengthInput = 3;
+    int labelBitsOutput = 6;
+    int lastIndex = 15;
 
-    int pcOffset = charsToInt(input, 12+firstIndex, 3);
+    li.output[0] = '0';
+    li.output[1] = '1';
+    li.output[2] = '1';
+    li.output[3] = '0';
 
-    writeIntBits(output, pcOffset, 15, 6);
+    char regDst = li.input[regIndexInput1 + li.firstIndex];
+    char regBase = li.input[regIndexInput2 + li.firstIndex];
+
+    writeRegBits(li.output, regDst, regIndexOutput1);
+    writeRegBits(li.output, regBase, regIndexOutput2);
+
+    char labelOrNot = li.input[li.firstIndex + labelIndexInput];
+
+    //Test wether or not instruction contains label reference
+    if(labelOrNot == '#' || labelOrNot == 'x' || labelOrNot == 'X'){
+
+        int pcOffset = charsToInt(li.input, labelIndexInput + li.firstIndex, labelLengthInput);
+        writeIntBits(li.output, pcOffset, lastIndex, labelBitsOutput);
+
+    } else{
+
+        writeLabelBits(li, labelIndexInput, labelBitsOutput, lastIndex);
+    }
 
 }
