@@ -22,7 +22,7 @@ void testORIG1() {
 
     char *testID = "ORIG1";
     char *input = ".ORIG x3000";
-    char *output = (char *) calloc(1, 17);
+    char *output = (char *) calloc(1, sizeof(char) * 17);
 
     ORIG(input, output);
     char *expected = "0011000000000000";

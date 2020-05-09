@@ -24,7 +24,7 @@ void testJSRR1(){
 
     char* testID = "JSRR1";
     char* input = "JSRR R4";
-    char* output = (char*) calloc(1, 17);
+    char* output = (char*) calloc(1, sizeof(char) * 17);
 
     JSRR(input, output);
     char* expected = "0100000100000000";
@@ -39,7 +39,7 @@ void testJSRR2(){
 
     char* testID = "JSRR2";
     char* input = "JSRR R7";
-    char* output = (char*) calloc(1, 17);
+    char* output = (char*) calloc(1, sizeof(char) * 17);
 
     JSRR(input, output);
     char* expected = "0100000111000000";

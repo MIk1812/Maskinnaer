@@ -1,15 +1,37 @@
 .ORIG x3050
-LEA R1, #3
-label LEA R1, #3
-NOT R1, R2
+ADD R1, R2, R3
+labelADD ADD R1, R2, R3
+AND R1, R2, #10
+AND R1, R2, #10
+BRnzp #10
+BRnzp #10
+JMP R4
+JMP R4
+JSR #932
+JSR #932
+JSRR R4
+JSRR R4
+LD R1, #-3
+labelToSkip LD R1, labelADD
+LDI R7, #212
+LDI R7, #212
+LDR R1, R2, #29
+LDR R1, R2, #29
+LEA R1, #13
+labelToSkip LEA R1, labelADD
+NOT R2, R1
+NOT R2, R1
+.ORIG x3000
+.ORIG x3000
+RET
+RET
 RTI
-label RTI
-STI R1, #10
-STR R1, R2, #5
-TRAP x22
-kl TRAP x22
-po STR R1, R2, #5
-boss ST R1, R2, #5
-kj .FILL #5
-kjkk .FILL #5
-.END
+RTI
+ST R1, #3
+ST R1, #3
+STI R1, #-3
+STI R1, #-3
+STR R1, R3, #-3
+STR R1, R3, #-3
+TRAP #34
+TRAP #34
