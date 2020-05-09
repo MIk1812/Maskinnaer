@@ -1,12 +1,15 @@
 .ORIG x3050
-label BRnzp #10
-JMP R4
-JSR #932
-.STRINGZ "HEY"
-JSR #932
-
-
-
-
-
-
+LEA R1, #3
+label LEA R1, #3
+NOT R1, R2
+RTI
+label RTI
+STI R1, #10
+STR R1, R2, #5
+TRAP x22
+kl TRAP x22
+po STR R1, R2, #5
+boss ST R1, R2, #5
+kj .FILL #5
+kjkk .FILL #5
+.END

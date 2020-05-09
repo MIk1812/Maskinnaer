@@ -36,14 +36,14 @@ int main() {
     if(numberOfLabels > 0){
 
         //To hold pointers to all the Labels
-        labels = (char**) calloc(1, numberOfLabels);
+        labels = (char**) calloc(1, sizeof(char*)*(numberOfLabels));
 
         for (int i = 0; i < numberOfLabels; ++i) {
-            *(labels+i) = (char*) calloc(1, inputSize);
+            *(labels+i) = (char*) calloc(1, sizeof(char )*(inputSize));
         }
 
         //To hold all the locations
-        locations = (int*) calloc(1, numberOfLabels);
+        locations = (int*) calloc(1, sizeof(int)*(numberOfLabels));
 
         //Initialise with null
         for (int j = 0; j < numberOfLabels; ++j)
@@ -80,7 +80,7 @@ int main() {
         //Marks the index of the opcode
         int firstIndex = 0;
 
-        char* output = (char*) calloc(1, outputSize +1);
+        char* output = (char*) calloc(1, sizeof(char) * (outputSize+1));
 
         //char* input = takeInput();
         char *input = readNextLine(inStream, inputSize, &exit);
@@ -118,13 +118,13 @@ int main() {
             case 16834896: //.END
 
             case 1357706560:
-                FILL(input, output);
+                FILL(input, output,firstIndex);
                 break;
             case 1505552400:
-                blocks = BLKW(input, output);
+                blocks = BLKW(input, output,firstIndex);
                 break;
             case 168348960:
-                END(input, &exit);
+                END(input, &exit,firstIndex);
                 break;
             case -823617216 :
                 STRINGZ(input, output, outputStream,firstIndex);
@@ -222,19 +222,3 @@ int main() {
         free(labels);
         free(locations);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
