@@ -7,7 +7,7 @@
 #pragma once
 #include "../Functionality/FuncOpcodes.h"
 
-void STRINGZ(char* input, char* output, FILE *outputStream){
+void STRINGZ(char* input, char* output, FILE *outputStream, int firstIndex){
     int mask = 1;
     int countfirstindex = 0;
     int countchars = 0;
@@ -27,12 +27,16 @@ void STRINGZ(char* input, char* output, FILE *outputStream){
         break;
     }
 
+    printf("\n%s",input);
     for (int k = 0; k < countchars ; ++k) {
-        printf("%c: ", input[countfirstindex+(k+1)]);
-        int pcoff = singleCharToInt(input,countfirstindex+k);
+        int alphaindex = (countfirstindex+(k+1))+firstIndex;
+        int charIndex = (countfirstindex+k)+firstIndex;
+        printf("%c: ", input[alphaindex]);
+        int pcoff = singleCharToInt(input,charIndex);
         writeIntBits(output,pcoff, 15, 16);
         printf("%s\n", output);
         fprintf(outputStream, "%s\n", output);
+
     }
 
 }

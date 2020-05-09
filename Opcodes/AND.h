@@ -10,7 +10,7 @@
 #pragma once
 #include "../Functionality/FuncOpcodes.h"
 
-void AND(char* input, char* output){
+void AND(char* input, char* output, int firstIndex){
 
     //AND R1, R2, R3
     //AND R1, R2, #11
@@ -20,17 +20,17 @@ void AND(char* input, char* output){
     output[2] = '0';
     output[3] = '1';
 
-    char regDst = input[5];
-    char regSrc1 = input[9];
+    char regDst = input[5 + firstIndex];
+    char regSrc1 = input[9 + firstIndex];
 
     writeRegBits(output, regDst, 4);
     writeRegBits(output, regSrc1, 7);
 
     //If register mode
-    if(input[12] != '#'){
+    if(input[12+firstIndex] != '#'){
 
-        char regSrc2 = input[13];
-        writeRegBits(output, regSrc2, 13);
+        char regSrc2 = input[13+firstIndex];
+        writeRegBits(output, regSrc2, 13+firstIndex);
 
         output[10] = '0';
         output[11] = '0';
@@ -40,7 +40,7 @@ void AND(char* input, char* output){
 
         output[10] = '1';
 
-        int pcOffset = charsToInt(input, 12, 3);
+        int pcOffset = charsToInt(input, 12+firstIndex, 3);
 
         writeIntBits(output, pcOffset, 15, 5);
 

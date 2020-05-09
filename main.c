@@ -75,34 +75,33 @@ int main() {
 
 
     //Until EOF
-    while(exit == 0){
+    while(exit == 0) {
 
         //Marks the index of the opcode
         int firstIndex = 0;
 
-        char* output = (char*) calloc(1, outputSize +1);
+        char *output = (char *) calloc(1, outputSize + 1);
 
         //char* input = takeInput();
         char *input = readNextLine(inStream, inputSize, &exit);
         int blocks = 0;
 
         //If we have any labels, change firstIndex accordingly
-        if(numberOfLabels > 0 ){
+        if (numberOfLabels > 0) {
 
             //If we are currently on a line with a label referencing it
-            if(lineCount == *(locations + labelCount)){
+            if (lineCount == *(locations + labelCount)) {
 
                 labelCount++;
 
                 //Skip the label via firstIndex
-                do{
+                do {
                     char currentChar = input[firstIndex];
-                    if(currentChar == ' ' || currentChar == '\0' || currentChar == '\n'){
+                    if (currentChar == ' ' || currentChar == '\0' || currentChar == '\n') {
                         firstIndex++;
                         break;
-                    }
-                    else firstIndex++;
-                } while(true);
+                    } else firstIndex++;
+                } while (true);
             }
         }
 
@@ -110,15 +109,12 @@ int main() {
         int sum = multiplyChars(input, firstIndex, inputSize);
 
         //Identify opcode
-        switch(sum){
+        switch (sum) {
             case 1544471804:
                 ORIG(input, output);
                 break;
 
-            case 1357706560: //.FILL
-            case 1505552400: //.BLKW
             case 16834896: //.END
-            case -823617216: //.STRINGZ
 
             case 1357706560:
                 FILL(input, output);
@@ -129,15 +125,15 @@ int main() {
             case 168348960:
                 END(input, &exit);
                 break;
-            case 956857760389440 :
-                STRINGZ(input,output,outputStream);
+            case -823617216 :
+                STRINGZ(input, output, outputStream,firstIndex);
                 break;
-            //LDR
+                //LDR
             case 423776:
-                LDR(input, output);
+                LDR(input, output,firstIndex);
                 break;
             case 377264:
-                LDI(input, output);
+                LDI(input, output,firstIndex);
                 break;
             case 340860:
                 LEA(input, output);
@@ -152,7 +148,7 @@ int main() {
                 NOT(input, output);
                 break;
 
-            //Various BR(nzp) statements
+                //Various BR(nzp) statements
             case 5412:
             case 595320:
             case 72629040:
@@ -161,7 +157,7 @@ int main() {
             case 660264:
             case 73949568:
             case 606144:
-                BR(input, output);
+                BR(input, output, firstIndex);
                 break;
 
             case 6972:
@@ -174,13 +170,13 @@ int main() {
                 STR(input, output);
                 break;
             case 503644:
-                JSR(input, output);
+                JSR(input, output,firstIndex);
                 break;
             case 41298808:
-                JSRR(input, output);
+                JSRR(input, output,firstIndex);
                 break;
             case 455840:
-                JMP(input, output);
+                JMP(input, output, firstIndex);
                 break;
             case 475272:
                 RET(input, output);
@@ -192,41 +188,36 @@ int main() {
                 TRAP(input, output);
                 break;
             case 344760:
-                AND(input, output);
+                AND(input, output, firstIndex);
                 break;
         }
 
-        printf("\n%s", input);
-        if (exit == 1) printf("\n");
+        if (sum != -823617216) {
+            printf("\n%s", input);
+            if (exit == 1) printf("\n");
 
-        if (blocks > 0) {
-            for (int i = 0; i < blocks ; ++i) {
+
+            if (blocks > 0) {
+                for (int i = 0; i < blocks; ++i) {
+                    printf("%s\n", output);
+
+                    fprintf(outputStream, "%s\n", output);
+                }
+
+            } else {
                 printf("%s\n", output);
 
                 fprintf(outputStream, "%s\n", output);
             }
 
-    }else{
-            printf("%s\n", output);
+            lineCount++;
 
-            fprintf(outputStream, "%s\n", output);
+
+            free(input);
+            free(output);
+            blocks = 0;
+
         }
-
-        lineCount++;
-
-        if(sum != 956857760389440) {
-            printf("\n%s", input);
-            if(exit == 1) printf("\n");
-            printf("%s\n", output);
-            fprintf(outputStream, "%s\n", output);
-        }
-
-
-
-        free(input);
-        free(output);
-        blocks = 0;
-
     }
 
     free(labels);

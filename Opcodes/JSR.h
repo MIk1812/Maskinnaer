@@ -10,7 +10,7 @@
 #pragma once
 #include "../Functionality/FuncOpcodes.h"
 
-void JSR(char* input, char* output){
+void JSR(char* input, char* output, int firstIndex){
 
     //JSR #943
     
@@ -21,7 +21,7 @@ void JSR(char* input, char* output){
 
     output[4] = '1';
     
-    int pcOffset = charsToInt(input, 4, 5);
+    int pcOffset = charsToInt(input, 4+firstIndex, 5);
 
     writeIntBits(output, pcOffset, 15, 11);
 

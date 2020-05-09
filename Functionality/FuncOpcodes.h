@@ -52,9 +52,9 @@ void writeIntBits(char* output, int intToWrite, int lastIndex, int numberOfBits)
 
 }
 
-void nzp_Operation(char* input, char* output){
+void nzp_Operation(char* input, char* output, int firstIndex){
 
-    for (int j = 2; j < 5 ; ++j) {
+    for (int j = 2+firstIndex; j < 5+firstIndex ; ++j) {
 
         if (input[j] == 'n')
                 output[4] = '1';

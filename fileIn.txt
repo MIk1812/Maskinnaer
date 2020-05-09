@@ -5,7 +5,7 @@ AND R1, R2, #10
 AND R1, R2, #10
 BRnzp #10
 BRnzp #10
-JMP R4
+Label JMP R4
 JMP R4
 JSR #932
 JSR #932
@@ -13,9 +13,9 @@ JSRR R4
 JSRR R4
 LD R1, #-3
 labelLD LD R1, labelLD
+Label LDI R7, #212
 LDI R7, #212
-LDI R7, #212
-LDR R1, R2, #29
+Label LDR R1, R2, #29
 LDR R1, R2, #29
 LEA R1, #13
 LEA R1, #13
@@ -35,4 +35,5 @@ STR R1, R3, #-3
 STR R1, R3, #-3
 TRAP #34
 TRAP #34
-.STRINGZ "hey your"
+.STRINGZ "hey you"
+
