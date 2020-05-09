@@ -10,39 +10,39 @@
 #pragma once
 #include "../Functionality/FuncOpcodes.h"
 
-void AND(char* input, char* output, int firstIndex){
+void AND(LineInfo li){
 
     //AND R1, R2, R3
     //AND R1, R2, #11
     
-    output[0] = '0';
-    output[1] = '1';
-    output[2] = '0';
-    output[3] = '1';
+    li.output[0] = '0';
+    li.output[1] = '1';
+    li.output[2] = '0';
+    li.output[3] = '1';
 
-    char regDst = input[5 + firstIndex];
-    char regSrc1 = input[9 + firstIndex];
+    char regDst = li.input[5 + li.firstIndex];
+    char regSrc1 = li.input[9 + li.firstIndex];
 
-    writeRegBits(output, regDst, 4);
-    writeRegBits(output, regSrc1, 7);
+    writeRegBits(li.output, regDst, 4);
+    writeRegBits(li.output, regSrc1, 7);
 
     //If register mode
-    if(input[12+firstIndex] != '#'){
+    if(li.input[12 + li.firstIndex] != '#'){
 
-        char regSrc2 = input[13+firstIndex];
-        writeRegBits(output, regSrc2, 13+firstIndex);
+        char regSrc2 = li.input[13 + li.firstIndex];
+        writeRegBits(li.output, regSrc2, 13 + li.firstIndex);
 
-        output[10] = '0';
-        output[11] = '0';
-        output[12] = '0';
+        li.output[10] = '0';
+        li.output[11] = '0';
+        li.output[12] = '0';
 
     } else{
 
-        output[10] = '1';
+        li.output[10] = '1';
 
-        int pcOffset = charsToInt(input, 12+firstIndex, 3);
+        int pcOffset = charsToInt(li.input, 12 + li.firstIndex, 3);
 
-        writeIntBits(output, pcOffset, 15, 5);
+        writeIntBits(li.output, pcOffset, 15, 5);
 
     }
 

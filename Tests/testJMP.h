@@ -23,27 +23,35 @@ void testJMP(){
 void testJMP1(){
 
     char* testID = "JMP1";
-    char* input = "JMP R4";
-    char* output = (char*) calloc(1, sizeof(char) * 17);
 
-    JMP(input, output,0);
+    LineInfo li;
+    li.input = "JMP R4";
+    li.output = (char*) calloc(1, sizeof(char) * 17);
+    li.firstIndex = 0;
+    li.lineLength = 30;
+
+    JMP(li);
     char* expected = "1100000100000000";
 
-    equals(output, expected, testID);
-    free(output);
+    equals(li.output, expected, testID);
+    free(li.output);
 
 }
 
 void testJMP2(){
 
     char* testID = "JMP2";
-    char* input = "JMP R2";
-    char* output = (char*) calloc(1, sizeof(char) * 17);
 
-    JMP(input, output,0);
+    LineInfo li;
+    li.input = "JMP R2";
+    li.output = (char*) calloc(1, sizeof(char) * 17);
+    li.firstIndex = 0;
+    li.lineLength = 30;
+
+    JMP(li);
     char* expected = "1100000010000000";
 
-    equals(output, expected, testID);
-    free(output);
+    equals(li.output, expected, testID);
+    free(li.output);
 
 }

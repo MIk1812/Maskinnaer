@@ -29,12 +29,13 @@ int main() {
 
     testEverything();
 
+    //Find number of labels in file
     int numberOfLabels = countNumberOfLabels(fileIn, inputSize);
 
     char** labels;
     int* locations;
 
-    //If we have any pointers
+    //If we have any labels
     if(numberOfLabels > 0){
 
         //To hold pointers to all the Labels
@@ -46,10 +47,6 @@ int main() {
 
         //To hold all the locations
         locations = (int*) calloc(1, sizeof(int)*(numberOfLabels));
-
-        //Initialise with null
-        for (int j = 0; j < numberOfLabels; ++j)
-            *(locations+j) = 3;
 
         createSymbolTable(fileIn, inputSize, labels, locations);
     }
@@ -66,6 +63,7 @@ int main() {
     outputStream = fopen(fileOut,"w");
     inStream = fopen(fileIn,"r");
 
+    //todo slet
     if (inStream != NULL && outputStream != NULL){
         printf("\nFile read success!\n");
     }
@@ -87,15 +85,18 @@ int main() {
         li.lineLength = inputSize;
         li.lineCount = lineCount;
 
-        //Marks the index of the opcode
+        //Used to skip any predicate labels
         int firstIndex = 0;
 
+        //To hold output
         char* output = (char*) calloc(1, sizeof(char) * (outputSize+1));
         li.output = output;
 
-        //char* input = takeInput();
+        //To hold input
         char *input = readNextLine(inStream, inputSize, &exit);
         li.input = input;
+
+        //todo hvad er blocks?
         int blocks = 0;
 
         //If we have any labels, change firstIndex accordingly
@@ -106,7 +107,7 @@ int main() {
 
                 labelCount++;
 
-                //Skip the label via firstIndex
+                //Update firstIndex accordingly
                 do{
                     char currentChar = input[firstIndex];
                     if(currentChar == ' ' || currentChar == '\0' || currentChar == '\n'){
@@ -129,6 +130,7 @@ int main() {
                 ORIG(input, output);
                 break;
 
+                //todo end skal med
             case 16834896: //.END
 
             case 1357706560:
@@ -157,13 +159,13 @@ int main() {
                 LD(li);
                 break;
             case 300560:
-                ADD(input, output, firstIndex);
+                ADD(li);
                 break;
             case 517608:
-                NOT(input, output,firstIndex);
+                NOT(li);
                 break;
 
-                //Various BR(nzp) statements
+            //Various BR(nzp) statements
             case 5412:
             case 595320:
             case 72629040:
@@ -188,27 +190,28 @@ int main() {
                 JSR(li);
                 break;
             case 41298808:
-                JSRR(input, output,firstIndex);
+                JSRR(li);
                 break;
             case 455840:
-                JMP(input, output, firstIndex);
+                JMP(li);
                 break;
             case 475272:
-                RET(input, output);
+                RET(li);
                 break;
             case 502824:
-                RTI(input, output,firstIndex);
+                RTI(li);
                 break;
             case 35817600:
-                TRAP(input, output,firstIndex);
+                TRAP(li);
                 break;
             case 344760:
-                AND(input, output, firstIndex);
+                AND(li);
                 break;
         }
 
+        //todo hvad er -823617216
         if (sum != -823617216) {
-            printf("\n%s", input);
+//            printf("\n%s", input);
             if (exit == 1) printf("\n");
 
 
@@ -216,12 +219,12 @@ int main() {
                 // lineCount = lineCount-1;
                 int getlines = 0;
                 for (int i = 0; i < blocks; ++i) {
-                    printf("%s\n", output);
+//                    printf("%s\n", output);
                     fprintf(outputStream, "%s\n", output);
                 }
 
             } else {
-                printf("%s\n", output);
+//                printf("%s\n", output);
                 fprintf(outputStream, "%s\n", output);
             }
         }
@@ -237,5 +240,4 @@ int main() {
 
     free(labels);
     free(locations);
-        printf("%d",lineCount);
 }

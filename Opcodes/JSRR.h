@@ -10,25 +10,25 @@
 #pragma once
 #include "../Functionality/FuncOpcodes.h"
 
-void JSRR(char* input, char* output, int firstIndex){
+void JSRR(LineInfo li){
 
     //JSRR R4
 
-    output[0] = '0';
-    output[1] = '1';
-    output[2] = '0';
-    output[3] = '0';
+    li.output[0] = '0';
+    li.output[1] = '1';
+    li.output[2] = '0';
+    li.output[3] = '0';
 
-    output[4] = '0';
-    output[5] = '0';
-    output[6] = '0';
+    li.output[4] = '0';
+    li.output[5] = '0';
+    li.output[6] = '0';
 
-    char regDst = input[6+firstIndex];
+    char regDst = li.input[6 + li.firstIndex];
 
-    writeRegBits(output, regDst, 7);
+    writeRegBits(li.output, regDst, 7);
 
     for (int i = 0; i < 6; ++i) {
-        output[i+10] = '0';
+        li.output[i+10] = '0';
     }
 
 }

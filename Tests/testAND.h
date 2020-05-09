@@ -25,41 +25,54 @@ void testAND(){
 void testAND1(){
 
     char* testID = "AND1";
-    char* input = "AND R1, R2, R3";
-    char* output = (char*) calloc(1, sizeof(char) * 17);
 
-    AND(input, output, 0);
+    LineInfo li;
+    li.input = "AND R1, R2, R3";
+    li.output = (char*) calloc(1, sizeof(char) * 17);
+    li.firstIndex = 0;
+    li.lineLength = 30;
+
+    AND(li);
     char* expected = "0101001010000011";
 
-    equals(output, expected, testID);
-    free(output);
+    equals(li.output, expected, testID);
+    free(li.output);
 
 }
 
 void testAND2(){
 
     char* testID = "AND2";
-    char* input = "AND R1, R2, #10";
-    char* output = (char*) calloc(1, sizeof(char) * 17);
 
-    AND(input, output, 0);
+    LineInfo li;
+    li.input = "AND R1, R2, #10";
+    li.output = (char*) calloc(1, sizeof(char) * 17);
+    li.firstIndex = 0;
+    li.lineLength = 30;
+
+    AND(li);
     char* expected = "0101001010101010";
 
-    equals(output, expected, testID);
-    free(output);
+    equals(li.output, expected, testID);
+    free(li.output);
 
 }
 
 void testAND3(){
 
     char* testID = "AND3";
-    char* input = "AND R1, R2, #-10";
-    char* output = (char*) calloc(1, sizeof(char) * 17);
 
-    AND(input, output, 0);
+    LineInfo li;
+    li.input = "AND R1, R2, #-10";
+    li.output = (char*) calloc(1, sizeof(char) * 17);
+    li.firstIndex = 0;
+    li.lineLength = 30;
+
+    AND(li);
     char* expected = "0101001010110110";
 
-    equals(output, expected, testID);
-    free(output);
+    equals(li.output, expected, testID);
+    free(li.output);
+
 
 }

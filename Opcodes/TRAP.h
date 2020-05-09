@@ -10,24 +10,24 @@
 #pragma once
 #include "../Functionality/FuncOpcodes.h"
 
-void TRAP(char* input, char* output, int firstIndex){
+void TRAP(LineInfo li){
 
     //TRAP x22
     //TRAP #34
 
-    output[0] = '1';
-    output[1] = '1';
-    output[2] = '1';
-    output[3] = '1';
+    li.output[0] = '1';
+    li.output[1] = '1';
+    li.output[2] = '1';
+    li.output[3] = '1';
 
-    output[4] = '0';
-    output[5] = '0';
-    output[6] = '0';
-    output[7] = '0';
+    li.output[4] = '0';
+    li.output[5] = '0';
+    li.output[6] = '0';
+    li.output[7] = '0';
 
-    int pcOffset = charsToInt(input, 5+firstIndex, 4);
+    int pcOffset = charsToInt(li.input, 5 + li.firstIndex, 4);
 
-    writeIntBits(output, pcOffset, 15, 8);
+    writeIntBits(li.output, pcOffset, 15, 8);
 
 
 }

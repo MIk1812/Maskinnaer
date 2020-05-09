@@ -23,27 +23,35 @@ void testNOT(){
 void testNOT1(){
 
     char* testID = "NOT1";
-    char* input = "NOT R1, R2";
-    char* output = (char*) calloc(1, sizeof(char) * 17);
 
-    NOT(input, output,NULL);
+    LineInfo li;
+    li.input = "NOT R1, R2";
+    li.output = (char*) calloc(1, sizeof(char) * 17);
+    li.firstIndex = 0;
+    li.lineLength = 30;
+
+    NOT(li);
     char* expected = "1001001010111111";
 
-    equals(output, expected, testID);
-    free(output);
+    equals(li.output, expected, testID);
+    free(li.output);
 
 }
 
 void testNOT2(){
 
     char* testID = "NOT2";
-    char* input = "NOT R2, R1";
-    char* output = (char*) calloc(1, sizeof(char) * 17);
 
-    NOT(input, output,NULL);
+    LineInfo li;
+    li.input = "NOT R2, R1";
+    li.output = (char*) calloc(1, sizeof(char) * 17);
+    li.firstIndex = 0;
+    li.lineLength = 30;
+
+    NOT(li);
     char* expected = "1001010001111111";
 
-    equals(output, expected, testID);
-    free(output);
+    equals(li.output, expected, testID);
+    free(li.output);
 
 }

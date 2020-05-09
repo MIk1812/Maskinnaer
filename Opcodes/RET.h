@@ -10,14 +10,14 @@
 #pragma once
 #include "../Functionality/FuncOpcodes.h"
 
-void RET(char* input, char* output){
+void RET(LineInfo li){
 
     //RET
 
     char* str = "1100000111000000";
 
     for (int i = 0; i < 16; ++i) {
-        output[i] = *(str+i);
+        li.output[i] = *(str+i);
     }
 
 }

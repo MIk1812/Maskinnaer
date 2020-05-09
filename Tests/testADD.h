@@ -25,41 +25,52 @@ void testADD(){
 void testADD1(){
 
     char* testID = "ADD1";
-    char* input = "ADD R1, R2, R3";
-    char* output = (char*) calloc(1, sizeof(char) * 17);
 
-    ADD(input, output, 0);
+    LineInfo li;
+    li.input = "ADD R1, R2, R3";
+    li.output = (char*) calloc(1, sizeof(char) * 17);
+    li.firstIndex = 0;
+    li.lineLength = 30;
+
+    ADD(li);
     char* expected = "0001001010000011";
 
-    equals(output, expected, testID);
-    free(output);
+    equals(li.output, expected, testID);
+    free(li.output);
 
 }
 
 void testADD2(){
 
     char* testID = "ADD2";
-    char* input = "ADD R1, R2, #10";
-    char* output = (char*) calloc(1, sizeof(char) * 17);
 
-    ADD(input, output, 0);
+    LineInfo li;
+    li.input = "ADD R1, R2, #10";
+    li.output = (char*) calloc(1, sizeof(char) * 17);
+    li.firstIndex = 0;
+    li.lineLength = 30;
+
+    ADD(li);
     char* expected = "0001001010101010";
 
-    equals(output, expected, testID);
-    free(output);
-
+    equals(li.output, expected, testID);
+    free(li.output);
 }
 
 void testADD3(){
 
-    char* testID = "ADD3";
-    char* input = "ADD R1, R2, #-10";
-    char* output = (char*) calloc(1, sizeof(char) * 17);
+    char* testID = "ADD1";
 
-    ADD(input, output, 0);
+    LineInfo li;
+    li.input = "ADD R1, R2, #-10";
+    li.output = (char*) calloc(1, sizeof(char) * 17);
+    li.firstIndex = 0;
+    li.lineLength = 30;
+
+    ADD(li);
     char* expected = "0001001010110110";
 
-    equals(output, expected, testID);
-    free(output);
+    equals(li.output, expected, testID);
+    free(li.output);
 
 }

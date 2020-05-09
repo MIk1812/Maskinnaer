@@ -21,13 +21,17 @@ void testRTI(){
 void testRTI1(){
 
     char* testID = "RTI1";
-    char* input = "RTI";
-    char* output = (char*) calloc(1, sizeof(char) * 17);
 
-    RTI(input, output,NULL);
+    LineInfo li;
+    li.input = "RTI";
+    li.output = (char*) calloc(1, sizeof(char) * 17);
+    li.firstIndex = 0;
+    li.lineLength = 30;
+
+    RTI(li);
     char* expected = "1000000000000000";
 
-    equals(output, expected, testID);
-    free(output);
+    equals(li.output, expected, testID);
+    free(li.output);
 
 }

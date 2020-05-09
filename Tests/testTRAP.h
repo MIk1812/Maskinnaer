@@ -23,27 +23,35 @@ void testTRAP(){
 void testTRAP1(){
 
     char* testID = "TRAP1";
-    char* input = "TRAP #34";
-    char* output = (char*) calloc(1, sizeof(char) * 17);
 
-    TRAP(input, output,NULL);
+    LineInfo li;
+    li.input = "TRAP #34";
+    li.output = (char*) calloc(1, sizeof(char) * 17);
+    li.firstIndex = 0;
+    li.lineLength = 30;
+
+    TRAP(li);
     char* expected = "1111000000100010";
 
+    equals(li.output, expected, testID);
+    free(li.output);
 
-    equals(output, expected, testID);
-    free(output);
 }
 
 void testTRAP2(){
 
     char* testID = "TRAP2";
-    char* input = "TRAP x22";
-    char* output = (char*) calloc(1, sizeof(char) * 17);
 
-    TRAP(input, output,NULL);
+    LineInfo li;
+    li.input = "TRAP x22";
+    li.output = (char*) calloc(1, sizeof(char) * 17);
+    li.firstIndex = 0;
+    li.lineLength = 30;
+
+    TRAP(li);
     char* expected = "1111000000100010";
 
+    equals(li.output, expected, testID);
+    free(li.output);
 
-    equals(output, expected, testID);
-    free(output);
 }

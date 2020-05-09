@@ -8,26 +8,26 @@
 
 #endif //PROJEKT2_NOT_H
 
-void NOT(char input[], char output[],int fistIndex){
+void NOT(LineInfo li){
 
     // Opcode
-    output[0] = '1';
-    output[1] = '0';
-    output[2] = '0';
-    output[3] = '1';
+    li.output[0] = '1';
+    li.output[1] = '0';
+    li.output[2] = '0';
+    li.output[3] = '1';
 
     //Register DR
-    char dr = input[5+fistIndex];
-    writeRegBits(output, dr, 4);
+    char dr = li.input[5 + li.firstIndex];
+    writeRegBits(li.output, dr, 4);
 
     //Register SR1
-    char sr1 = input[9+fistIndex];
-    writeRegBits(output, sr1, 7);
+    char sr1 = li.input[9 + li.firstIndex];
+    writeRegBits(li.output, sr1, 7);
 
-    output[10] = '1';
-    output[11] = '1';
-    output[12] = '1';
-    output[13] = '1';
-    output[14] = '1';
-    output[15] = '1';
+    li.output[10] = '1';
+    li.output[11] = '1';
+    li.output[12] = '1';
+    li.output[13] = '1';
+    li.output[14] = '1';
+    li.output[15] = '1';
 }

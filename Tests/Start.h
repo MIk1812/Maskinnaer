@@ -51,7 +51,7 @@ void testEverything(){
     testAND();
     testTRAP();
     testORIG();
-   // testSTRINGZ();
+//    testSTRINGZ();
 
     printf("\nTests completed successfully");
 

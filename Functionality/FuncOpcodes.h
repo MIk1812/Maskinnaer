@@ -54,6 +54,33 @@ void writeIntBits(char* output, int intToWrite, int lastIndex, int numberOfBits)
 
 }
 
+void writeLabelBits(LineInfo li, int labelIndex, int labelBits, int lastIndex){
+
+    //Isolate label from input
+    char* inputLabel = (char*) calloc(1, sizeof(char) * li.lineLength);
+    isolateChars(li.input, labelIndex + li.firstIndex, li.lineLength, inputLabel);
+
+    int matchIndex = NULL;
+
+    //Go through labels to find match
+    for (int i = 0; i < li.symbolTable.numberOfLabels; ++i) {
+
+        char* currentLabel = *(li.symbolTable.labels + i);
+
+        //If we have a match
+        if(strcmp(currentLabel, inputLabel) == 0){
+            matchIndex = i;
+            break;
+        }
+    }
+
+    int addOfLabel = li.symbolTable.locations[matchIndex];
+    int pcOffset = addOfLabel - li.lineCount - 1;
+
+    writeIntBits(li.output, pcOffset, lastIndex, labelBits);
+
+}
+
 void nzp_Operation(char* input, char* output, int firstIndex){
 
     for (int j = 2+firstIndex; j < 5+firstIndex ; ++j) {
@@ -110,33 +137,6 @@ int charsToInt(char* input, int firstIndex, int maxLength){
         return out;
 
     }
-}
-
-void writeLabelBits(LineInfo li, int labelIndex, int labelBits, int lastIndex){
-
-    //Isolate label from input
-    char* inputLabel = (char*) calloc(1, sizeof(char) * li.lineLength);
-    isolateChars(li.input, labelIndex + li.firstIndex, li.lineLength, inputLabel);
-
-    int matchIndex = NULL;
-
-    //Go through labels to find match
-    for (int i = 0; i < li.symbolTable.numberOfLabels; ++i) {
-
-        char* currentLabel = *(li.symbolTable.labels + i);
-
-        //If we have a match
-        if(strcmp(currentLabel, inputLabel) == 0){
-            matchIndex = i;
-            break;
-        }
-    }
-
-    int addOfLabel = li.symbolTable.locations[matchIndex];
-    int pcOffset = addOfLabel - li.lineCount - 1;
-
-    writeIntBits(li.output, pcOffset, lastIndex, labelBits);
-
 }
 
 int singleCharToInt (char* input, int firstIndex){

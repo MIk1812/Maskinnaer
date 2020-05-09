@@ -21,13 +21,17 @@ void testRET(){
 void testRET1(){
 
     char* testID = "RET1";
-    char* input = "RET";
-    char* output = (char*) calloc(1, sizeof(char) * 17);
 
-    RET(input, output);
+    LineInfo li;
+    li.input = "RET";
+    li.output = (char*) calloc(1, sizeof(char) * 17);
+    li.firstIndex = 0;
+    li.lineLength = 30;
+
+    RET(li);
     char* expected = "1100000111000000";
 
-    equals(output, expected, testID);
-    free(output);
+    equals(li.output, expected, testID);
+    free(li.output);
 
 }

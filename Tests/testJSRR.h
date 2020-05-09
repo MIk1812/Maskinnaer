@@ -23,28 +23,36 @@ void testJSRR(){
 void testJSRR1(){
 
     char* testID = "JSRR1";
-    char* input = "JSRR R4";
-    char* output = (char*) calloc(1, sizeof(char) * 17);
 
-    JSRR(input, output,0);
+    LineInfo li;
+    li.input = "JSRR R4";
+    li.output = (char*) calloc(1, sizeof(char) * 17);
+    li.firstIndex = 0;
+    li.lineLength = 30;
+
+    JSRR(li);
     char* expected = "0100000100000000";
 
-    equals(output, expected, testID);
-    free(output);
+    equals(li.output, expected, testID);
+    free(li.output);
 
 }
 
 
 void testJSRR2(){
 
-    char* testID = "JSRR2";
-    char* input = "JSRR R7";
-    char* output = (char*) calloc(1, sizeof(char) * 17);
+    char* testID = "JSRR1";
 
-    JSRR(input, output,0);
+    LineInfo li;
+    li.input = "JSRR R7";
+    li.output = (char*) calloc(1, sizeof(char) * 17);
+    li.firstIndex = 0;
+    li.lineLength = 30;
+
+    JSRR(li);
     char* expected = "0100000111000000";
 
-    equals(output, expected, testID);
-    free(output);
+    equals(li.output, expected, testID);
+    free(li.output);
 
 }

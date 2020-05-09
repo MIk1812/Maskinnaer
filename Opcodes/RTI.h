@@ -10,14 +10,14 @@
 #pragma once
 #include "../Functionality/FuncOpcodes.h"
 
-void RTI(char* input, char* output,int firstIndex){
+void RTI(LineInfo li){
 
     //RTI
 
     char* str = "1000000000000000";
 
     for (int i = 0; i < 16; ++i) {
-        output[i] = *(str+i);
+        li.output[i] = *(str+i);
     }
 
 }
