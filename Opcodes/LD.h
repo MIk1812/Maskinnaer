@@ -23,9 +23,9 @@ void LD(LineInfo li){
     //LD R1, LABEL
 
     int regIndex = 4;
-    int pcOffsetIndex = 7;
-    int pcOffsetLength = 4;
-    int pcOffsetBits = 9;
+    int labelIndexInput = 7;
+    int labelLengthInput = 4;
+    int labelBitsOutput = 9;
     int lastIndex = 15;
 
     li.output[0] = '0';
@@ -37,17 +37,17 @@ void LD(LineInfo li){
 
     writeRegBits(li.output, reg, regIndex);
 
-    char labelOrNot = li.input[li.firstIndex + pcOffsetIndex];
+    char labelOrNot = li.input[li.firstIndex + labelIndexInput];
 
     //Test wether or not instruction contains label reference
     if(labelOrNot == '#' || labelOrNot == 'x' || labelOrNot == 'X'){
 
-        int pcOffset = charsToInt(li.input, pcOffsetIndex + li.firstIndex, pcOffsetLength);
-        writeIntBits(li.output, pcOffset, lastIndex, pcOffsetBits);
+        int pcOffset = charsToInt(li.input, labelIndexInput + li.firstIndex, labelLengthInput);
+        writeIntBits(li.output, pcOffset, lastIndex, labelBitsOutput);
 
     } else{
 
-        writeLabelBits(li, pcOffsetIndex, pcOffsetBits, lastIndex);
+        writeLabelBits(li, labelIndexInput, labelBitsOutput, lastIndex);
     }
 }
 

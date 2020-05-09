@@ -16,9 +16,9 @@ void LEA(LineInfo li){
     //LEA R1, #10
 
     int regIndex = 5;
-    int pcOffsetIndex = 8;
-    int pcOffsetLength = 4;
-    int pcOffsetBits = 9;
+    int labelIndexInput = 8;
+    int labelLengthInput = 4;
+    int labelBitsOutput = 9;
     int lastIndex = 15;
 
     li.output[0] = '1';
@@ -29,45 +29,20 @@ void LEA(LineInfo li){
 
     char regDst = li.input[regIndex+li.firstIndex];
 
-    writeRegBits(li.output, regDst, pcOffsetLength);
+    writeRegBits(li.output, regDst, labelLengthInput);
 
-    char labelOrNot = li.input[li.firstIndex + pcOffsetIndex];
+    char labelOrNot = li.input[li.firstIndex + labelIndexInput];
 
     //Test wether or not instruction contains label reference
     if(labelOrNot == '#' || labelOrNot == 'x' || labelOrNot == 'X'){
 
-        int pcOffset = charsToInt(li.input, 8 + li.firstIndex, pcOffsetLength);
-        writeIntBits(li.output, pcOffset, lastIndex, pcOffsetBits);
+        int pcOffset = charsToInt(li.input, 8 + li.firstIndex, labelLengthInput);
+        writeIntBits(li.output, pcOffset, lastIndex, labelBitsOutput);
 
     } else{
 
-        writeLabelBits(li, pcOffsetIndex, pcOffsetBits, lastIndex);
+        writeLabelBits(li, labelIndexInput, labelBitsOutput, lastIndex);
 
-//        //Isolate label from input
-//        char* inputLabel = (char*) calloc(1, sizeof(char) * li.lineLength);
-//        isolateChars(li.input,  8 + li.firstIndex, li.lineLength, inputLabel);
-//
-//        int matchIndex = NULL;
-//
-//        //Go through labels to find match
-//        for (int i = 0; i < li.symbolTable.numberOfLabels; ++i) {
-//
-//            char* currentLabel = *(li.symbolTable.labels + i);
-//
-//            //If we have a match
-//            if(strcmp(currentLabel, inputLabel) == 0){
-//                matchIndex = i;
-//                break;
-//            }
-//        }
-//
-//        int addOfLabel = li.symbolTable.locations[matchIndex];
-//        int pcOffset = addOfLabel - li.lineCount - 1;
-//
-//        writeIntBits(li.output, pcOffset, 15, 9);
     }
-
-
-
 
 }

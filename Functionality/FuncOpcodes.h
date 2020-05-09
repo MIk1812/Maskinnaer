@@ -104,7 +104,7 @@ int charsToInt(char* input, int firstIndex, int maxLength){
     } else {
 
         //Convert PC Offset to int
-        int out = (int)strtol(temp, NULL, 16);
+        int out = (int) strtol(temp, NULL, 16);
         free(temp);
 
         return out;

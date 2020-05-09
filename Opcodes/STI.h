@@ -15,9 +15,9 @@ void STI(LineInfo li) {
 
     int regIndexInput = 5;
     int regIndexOutput = 4;
-    int pcOffsetIndex = 8;
-    int pcOffsetLength = 4;
-    int pcOffsetBits = 9;
+    int labelIndexInput = 8;
+    int labelLengthInput = 4;
+    int labelBitsOutput = 9;
     int lastIndex = 15;
 
     li.output[0] = '1';
@@ -29,16 +29,16 @@ void STI(LineInfo li) {
 
     writeRegBits(li.output, reg, regIndexOutput);
 
-    char labelOrNot = li.input[li.firstIndex + pcOffsetIndex];
+    char labelOrNot = li.input[li.firstIndex + labelIndexInput];
 
     //Test wether or not instruction contains label reference
     if(labelOrNot == '#' || labelOrNot == 'x' || labelOrNot == 'X'){
 
-        int pcOffset = charsToInt(li.input, pcOffsetIndex + li.firstIndex, pcOffsetLength);
-        writeIntBits(li.output, pcOffset, lastIndex, pcOffsetBits);
+        int pcOffset = charsToInt(li.input, labelIndexInput + li.firstIndex, labelLengthInput);
+        writeIntBits(li.output, pcOffset, lastIndex, labelBitsOutput);
 
     } else{
 
-        writeLabelBits(li, pcOffsetIndex, pcOffsetBits, lastIndex);
+        writeLabelBits(li, labelIndexInput, labelBitsOutput, lastIndex);
     }
 }

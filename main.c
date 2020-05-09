@@ -177,7 +177,7 @@ int main() {
                 STI(li);
                 break;
             case 571704:
-                STR(input, output,firstIndex);
+                STR(li);
                 break;
             case 503644:
                 JSR(input, output);
