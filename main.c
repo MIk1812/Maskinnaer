@@ -13,6 +13,9 @@
 #include "Opcodes/LDR.h"
 #include "Opcodes/LDI.h"
 #include "Pseudo-Ops/ORIG.h"
+#include "Pseudo-Ops/FILL.h"
+#include "Pseudo-Ops/BLKW.h"
+#include "Pseudo-Ops/END.h"
 
 #define inputSize 30
 #define outputSize 16
@@ -79,7 +82,8 @@ int main() {
         char* output = (char*) calloc(1, outputSize +1);
 
         //char* input = takeInput();
-        char* input = readNextLine(inStream, inputSize, &exit);
+        char *input = readNextLine(inStream, inputSize, &exit);
+        int blocks = 0;
 
         //If we have any labels, change firstIndex accordingly
         if(numberOfLabels > 0 ){
@@ -115,6 +119,15 @@ int main() {
             case 16834896: //.END
             case -823617216: //.STRINGZ
 
+            case 1357706560:
+                FILL(input, output);
+                break;
+            case 1505552400:
+                blocks = BLKW(input, output);
+                break;
+            case 168348960:
+                END(input, &exit);
+                break;
             case 423776:
                 LDR(input, output);
                 break;
@@ -150,10 +163,10 @@ int main() {
                 ST(input, output);
                 break;
             case 508956:
-                STI(input,output);
+                STI(input, output);
                 break;
             case 571704:
-                STR(input,output);
+                STR(input, output);
                 break;
             case 503644:
                 JSR(input, output);
@@ -179,15 +192,26 @@ int main() {
         }
 
         printf("\n%s", input);
-        if(exit == 1) printf("\n");
-        printf("%s\n", output);
+        if (exit == 1) printf("\n");
 
-        fprintf(outputStream, "%s\n", output);
+        if (blocks > 0) {
+            for (int i = 0; i < blocks ; ++i) {
+                printf("%s\n", output);
+
+                fprintf(outputStream, "%s\n", output);
+            }
+
+    }else{
+            printf("%s\n", output);
+
+            fprintf(outputStream, "%s\n", output);
+        }
 
         lineCount++;
 
         free(input);
         free(output);
+        blocks = 0;
 
     }
 
