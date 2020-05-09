@@ -16,8 +16,8 @@
 #include "Pseudo-Ops/FILL.h"
 #include "Pseudo-Ops/BLKW.h"
 #include "Pseudo-Ops/END.h"
-#include "Structs.h"
 #include "Pseudo-Ops/STRINGZ.h"
+#include "Structs.h"
 
 #define inputSize 30
 #define outputSize 16
@@ -141,14 +141,14 @@ int main() {
                 END(input, &exit, firstIndex);
                 break;
             case -823617216 :
-                STRINGZ(input, output, outputStream,inputSize,firstIndex);
+                STRINGZ(input, output, outputStream, inputSize, firstIndex);
                 break;
                 //LDR
             case 423776:
                 LDR(input, output,firstIndex);
                 break;
             case 377264:
-                LDI(input, output,firstIndex);
+                LDI(li);
                 break;
             case 340860:
                 LEA(li);

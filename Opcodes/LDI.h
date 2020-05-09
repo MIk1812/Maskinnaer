@@ -10,21 +10,38 @@
 
 #include "../Functionality/FuncOpcodes.h"
 
-void LDI(char* input, char* output, int firstIndex) {
+void LDI(LineInfo li) {
 
     //LDI R1, #10
+    //LDI R1, LABEL
 
-    output[0] = '1';
-    output[1] = '0';
-    output[2] = '1';
-    output[3] = '0';
+    int regIndexInput = 5;
+    int regIndexOutput = 4;
+    int labelIndexInput = 8;
+    int labelLengthInput = 4;
+    int labelBitsOutput = 9;
+    int lastIndex = 15;
 
-    char regDst = input[5+firstIndex];
+    li.output[0] = '1';
+    li.output[1] = '0';
+    li.output[2] = '1';
+    li.output[3] = '0';
 
-    writeRegBits(output, regDst, 4);
+    char regDst = li.input[regIndexInput + li.firstIndex];
 
-    int pcOffset = charsToInt(input, 8+firstIndex, 4);
+    writeRegBits(li.output, regDst, regIndexOutput);
 
-    writeIntBits(output, pcOffset, 15, 9);
+    char labelOrNot = li.input[li.firstIndex + labelIndexInput];
+
+    //Test wether or not instruction contains label reference
+    if(labelOrNot == '#' || labelOrNot == 'x' || labelOrNot == 'X'){
+
+        int pcOffset = charsToInt(li.input, labelIndexInput + li.firstIndex, labelLengthInput);
+        writeIntBits(li.output, pcOffset, lastIndex, labelBitsOutput);
+
+    } else{
+
+        writeLabelBits(li, labelIndexInput, labelBitsOutput, lastIndex);
+    }
 
 }
