@@ -15,6 +15,7 @@
 #include "Pseudo-Ops/ORIG.h"
 #include "Pseudo-Ops/FILL.h"
 #include "Pseudo-Ops/BLKW.h"
+#include "Pseudo-Ops/END.h"
 
 #define inputSize 30
 #define outputSize 16
@@ -34,12 +35,13 @@ int main() {
     }
 
     int exit = 0;
-    while(exit == 0){
+    while(exit == 0) {
 
-        char* output = (char*) calloc(1, outputSize +1);
+        char *output = (char *) calloc(1, outputSize + 1);
 
         //char* input = takeInput();
-        char* input = readNextLine(inStream, inputSize, &exit);
+        char *input = readNextLine(inStream, inputSize, &exit);
+        int blocks = 0;
 
         //Multiply the ASCII values of the opcode's characters in order to differentiate them
         int sum = 1;
@@ -47,112 +49,117 @@ int main() {
 
             //Until first blank space
             //grund til at vi tjekker ekstra input er fordi vi bare har brug for summen af BR og ikke ekstra input som n / z / p.
-            if(input[i] == ' '|| input[i] == 110 || input[i] == 122 || input[i] == 112 || input[i] == '\0')
+            if (input[i] == ' ' || input[i] == 110 || input[i] == 122 || input[i] == 112 || input[i] == '\0')
                 break;
 
-            int toMultiply = *(input+i);
+            int toMultiply = *(input + i);
             sum = sum * toMultiply;
 
         }
 
         //Identify opcode
-        switch(sum){
+        switch (sum) {
 
             //.ORIG
             case 1544471804:
                 ORIG(input, output);
                 break;
 
-            //.FILL
+                //.FILL
             case 1357706560:
-                FILL(input,output);
-                break;
-            //.BLKW
-            case 1505552400:
-                BLKW(input,output);
+                FILL(input, output);
                 break;
 
-            //LDR
+                //.BLKW
+            case 1505552400:
+                blocks = BLKW(input, output);
+                break;
+
+                //.END
+            case 168348960:
+                END(input, &exit);
+                break;
+                //LDR
             case 423776:
                 LDR(input, output);
                 break;
 
-            //LDI
+                //LDI
             case 377264:
                 LDI(input, output);
                 break;
 
-            //LEA
+                //LEA
             case 340860:
                 LEA(input, output);
                 break;
 
-            //LD
+                //LD
             case 5168:
                 LD(input, output);
                 break;
 
-            //ADD
+                //ADD
             case 300560:
                 ADD(input, output);
                 break;
 
-            //NOT
+                //NOT
             case 517608:
                 NOT(input, output);
                 break;
 
-            //BR
+                //BR
             case 5412:
                 BR(input, output);
                 break;
 
-            //ST
+                //ST
             case 6972:
                 ST(input, output);
                 break;
 
-            //STI
+                //STI
             case 508956:
-                STI(input,output);
+                STI(input, output);
                 break;
 
-            //STR
+                //STR
             case 571704:
-                STR(input,output);
+                STR(input, output);
                 break;
 
-            //JSR
+                //JSR
             case 503644:
                 JSR(input, output);
                 break;
 
-            //JSRR
+                //JSRR
             case 41298808:
                 JSRR(input, output);
                 break;
 
-            //JMP
+                //JMP
             case 455840:
                 JMP(input, output);
                 break;
 
-            //RET
+                //RET
             case 475272:
                 RET(input, output);
                 break;
 
-            //RTI
+                //RTI
             case 502824:
                 RTI(input, output);
                 break;
 
-            //AND
+                //AND
             case 344760:
                 ADD(input, output);
                 break;
 
-            //TRAP
+                //TRAP
             case 35817600:
                 TRAP(input, output);
                 break;
@@ -160,13 +167,24 @@ int main() {
         }
 
         printf("\n%s", input);
-        if(exit == 1) printf("\n");
-        printf("%s\n", output);
+        if (exit == 1) printf("\n");
 
-        fprintf(outputStream, "%s\n", output);
+        if (blocks > 0) {
+            for (int i = 0; i < blocks ; ++i) {
+                printf("%s\n", output);
+
+                fprintf(outputStream, "%s\n", output);
+            }
+
+    }else{
+            printf("%s\n", output);
+
+            fprintf(outputStream, "%s\n", output);
+        }
 
         free(input);
         free(output);
+        blocks = 0;
 
     }
 

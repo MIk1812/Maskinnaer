@@ -22,6 +22,6 @@ int BLKW(char* input, char* output){
 
 
     int memoryBlocks = charsToInt(input, xorhash, 6);
+    writeIntBits(output, 0, 15, 16);
     return memoryBlocks;
-
 }
