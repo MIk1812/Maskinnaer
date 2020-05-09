@@ -27,6 +27,8 @@
 
 int main() {
 
+    //todo brugerinterface?
+
     testEverything();
 
     //Find number of labels in file
@@ -51,6 +53,7 @@ int main() {
         createSymbolTable(fileIn, inputSize, labels, locations);
     }
 
+    //todo integrer når psedoups er færdige
     SymbolTable symbolTable;
     symbolTable.labels = labels;
     symbolTable.numberOfLabels = numberOfLabels;
@@ -209,6 +212,7 @@ int main() {
                 break;
         }
 
+        //todo slet udskrifter
         //todo hvad er -823617216
         if (sum != -823617216) {
 //            printf("\n%s", input);
