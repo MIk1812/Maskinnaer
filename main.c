@@ -172,7 +172,7 @@ int main() {
             case 660264:
             case 73949568:
             case 606144:
-                BR(input, output, firstIndex);
+                BR(li);
                 break;
 
             case 6972:

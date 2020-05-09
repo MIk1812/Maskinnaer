@@ -10,24 +10,46 @@
 
 #include "../Functionality/FuncOpcodes.h"
 
-void BR(char* input, char* output, int firstIndex) {
-    output[0] = '0';
-    output[1] = '0';
-    output[2] = '0';
-    output[3] = '0';
+void BR(LineInfo li) {
+
+    //BRnpz #10
+    //BRnzp LABEL
+
+    int labelLengthInput = 5;
+    int labelBitsOutput = 9;
+    int lastIndex = 15;
+
+    li.output[0] = '0';
+    li.output[1] = '0';
+    li.output[2] = '0';
+    li.output[3] = '0';
 
     // set correct operation bit n,z,p
-    nzp_Operation(input, output,firstIndex);
-    int count = 0; // count til '#' to read where pcoff begins.
-    for (int i = 0; i < 30 ; ++i) {
-        if(input[i] =='#')
-            break;
-        count++;
-    }
-    char labelOrNot = input[count];
+    nzp_Operation(li.input, li.output,li.firstIndex);
 
-    if(labelOrNot == '#') {
-        int pcoff = charsToInt(input, count, 4);
-        writeIntBits(output, pcoff, 15, 9);
+    // labelIndexInput to record where pcoff/label begins
+    int labelIndexInput = 0;
+
+    for (int i = li.firstIndex; i < li.lineLength ; ++i) {
+
+        if( (li.input[i]) == ' '){
+            labelIndexInput++;
+            break;
+        }
+        labelIndexInput++;
     }
+
+    char labelOrNot = li.input[li.firstIndex + labelIndexInput];
+
+    //Test wether or not instruction contains label reference
+    if(labelOrNot == '#' || labelOrNot == 'x' || labelOrNot == 'X'){
+
+        int pcOffset = charsToInt(li.input, labelIndexInput + li.firstIndex, labelLengthInput);
+        writeIntBits(li.output, pcOffset, lastIndex, labelBitsOutput);
+
+    } else{
+
+        writeLabelBits(li, labelIndexInput, labelBitsOutput, lastIndex);
+    }
+
 }
