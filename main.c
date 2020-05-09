@@ -127,7 +127,7 @@ int main() {
                 END(input, &exit,firstIndex);
                 break;
             case -823617216 :
-                STRINGZ(input, output, outputStream,firstIndex);
+                STRINGZ(input, output, outputStream,firstIndex,lineCount-1);
                 break;
                 //LDR
             case 423776:
@@ -209,16 +209,18 @@ int main() {
             printf("%s\n", output);
             fprintf(outputStream, "%s\n", output);
         }
+            }
 
-            lineCount++;
+            (lineCount++);
 
 
             free(input);
             free(output);
             blocks = 0;
 
-        }
+
     }
         free(labels);
         free(locations);
+        printf("%d",lineCount);
 }

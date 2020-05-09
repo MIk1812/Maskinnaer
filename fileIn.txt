@@ -9,6 +9,7 @@ STR R1, R2, #5
 TRAP x22
 kl TRAP x22
 po STR R1, R2, #5
+Label .STRINGZ "ME My"
 boss ST R1, R2, #5
 kj .FILL #5
 kjkk .FILL #5
