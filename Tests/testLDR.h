@@ -24,7 +24,7 @@ void testLDR(){
 
 void testLDR1(){
 
-    char* testID = "LDR2";
+    char* testID = "LDR1";
 
     LineInfo li;
     li.input = "LDR R1, R2, #29";

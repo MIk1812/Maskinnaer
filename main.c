@@ -185,7 +185,7 @@ int main() {
                 STR(li);
                 break;
             case 503644:
-                JSR(input, output,firstIndex);
+                JSR(li);
                 break;
             case 41298808:
                 JSRR(input, output,firstIndex);

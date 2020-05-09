@@ -42,7 +42,7 @@ void testSTI1(){
 
 void testSTI2(){
 
-    char* testID = "STI1";
+    char* testID = "STI2";
 
     LineInfo li;
     li.input = "STI R1, #-3";
