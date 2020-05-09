@@ -114,9 +114,6 @@ int main() {
                 ORIG(input, output);
                 break;
 
-            case 1357706560: //.FILL
-            case 1505552400: //.BLKW
-            case 16834896: //.END
             case -823617216: //.STRINGZ
 
             case 1357706560:
