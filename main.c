@@ -174,7 +174,7 @@ int main() {
                 ST(li);
                 break;
             case 508956:
-                STI(input, output,firstIndex);
+                STI(li);
                 break;
             case 571704:
                 STR(input, output,firstIndex);
