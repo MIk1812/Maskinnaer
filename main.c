@@ -17,12 +17,12 @@
 #include "Pseudo-Ops/BLKW.h"
 #include "Pseudo-Ops/END.h"
 #include "Pseudo-Ops/STRINGZ.h"
-#include "Structs.h"
+#include "Functionality/Structs.h"
 
 #define inputSize 30
 #define outputSize 16
-#define fileIn "../fileIn.txt"
-#define fileOut "../fileOut.txt"
+#define fileIn "../Files/fileIn.txt"
+#define fileOut "../Files/fileOut.txt"
 
 
 int main() {

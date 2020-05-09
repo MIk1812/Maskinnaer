@@ -10,7 +10,7 @@
 
 #include <string.h>
 
-#include "../Structs.h"
+#include "../Functionality/Structs.h"
 #include "../Functionality/FuncOpcodes.h"
 #include "../Functionality/FuncIO.h"
 
