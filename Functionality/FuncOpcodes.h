@@ -77,7 +77,7 @@ void nzp_Operation(char* input, char* output){
 //maxLength er tallets maximale længde tal som digits. Better safe than sorry.
 int charsToInt(char* input, int firstIndex, int maxLength){
 
-    char* temp = (char*) calloc(1,maxLength + 1);
+    char* temp = (char*) calloc(1,sizeof(char )*(maxLength + 1));
 
     //Isolate the chars from the input array.
     for (int i = 1; i < maxLength + 1; ++i) {

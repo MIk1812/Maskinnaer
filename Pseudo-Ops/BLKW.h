@@ -9,7 +9,7 @@
 #include "../Functionality/FuncOpcodes.h"
 
 
-int BLKW(char* input, char* output){
+int BLKW(char* input, char* output,int firstInt){
 
     // Calculates the place of dot
     int xorhash = 0;

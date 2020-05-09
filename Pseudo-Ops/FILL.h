@@ -10,7 +10,7 @@
 #include "../Functionality/FuncOpcodes.h"
 
 
-void FILL(char* input, char* output){
+void FILL(char* input, char* output,int firstInt){
 
     // Calculates the place of dot
     int xorhash = 0;
@@ -22,7 +22,7 @@ void FILL(char* input, char* output){
     }
 
 
-    int pcOffset = charsToInt(input, xorhash, 6);
+    int pcOffset = charsToInt(input, xorhash+firstInt, 6);
 
     writeIntBits(output, pcOffset, 15, 16);
 
