@@ -10,7 +10,7 @@
 #pragma once
 #include "../Functionality/FuncOpcodes.h"
 
-void RTI(char* input, char* output){
+void RTI(char* input, char* output,int firstIndex){
 
     //RTI
 
