@@ -127,7 +127,7 @@ int main() {
                 END(input, &exit,firstIndex);
                 break;
             case -823617216 :
-                STRINGZ(input, output, outputStream,firstIndex,lineCount-1);
+                STRINGZ(input, output, outputStream,inputSize,firstIndex);
                 break;
                 //LDR
             case 423776:
@@ -199,9 +199,10 @@ int main() {
 
 
             if (blocks > 0) {
+               // lineCount = lineCount-1;
+               int getlines = 0;
                 for (int i = 0; i < blocks; ++i) {
                     printf("%s\n", output);
-
                     fprintf(outputStream, "%s\n", output);
                 }
 
@@ -210,9 +211,8 @@ int main() {
             fprintf(outputStream, "%s\n", output);
         }
             }
-
-            (lineCount++);
-
+        lineCount = lineCount + blocks;
+        lineCount++;
 
             free(input);
             free(output);
