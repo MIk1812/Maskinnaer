@@ -24,7 +24,7 @@ void testST1(){
 
     char* testID = "ST1";
     char* input = "ST R1, #3";
-    char* output = (char*) calloc(1, 17);
+    char* output = (char*) calloc(1, sizeof(char) * 17);
 
     ST(input, output,NULL);
     char* expected = "0011001000000011";
@@ -38,7 +38,7 @@ void testST2(){
 
     char* testID = "ST2";
     char* input = "ST R1, #-3";
-    char* output = (char*) calloc(1, 17);
+    char* output = (char*) calloc(1, sizeof(char) * 17);
 
     ST(input, output,NULL);
     char* expected = "0011001111111101";

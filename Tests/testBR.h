@@ -24,7 +24,7 @@ void testBR1(){
 
     char* testID = "BR1";
     char* input = "BRnzp #10";
-    char* output = (char*) calloc(1, 17);
+    char* output = (char*) calloc(1, sizeof(char) * 17);
 
     BR(input, output,0);
     char* expected = "0000111000001010";
@@ -38,7 +38,7 @@ void testBR2(){
 
     char* testID = "BR2";
     char* input = "BRnz #10";
-    char* output = (char*) calloc(1, 17);
+    char* output = (char*) calloc(1, sizeof(char) * 17);
 
     BR(input, output,0);
     char* expected = "0000110000001010";

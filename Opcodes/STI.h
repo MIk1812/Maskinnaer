@@ -9,6 +9,8 @@
 #endif //PROJEKT2_STI_H
 #include "../Functionality/FuncOpcodes.h"
 void STI(char* input, char* output,int firstIndex) {
+
+
     output[0] = '1';
     output[1] = '0';
     output[2] = '1';

@@ -22,7 +22,7 @@ void FILL(char* input, char* output,int firstInt){
     }
 
 
-    int pcOffset = charsToInt(input, xorhash+firstInt, 6);
+    int pcOffset = charsToInt(input, xorhash, 6);
 
     writeIntBits(output, pcOffset, 15, 16);
 

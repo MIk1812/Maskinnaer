@@ -25,7 +25,7 @@ void testLDI1(){
 
     char* testID = "LDI1";
     char* input = "LDI R7, #212";
-    char* output = (char*) calloc(1, 17);
+    char* output = (char*) calloc(1, sizeof(char) * 17);
 
     LDI(input, output,0);
     char* expected = "1010111011010100";
@@ -39,7 +39,7 @@ void testLDI2(){
 
     char* testID = "LDI2";
     char* input = "LDI R3, #-193";
-    char* output = (char*) calloc(1, 17);
+    char* output = (char*) calloc(1, sizeof(char) * 17);
 
     LDI(input, output,0);
     char* expected = "1010011100111111";

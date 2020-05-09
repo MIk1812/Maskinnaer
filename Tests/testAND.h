@@ -26,7 +26,7 @@ void testAND1(){
 
     char* testID = "AND1";
     char* input = "AND R1, R2, R3";
-    char* output = (char*) calloc(1, 17);
+    char* output = (char*) calloc(1, sizeof(char) * 17);
 
     AND(input, output, 0);
     char* expected = "0101001010000011";
@@ -40,7 +40,7 @@ void testAND2(){
 
     char* testID = "AND2";
     char* input = "AND R1, R2, #10";
-    char* output = (char*) calloc(1, 17);
+    char* output = (char*) calloc(1, sizeof(char) * 17);
 
     AND(input, output, 0);
     char* expected = "0101001010101010";
@@ -54,7 +54,7 @@ void testAND3(){
 
     char* testID = "AND3";
     char* input = "AND R1, R2, #-10";
-    char* output = (char*) calloc(1, 17);
+    char* output = (char*) calloc(1, sizeof(char) * 17);
 
     AND(input, output, 0);
     char* expected = "0101001010110110";
