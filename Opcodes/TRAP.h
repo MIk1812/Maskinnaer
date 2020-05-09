@@ -10,7 +10,7 @@
 #pragma once
 #include "../Functionality/FuncOpcodes.h"
 
-void TRAP(char* input, char* output){
+void TRAP(char* input, char* output,int firstIndex){
 
     //TRAP x22
     //TRAP #34
@@ -25,7 +25,7 @@ void TRAP(char* input, char* output){
     output[6] = '0';
     output[7] = '0';
 
-    int pcOffset = charsToInt(input, 5, 4);
+    int pcOffset = charsToInt(input, 5+firstIndex, 4);
 
     writeIntBits(output, pcOffset, 15, 8);
 

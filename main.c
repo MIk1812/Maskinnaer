@@ -75,33 +75,34 @@ int main() {
 
 
     //Until EOF
-    while(exit == 0) {
+    while(exit == 0){
 
         //Marks the index of the opcode
         int firstIndex = 0;
 
-        char *output = (char *) calloc(1, outputSize + 1);
+        char* output = (char*) calloc(1, outputSize +1);
 
         //char* input = takeInput();
         char *input = readNextLine(inStream, inputSize, &exit);
         int blocks = 0;
 
         //If we have any labels, change firstIndex accordingly
-        if (numberOfLabels > 0) {
+        if(numberOfLabels > 0 ){
 
             //If we are currently on a line with a label referencing it
-            if (lineCount == *(locations + labelCount)) {
+            if(lineCount == *(locations + labelCount)){
 
                 labelCount++;
 
                 //Skip the label via firstIndex
-                do {
+                do{
                     char currentChar = input[firstIndex];
-                    if (currentChar == ' ' || currentChar == '\0' || currentChar == '\n') {
+                    if(currentChar == ' ' || currentChar == '\0' || currentChar == '\n'){
                         firstIndex++;
                         break;
-                    } else firstIndex++;
-                } while (true);
+                    }
+                    else firstIndex++;
+                } while(true);
             }
         }
 
@@ -109,7 +110,7 @@ int main() {
         int sum = multiplyChars(input, firstIndex, inputSize);
 
         //Identify opcode
-        switch (sum) {
+        switch(sum){
             case 1544471804:
                 ORIG(input, output);
                 break;
@@ -136,7 +137,7 @@ int main() {
                 LDI(input, output,firstIndex);
                 break;
             case 340860:
-                LEA(input, output);
+                LEA(input, output,firstIndex);
                 break;
             case 5168:
                 LD(input, output, firstIndex, labels, numberOfLabels, locations, inputSize);
@@ -145,7 +146,7 @@ int main() {
                 ADD(input, output, firstIndex);
                 break;
             case 517608:
-                NOT(input, output);
+                NOT(input, output,firstIndex);
                 break;
 
                 //Various BR(nzp) statements
@@ -161,13 +162,13 @@ int main() {
                 break;
 
             case 6972:
-                ST(input, output);
+                ST(input, output,firstIndex);
                 break;
             case 508956:
-                STI(input, output);
+                STI(input, output,firstIndex);
                 break;
             case 571704:
-                STR(input, output);
+                STR(input, output,firstIndex);
                 break;
             case 503644:
                 JSR(input, output,firstIndex);
@@ -182,10 +183,10 @@ int main() {
                 RET(input, output);
                 break;
             case 502824:
-                RTI(input, output);
+                RTI(input, output,firstIndex);
                 break;
             case 35817600:
-                TRAP(input, output);
+                TRAP(input, output,firstIndex);
                 break;
             case 344760:
                 AND(input, output, firstIndex);
@@ -204,11 +205,10 @@ int main() {
                     fprintf(outputStream, "%s\n", output);
                 }
 
-            } else {
-                printf("%s\n", output);
-
-                fprintf(outputStream, "%s\n", output);
-            }
+    }else{
+            printf("%s\n", output);
+            fprintf(outputStream, "%s\n", output);
+        }
 
             lineCount++;
 
@@ -219,10 +219,8 @@ int main() {
 
         }
     }
-
-    free(labels);
-    free(locations);
-
+       // free(labels);
+       // free(locations);
 }
 
 

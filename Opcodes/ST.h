@@ -8,16 +8,16 @@
 
 #endif //PROJEKT2_ST_H
 #include "../Functionality/FuncOpcodes.h"
-void ST(char* input, char* output){
+void ST(char* input, char* output, int firstIndex){
     output[0] = '0';
     output[1] = '0';
     output[2] = '1';
     output[3] = '1';
 
-    char reg = input[4];
+    char reg = input[4+firstIndex];
 
     writeRegBits(output, reg, 4);
-    int pcoff = charsToInt(input, 7, 4);
+    int pcoff = charsToInt(input, 7+firstIndex, 4);
     writeIntBits(output,pcoff,15,9);
 
 //    int LabelBits[9]={0,0,0,0,0,0,0,0,0};

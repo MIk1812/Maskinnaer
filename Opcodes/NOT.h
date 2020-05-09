@@ -8,7 +8,7 @@
 
 #endif //PROJEKT2_NOT_H
 
-void NOT(char input[], char output[]){
+void NOT(char input[], char output[],int fistIndex){
 
     // Opcode
     output[0] = '1';
@@ -17,11 +17,11 @@ void NOT(char input[], char output[]){
     output[3] = '1';
 
     //Register DR
-    char dr = input[5];
+    char dr = input[5+fistIndex];
     writeRegBits(output, dr, 4);
 
     //Register SR1
-    char sr1 = input[9];
+    char sr1 = input[9+fistIndex];
     writeRegBits(output, sr1, 7);
 
     output[10] = '1';
