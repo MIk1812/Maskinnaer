@@ -130,10 +130,10 @@ int main() {
                 LDI(input, output);
                 break;
             case 340860:
-                LEA(input, output,firstIndex, labels, numberOfLabels, locations, inputSize);
+                LEA(input, output,firstIndex, labels, numberOfLabels, locations, inputSize, lineCount);
                 break;
             case 5168:
-                LD(input, output, firstIndex, labels, numberOfLabels, locations, inputSize);
+                LD(input, output, firstIndex, labels, numberOfLabels, locations, inputSize, lineCount);
                 break;
             case 300560:
                 ADD(input, output, firstIndex);

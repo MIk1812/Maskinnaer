@@ -10,7 +10,7 @@
 
 #include "../Functionality/FuncOpcodes.h"
 
-void LEA(char* input, char* output, int firstIndex, char** labels, int numberOfLabels, int* locations, int inputSize){
+void LEA(char* input, char* output, int firstIndex, char** labels, int numberOfLabels, int* locations, int inputSize, int lineCount){
 
     //LEA R1, #10
 
@@ -51,7 +51,10 @@ void LEA(char* input, char* output, int firstIndex, char** labels, int numberOfL
             }
         }
 
-        writeIntBits(output, locations[matchIndex], 15, 9);
+        int addOfLabel = locations[matchIndex];
+        int pcOffset = addOfLabel - lineCount - 1;
+
+        writeIntBits(output, pcOffset, 15, 9);
     }
 
 

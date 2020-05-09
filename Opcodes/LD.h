@@ -13,7 +13,7 @@
 #include "../Functionality/FuncOpcodes.h"
 #include "../Functionality/FuncIO.h"
 
-void LD(char* input, char* output, int firstIndex, char** labels, int numberOfLabels, int* locations, int inputSize){
+void LD(char* input, char* output, int firstIndex, char** labels, int numberOfLabels, int* locations, int inputSize, int lineCount){
 
     //LD R1, #3
     //LD R1, x3
@@ -56,7 +56,10 @@ void LD(char* input, char* output, int firstIndex, char** labels, int numberOfLa
             }
         }
 
-        writeIntBits(output, locations[matchIndex], 15, 9);
+        int addOfLabel = locations[matchIndex];
+        int pcOffset = addOfLabel - lineCount - 1;
+
+        writeIntBits(output, pcOffset, 15, 9);
 
     }
 

@@ -12,13 +12,13 @@ JSR #932
 JSRR R4
 JSRR R4
 LD R1, #-3
-labelToSkip LD R1, labelADD
+labelToSkip LD R1, labelEND2
 LDI R7, #212
-LDI R7, #212
+labelEND2 LDI R7, #212
 LDR R1, R2, #29
 LDR R1, R2, #29
 LEA R1, #13
-labelToSkip LEA R1, labelADD
+labelToSkip LEA R1, labelEND2
 NOT R2, R1
 NOT R2, R1
 .ORIG x3000
@@ -34,4 +34,4 @@ STI R1, #-3
 STR R1, R3, #-3
 STR R1, R3, #-3
 TRAP #34
-TRAP #34
+labelEND TRAP #34

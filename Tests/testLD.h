@@ -12,18 +12,20 @@
 
 void testLD1();
 void testLD2();
-void testLD3();
+void testLD3(char** labels, int* locations);
 
 void testLD(){
 
     testLD1();
     testLD2();
 
-    char* label1 = "labelNotToUse";
-    char* label2 = "labelToUse";
+    char* label1 = "label3";
+    char* label2 = "label7";
     char** labels[] = {label1, label2};
 
-    int* locations = {3,7};
+    int* locations = (int*) malloc(sizeof(int) * 2);
+    locations[0] = 3;
+    locations[1] = 7;
 
     testLD3(labels, locations);
 
@@ -35,7 +37,7 @@ void testLD1(){
     char* input = "LD R1, #-3";
     char* output = (char*) calloc(1, sizeof(char) * 17);
 
-    LD(input, output, 0, NULL, 0, NULL, 30);
+    LD(input, output, 0, NULL, 0, NULL, 30, 0);
     char* expected = "0010001111111101";
 
     equals(output, expected, testID);
@@ -50,7 +52,7 @@ void testLD2(){
     char* input = "LD R1, #3";
     char* output = (char*) calloc(1, sizeof(char) * 17);
 
-    LD(input, output, 0, NULL, 0, NULL, 30);
+    LD(input, output, 0, NULL, 0, NULL, 30,0);
     char* expected = "0010001000000011";
 
     equals(output, expected, testID);
@@ -58,17 +60,17 @@ void testLD2(){
 
 }
 
+//Test labels
+void testLD3(char** labels, int locations[]){
 
-void testLD3(char** labels, int* locations){
+    char* testID = "LD3";
+    char* input = "label3 LD R1, label7";
+    char* output = (char*) calloc(1, sizeof(char) * 17);
 
-//    char* testID = "LD3";
-//    char* input = "labelNotToUse LD R1, labelToUse";
-//    char* output = (char*) calloc(1, sizeof(char) * 17);
-//
-//    LD(input, output, 14, labels, 2, locations, 30);
-//    char* expected = "0010001000000011";
-//
-//    equals(output, expected, testID);
-//    free(output);
+    LD(input, output, 7, labels, 2, locations, 30,4);
+    char* expected = "0010001000000010";
+
+    equals(output, expected, testID);
+    free(output);
 
 }
