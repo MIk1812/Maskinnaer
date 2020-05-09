@@ -28,36 +28,37 @@ void LD(char* input, char* output, int firstIndex, char** labels, int numberOfLa
 
     writeRegBits(output, reg, 4);
 
-
     char labelOrNot = input[firstIndex + 7];
 
-    //Test wether instructin constains label reference or not
-    if( labelOrNot == '#' || labelOrNot == 'x' || labelOrNot == 'X'){
+    //Test wether or not instruction contains label reference
+    if(labelOrNot == '#' || labelOrNot == 'x' || labelOrNot == 'X'){
 
         int pcOffset = charsToInt(input, 7 + firstIndex, 4);
         writeIntBits(output, pcOffset, 15, 9);
 
     } else{
 
-        //Isolate labels from input
-        char* inputLabel = isolateChars(input,  7 + firstIndex, inputSize);
+        //Isolate label from input
+        char* inputLabel = (char*) calloc(1, inputSize);
+        isolateChars(input,  7 + firstIndex, inputSize, inputLabel);
 
-//
-//
-//
-//        //Go through labels to find match
-//        for (int i = 0; i < numberOfLabels; ++i) {
-//
-//            char* currentLabel = *(labels+i);
-//
-//            //If we have a match
-//            if(strcmp(currentLabel, ))
-//
-//        }
+        int matchIndex = NULL;
+
+        //Go through labels to find match
+        for (int i = 0; i < numberOfLabels; ++i) {
+
+            char* currentLabel = *(labels + i);
+
+            //If we have a match
+            if(strcmp(currentLabel, inputLabel) == 0){
+                matchIndex = i;
+                break;
+            }
+        }
+
+        writeIntBits(output, locations[matchIndex], 15, 9);
 
     }
-
-
 
 }
 

@@ -38,7 +38,7 @@ int main() {
         labels = (char**) calloc(1, numberOfLabels);
 
         for (int i = 0; i < numberOfLabels; ++i) {
-            *(labels+i) = (char*) calloc(1, inputSize);
+            *(labels + i) = (char*) calloc(1, inputSize);
         }
 
         //To hold all the locations
@@ -50,7 +50,6 @@ int main() {
 
         createSymbolTable(fileIn, inputSize, labels, locations);
     }
-
 
     FILE *inStream;
     FILE *outputStream;
@@ -71,7 +70,6 @@ int main() {
 
     //To track how many labels we have passed
     int labelCount = 0;
-
 
     //Until EOF
     while(exit == 0){
@@ -198,9 +196,8 @@ int main() {
                 fprintf(outputStream, "%s\n", output);
             }
 
-    }else{
+        }else{
             printf("%s\n", output);
-
             fprintf(outputStream, "%s\n", output);
         }
 

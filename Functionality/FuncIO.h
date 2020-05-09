@@ -32,28 +32,28 @@ int countNumberOfLabels(char* filePath, int inputSize){
 
     FILE* inStream;
     inStream = fopen(filePath,"r");
-    char* str = (char*) calloc(1, inputSize);
 
     int count = 0;
 
     int statusEOF = 0;
     while(statusEOF == 0){
 
+        char* str = (char*) calloc(1, inputSize);
+
         char* nextLine = readNextLine(inStream, inputSize, &statusEOF);
         bool opcodeStatus = isLabel(nextLine, 0, inputSize, str);
 
         if(opcodeStatus)
             count++;
-    }
 
-    free(str);
+        free(str);
+    }
     return count;
 
 }
 
-char* isolateChars(char* string, int firstIndex, int inputSize){
-
-    char* out = (char*) calloc(1, inputSize);
+//The method return the string in stringToReturn
+void isolateChars(char* string, int firstIndex, int inputSize, char* stringToReturn){
 
     //First, copy the chars to stringTested
     for (int i = firstIndex; i < inputSize; ++i) {
@@ -62,17 +62,15 @@ char* isolateChars(char* string, int firstIndex, int inputSize){
         if(string[i] == ' ' || string[i] == '\0' || string[i] == '\n')
             break;
 
-        out[i-firstIndex] = string[i];
+        stringToReturn[i-firstIndex] = string[i];
     }
-
-    return out;
 }
 
 //The method also returns the chars it tests, and therefor requires char* stringTested
 bool isLabel(char* line, int firstIndex, int inputSize, char* stringTested){
 
     //First, copy the chars to stringTested
-    stringTested = isolateChars(line, firstIndex, inputSize);
+    isolateChars(line, firstIndex, inputSize, stringTested);
 
     //Multiply the ASCII values of the characters in the first word in order to differentiate them
     int product = multiplyChars(line, firstIndex, inputSize);
@@ -127,19 +125,22 @@ void createSymbolTable(char* filePath, int inputSize, char** labels, int* locati
     while(statusEOF == 0){
 
         char* currentLine = readNextLine(inStream, inputSize, &statusEOF);
-        char* currentLabel;
+        char* currentLabel = (char*) calloc(1, inputSize);
 
+        //If current line contains a label
         if( isLabel(currentLine, 0, inputSize, currentLabel) ){
 
+            //Record the lable's chars
             for (int i = 0; i < inputSize; ++i) {
                 *(*(labels + labelCounter)+i) = *(currentLabel+i);
             }
 
+            //And record the lineNumber
             *(locations + labelCounter) = lineNumber;
-
             labelCounter++;
         }
         lineNumber++;
+        free(currentLabel);
     }
 }
 
@@ -160,16 +161,15 @@ int multiplyChars(char* input, int firstIndex, int inputSize){
     return sum;
 }
 
-//todo slet
-//char* takeInput(int inputSize) {
-//
-//    char* input = (char*) calloc(1, inputSize + 1);
-//
-//    //Space for 30 characters. Scanf reads until \n
-//    scanf("%30[^\n]s", input);
-//
-//    //Clears line (\n)
-//    scanf("%*c");
-//
-//    return input;
-//}
+char* takeInput(int inputSize) {
+
+    char* input = (char*) calloc(1, inputSize + 1);
+
+    //Space for 30 characters. Scanf reads until \n
+    scanf("%30[^\n]s", input);
+
+    //Clears line (\n)
+    scanf("%*c");
+
+    return input;
+}
