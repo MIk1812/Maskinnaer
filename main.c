@@ -16,7 +16,6 @@
 #include "Pseudo-Ops/FILL.h"
 #include "Pseudo-Ops/BLKW.h"
 #include "Pseudo-Ops/END.h"
-
 #define inputSize 30
 #define outputSize 16
 #define fileIn "../fileIn.txt"
