@@ -61,7 +61,7 @@ void testLD2(){
 
 
 void testLD3(char** labels, int* locations){
-
+//
 //    char* testID = "LD3";
 //    char* input = "labelNotToUse LD R1, labelToUse";
 //    char* output = (char*) calloc(1, 17);

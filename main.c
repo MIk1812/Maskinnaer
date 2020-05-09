@@ -130,7 +130,7 @@ int main() {
                 LDI(input, output);
                 break;
             case 340860:
-                LEA(input, output,firstIndex);
+                LEA(input, output,firstIndex, labels, numberOfLabels, locations, inputSize);
                 break;
             case 5168:
                 LD(input, output, firstIndex, labels, numberOfLabels, locations, inputSize);

@@ -27,7 +27,7 @@ void testLEA1(){
     char* input = "LEA R1, #13";
     char* output = (char*) calloc(1, 17);
 
-    LEA(input, output,NULL);
+    LEA(input, output,0, NULL, 0, NULL, 30);
     char* expected = "1110001000001101";
 
     equals(output, expected, testID);
@@ -41,7 +41,7 @@ void testLEA2(){
     char* input = "LEA R3, #-26";
     char* output = (char*) calloc(1, 17);
 
-    LEA(input, output,NULL);
+    LEA(input, output,0, NULL, 0, NULL, 30);
     char* expected = "1110011111100110";
 
     equals(output, expected, testID);
