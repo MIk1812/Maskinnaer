@@ -20,7 +20,7 @@
 #define inputSize 30
 #define outputSize 16
 #define fileIn "../fileIn.txt"
-//#define fileOut "../fileOut.txt"
+#define fileOut "../fileOut.txt"
 
 int main() {
 
@@ -35,14 +35,14 @@ int main() {
     if(numberOfLabels > 0){
 
         //To hold pointers to all the Labels
-        labels = (char**) calloc(1, numberOfLabels);
+        labels = (char**) calloc(1, sizeof(char*)*(numberOfLabels));
 
         for (int i = 0; i < numberOfLabels; ++i) {
-            *(labels + i) = (char*) calloc(1, inputSize);
+            *(labels+i) = (char*) calloc(1, sizeof(char )*(inputSize));
         }
 
         //To hold all the locations
-        locations = (int*) calloc(1, numberOfLabels);
+        locations = (int*) calloc(1, sizeof(int)*(numberOfLabels));
 
         //Initialise with null
         for (int j = 0; j < numberOfLabels; ++j)
@@ -55,7 +55,7 @@ int main() {
     FILE *outputStream;
 
     //Initialize input and output
-    outputStream = fopen("../fileOut.txt","w");
+    outputStream = fopen(fileOut,"w");
     inStream = fopen(fileIn,"r");
 
     if (inStream != NULL && outputStream != NULL){
@@ -77,7 +77,7 @@ int main() {
         //Marks the index of the opcode
         int firstIndex = 0;
 
-        char* output = (char*) calloc(1, outputSize +1);
+        char* output = (char*) calloc(1, sizeof(char) * (outputSize+1));
 
         //char* input = takeInput();
         char *input = readNextLine(inStream, inputSize, &exit);
@@ -115,13 +115,13 @@ int main() {
             case -823617216: //.STRINGZ
 
             case 1357706560:
-                FILL(input, output);
+                FILL(input, output,firstIndex);
                 break;
             case 1505552400:
-                blocks = BLKW(input, output);
+                blocks = BLKW(input, output,firstIndex);
                 break;
             case 16834896:
-                END(input, &exit);
+                END(input, &exit,firstIndex);
                 break;
             case 423776:
                 LDR(input, output);
@@ -208,22 +208,6 @@ int main() {
         blocks = 0;
 
     }
-       // free(labels);
-       // free(locations);
+        free(labels);
+        free(locations);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

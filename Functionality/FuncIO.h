@@ -15,7 +15,7 @@ bool isLabel(char* line, int firstIndex, int inputSize, char* labelToReturn);
 char* readNextLine(FILE* file, int inputSize, int* statusEOF){
 
     int i = 0;
-    char* data = (char*) calloc(1,inputSize + 1);
+    char* data = (char*) calloc(1,sizeof(char )*(inputSize + 1));
 
     while (fscanf(file, "%c", &data[i]) != EOF ){
 
@@ -32,6 +32,7 @@ int countNumberOfLabels(char* filePath, int inputSize){
 
     FILE* inStream;
     inStream = fopen(filePath,"r");
+    char* str = (char*) calloc(1, sizeof(char )*(inputSize));
 
     int count = 0;
 
@@ -116,7 +117,7 @@ bool isLabel(char* line, int firstIndex, int inputSize, char* stringTested){
 void createSymbolTable(char* filePath, int inputSize, char** labels, int* locations){
 
     FILE* inStream;
-    inStream = fopen(filePath,"r");
+    inStream = fopen(filePath, "r");
 
     int lineNumber = 0;
     int statusEOF = 0;
