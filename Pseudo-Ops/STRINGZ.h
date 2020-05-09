@@ -29,8 +29,8 @@ void STRINGZ(char* input, char* output, FILE *outputStream, int firstIndex){
 
     printf("\n%s",input);
     for (int k = 0; k < countchars ; ++k) {
-        int alphaindex = (countfirstindex+(k+1))+firstIndex;
-        int charIndex = (countfirstindex+k)+firstIndex;
+        int alphaindex = (countfirstindex+(k+1));
+        int charIndex = (countfirstindex+k);
         printf("%c: ", input[alphaindex]);
         int pcoff = singleCharToInt(input,charIndex);
         writeIntBits(output,pcoff, 15, 16);
