@@ -24,10 +24,11 @@
 //    outputStream = fopen(fileOut,"w");
 //    char* testID = "STRINGZ1";
 //    char* input  = ".STRINGZ \"me\"";
-//    char* output = (char*) calloc(2, sizeof(char)*(17));
+//
+//
 //
 //    STRINGZ(input,output,outputStream,30,0);
-//    char* expectedresult = (char*) calloc(2, sizeof(char) * 17);
+//    char* expectedresult = (char*) calloc(1, sizeof(char) * 17);
 //
 //    expectedresult[0]= (char) "0000000001101101";
 //    expectedresult[1]= (char) "0000000001100101";

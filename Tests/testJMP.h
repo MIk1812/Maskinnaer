@@ -26,7 +26,7 @@ void testJMP1(){
     char* input = "JMP R4";
     char* output = (char*) calloc(1, sizeof(char) * 17);
 
-    JMP(input, output,0);
+    JMP(input,output,0);
     char* expected = "1100000100000000";
 
     equals(output, expected, testID);
