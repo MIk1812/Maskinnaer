@@ -7,30 +7,30 @@
 #pragma once
 #include "../Functionality/FuncOpcodes.h"
 
-void STRINGZ(char* input, char* output, FILE *outputStream, int inputSize, int firstIndex){
+void STRINGZ(LineInfo li, FILE *outputStream){
     int mask = 1;
     int countfirstindex = 0;
     int countchars = 0;
-    for (int i = 10+firstIndex; i <inputSize ; ++i) {
+    for (int i = 10+li.firstIndex; i <li.lineLength ; ++i) {
 
-        if (input[i] == '"') {
+        if (li.input[i] == '"') {
             break;
         } else
             countchars++;
     }
 
-    printf("\n%s",input);
+    printf("\n%s",li.input);
     for (int k = 0; k < countchars ; ++k) {
 
-        int alphaindex = (10+firstIndex+k);
-        int charIndex = (9+firstIndex+k);
+        int alphaindex = (10+li.firstIndex+k);
+        int charIndex = (9+li.firstIndex+k);
 
-        printf("%c: ", input[alphaindex]);
+        printf("%c: ", li.input[alphaindex]);
 
-        int pcoff = singleCharToInt(input,charIndex);
-        writeIntBits(output,pcoff, 15, 16);
-        printf("%s\n", output);
-        fprintf(outputStream, "%s\n", output);
+        int pcoff = singleCharToInt(li.input,charIndex);
+        writeIntBits(li.output,pcoff, 15, 16);
+        printf("%s\n", li.output);
+        fprintf(outputStream, "%s\n", li.output);
 
     }
 

@@ -10,35 +10,38 @@
 
 #include "../Functionality/FuncOpcodes.h"
 
-void ADD(char input[], char output[], int firstIndex) {
+void ADD(LineInfo li) {
+
+    //ADD R1, R2, R3
+
     // Opcode
-    output[0] = '0';
-    output[1] = '0';
-    output[2] = '0';
-    output[3] = '1';
+    li.output[0] = '0';
+    li.output[1] = '0';
+    li.output[2] = '0';
+    li.output[3] = '1';
 
     //Register DR
-    char dr = input[firstIndex + 5];
-    writeRegBits(output, dr, 4);
+    char dr = li.input[li.firstIndex + 5];
+    writeRegBits(li.output, dr, 4);
 
     //Register SR1
-    char sr1 = input[firstIndex + 9];
-    writeRegBits(output, sr1, 7);
+    char sr1 = li.input[li.firstIndex + 9];
+    writeRegBits(li.output, sr1, 7);
 
     // Her kontrolleres der om det er en immadiate værdi eller bare register
-    if (input[firstIndex + 12] == 'R') {
-        output[10] = '0';
-        output[11] = '0';
-        output[12] = '0';
+    if (li.input[li.firstIndex + 12] == 'R') {
+        li.output[10] = '0';
+        li.output[11] = '0';
+        li.output[12] = '0';
 
-        char sr2 = input[firstIndex + 13];
-        writeRegBits(output, sr2, 13);
+        char sr2 = li.input[li.firstIndex + 13];
+        writeRegBits(li.output, sr2, 13);
     } else{
         char imm[3];
         int immDigits = 0;
-        for (int j = 13; j < 30 ; ++j) {
-            if((input[firstIndex + j]>='0' && input[firstIndex + j]<='9') || input[firstIndex + j]=='-'){
-                imm[immDigits] = input[firstIndex + j];
+        for (int j = 13; j < li.lineLength ; ++j) {
+            if((li.input[li.firstIndex + j]>='0' && li.input[li.firstIndex + j]<='9') || li.input[li.firstIndex + j]=='-'){
+                imm[immDigits] = li.input[li.firstIndex + j];
                 immDigits++;
             }
             else
@@ -46,10 +49,10 @@ void ADD(char input[], char output[], int firstIndex) {
         }
 
         //iMM IDENTIFIER
-        output[10] = '1';
+        li.output[10] = '1';
         // Læser en char array laver den om til int.
         int immInt;
         immInt = atoi(imm);
-        writeIntBits(output,immInt,15,5);
+        writeIntBits(li.output,immInt,15,5);
     }
 }

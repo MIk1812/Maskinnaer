@@ -10,56 +10,46 @@
 
 #include <string.h>
 
+#include "../Functionality/Structs.h"
 #include "../Functionality/FuncOpcodes.h"
 #include "../Functionality/FuncIO.h"
 
-void LD(char* input, char* output, int firstIndex, char** labels, int numberOfLabels, int* locations, int inputSize){
+void writeLabelBits(LineInfo li, int labelIndex, int labelBits, int lastIndex);
+
+void LD(LineInfo li){
 
     //LD R1, #3
     //LD R1, x3
     //LD R1, LABEL
 
-    output[0] = '0';
-    output[1] = '0';
-    output[2] = '1';
-    output[3] = '0';
+    int regIndex = 4;
+    int labelIndexInput = 7;
+    int labelLengthInput = 4;
+    int labelBitsOutput = 9;
+    int lastIndex = 15;
 
-    char reg = input[4 + firstIndex];
+    li.output[0] = '0';
+    li.output[1] = '0';
+    li.output[2] = '1';
+    li.output[3] = '0';
 
-    writeRegBits(output, reg, 4);
+    char reg = li.input[regIndex + li.firstIndex];
 
-    char labelOrNot = input[firstIndex + 7];
+    writeRegBits(li.output, reg, regIndex);
+
+    char labelOrNot = li.input[li.firstIndex + labelIndexInput];
 
     //Test wether or not instruction contains label reference
     if(labelOrNot == '#' || labelOrNot == 'x' || labelOrNot == 'X'){
 
-        int pcOffset = charsToInt(input, 7 + firstIndex, 4);
-        writeIntBits(output, pcOffset, 15, 9);
+        int pcOffset = charsToInt(li.input, labelIndexInput + li.firstIndex, labelLengthInput);
+        writeIntBits(li.output, pcOffset, lastIndex, labelBitsOutput);
 
     } else{
 
-        //Isolate label from input
-        char* inputLabel = (char*) calloc(1, sizeof(char)* inputSize);
-        isolateChars(input,  7 + firstIndex, inputSize, inputLabel);
-
-        int matchIndex = NULL;
-
-        //Go through labels to find match
-        for (int i = 0; i < numberOfLabels; ++i) {
-
-            char* currentLabel = *(labels + i);
-
-            //If we have a match
-            if(strcmp(currentLabel, inputLabel) == 0){
-                matchIndex = i;
-                break;
-            }
-        }
-
-        writeIntBits(output, locations[matchIndex], 15, 9);
-
+        writeLabelBits(li, labelIndexInput, labelBitsOutput, lastIndex);
     }
-
 }
+
 
 

@@ -5,17 +5,44 @@
 #endif //PROJEKT2_STM_H
 #include "../Functionality/FuncOpcodes.h"
 
-void STR(char* input, char* output,int firstIndex) {
-    output[0] = '0';
-    output[1] = '1';
-    output[2] = '1';
-    output[3] = '1';
+void STR(LineInfo li) {
 
-    char Sreg = input[5+firstIndex]; //source register
-    writeRegBits(output,Sreg,4);
-    char BaseR = input[9+firstIndex]; //
-    writeRegBits(output,BaseR,7);
-    int pcoff = charsToInt(input, 12+firstIndex, 3);
-    writeIntBits(output,pcoff,15,6);
+    //STR R1, R2, #3
+    //STR R1, R2, LABEL
+
+    int regIndexInput1 = 5;
+    int regIndexOutput1 = 4;
+
+    int regIndexInput2 = 9;
+    int regIndexOutput2 = 7;
+
+    int labelIndexInput = 12;
+    int labelLengthInput = 4;
+    int labelBitsOutput = 6;
+    int lastIndex = 15;
+
+    li.output[0] = '0';
+    li.output[1] = '1';
+    li.output[2] = '1';
+    li.output[3] = '1';
+
+    char Sreg = li.input[regIndexInput1 + li.firstIndex]; //source register
+    writeRegBits(li.output, Sreg, regIndexOutput1);
+
+    char BaseR = li.input[regIndexInput2 + li.firstIndex]; //
+    writeRegBits(li.output, BaseR, regIndexOutput2);
+
+    char labelOrNot = li.input[li.firstIndex + labelIndexInput];
+
+    //Test wether or not instruction contains label reference
+    if(labelOrNot == '#' || labelOrNot == 'x' || labelOrNot == 'X'){
+
+        int pcOffset = charsToInt(li.input, labelIndexInput + li.firstIndex, labelLengthInput);
+        writeIntBits(li.output, pcOffset, lastIndex, labelBitsOutput);
+
+    } else{
+
+        writeLabelBits(li, labelIndexInput, labelBitsOutput, lastIndex);
+    }
 
 }

@@ -57,7 +57,7 @@ int countNumberOfLabels(char* filePath, int inputSize){
 void isolateChars(char* string, int firstIndex, int inputSize, char* stringToReturn){
 
     //First, copy the chars to stringTested
-    for (int i = firstIndex; i < inputSize; ++i) {
+    for (int i = firstIndex; i < inputSize + 1; ++i) {
 
         //Until first blank space
         if(string[i] == ' ' || string[i] == '\0' || string[i] == '\n')
@@ -114,7 +114,7 @@ bool isLabel(char* line, int firstIndex, int inputSize, char* stringTested){
 }
 
 //Indirect return through char** labels and int* locations
-void createSymbolTable(char* filePath, int inputSize, char** labels, int* locations){
+void createSymbolTable(char* filePath, int inputSize, SymbolTable symbolTable){
 
     FILE* inStream;
     inStream = fopen(filePath, "r");
@@ -132,12 +132,12 @@ void createSymbolTable(char* filePath, int inputSize, char** labels, int* locati
         if( isLabel(currentLine, 0, inputSize, currentLabel) ){
 
             //Record the lable's chars
-            for (int i = 0; i < inputSize; ++i) {
-                *(*(labels + labelCounter)+i) = *(currentLabel+i);
+            for (int i = 0; i < inputSize +1; ++i) {
+                *(*(symbolTable.labels + labelCounter)+i) = *(currentLabel+i);
             }
 
             //And record the lineNumber
-            *(locations + labelCounter) = lineNumber;
+            *(symbolTable.locations + labelCounter) = lineNumber;
             labelCounter++;
         }
         lineNumber++;
@@ -149,7 +149,7 @@ void createSymbolTable(char* filePath, int inputSize, char** labels, int* locati
 int multiplyChars(char* input, int firstIndex, int inputSize){
 
     int sum = 1;
-    for (int i = firstIndex; i < inputSize; ++i) {
+    for (int i = firstIndex; i < inputSize + 1; ++i) {
 
         //Until first blank space
         if(input[i] == ' '|| input[i] == '\0' || input[i] == '\n')

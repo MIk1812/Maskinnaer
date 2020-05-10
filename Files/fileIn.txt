@@ -1,0 +1,8 @@
+.ORIG x3050
+LD R1, kok
+AND R1, R2, #0
+kok .FILL x5
+.STRINGZ "hej"
+.BLKW #5
+
+.END

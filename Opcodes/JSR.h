@@ -10,20 +10,35 @@
 #pragma once
 #include "../Functionality/FuncOpcodes.h"
 
-void JSR(char* input, char* output, int firstIndex){
+void JSR(LineInfo li){
 
     //JSR #943
-    
-    output[0] = '0';
-    output[1] = '1';
-    output[2] = '0';
-    output[3] = '0';
+    //JSR LABEL
 
-    output[4] = '1';
+    int labelIndexInput = 4;
+    int labelLengthInput = 5;
+    int labelBitsOutput = 11;
+    int lastIndex = 15;
     
-    int pcOffset = charsToInt(input, 4+firstIndex, 5);
+    li.output[0] = '0';
+    li.output[1] = '1';
+    li.output[2] = '0';
+    li.output[3] = '0';
 
-    writeIntBits(output, pcOffset, 15, 11);
+    li.output[4] = '1';
+
+    char labelOrNot = li.input[li.firstIndex + labelIndexInput];
+
+    //Test wether or not instruction contains label reference
+    if(labelOrNot == '#' || labelOrNot == 'x' || labelOrNot == 'X'){
+
+        int pcOffset = charsToInt(li.input, labelIndexInput + li.firstIndex, labelLengthInput);
+        writeIntBits(li.output, pcOffset, lastIndex, labelBitsOutput);
+
+    } else{
+
+        writeLabelBits(li, labelIndexInput, labelBitsOutput, lastIndex);
+    }
 
 }
 

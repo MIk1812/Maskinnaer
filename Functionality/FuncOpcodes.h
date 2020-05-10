@@ -8,6 +8,8 @@
 
 #endif //PROJEKT2_FUNC_H
 
+#include "FuncIO.h"
+
 //start determines which bits in bits[] are to be modified
 //Notice: writes from left to right
 void writeRegBits(char* output, char reg, int firstIndex){
@@ -49,6 +51,33 @@ void writeIntBits(char* output, int intToWrite, int lastIndex, int numberOfBits)
         lastIndex--;
         bit = bit*2;
     }
+
+}
+
+void writeLabelBits(LineInfo li, int labelIndex, int labelBits, int lastIndex){
+
+    //Isolate label from input
+    char* inputLabel = (char*) calloc(1, sizeof(char) * li.lineLength);
+    isolateChars(li.input, labelIndex + li.firstIndex, li.lineLength, inputLabel);
+//NULL her vvvvvvvvvvvv
+    int matchIndex = NULL;
+
+    //Go through labels to find match
+    for (int i = 0; i < li.symbolTable.numberOfLabels; ++i) {
+
+        char* currentLabel = *(li.symbolTable.labels + i);
+
+        //If we have a match
+        if(strcmp(currentLabel, inputLabel) == 0){
+            matchIndex = i;
+            break;
+        }
+    }
+
+    int addOfLabel = li.symbolTable.locations[matchIndex];
+    int pcOffset = addOfLabel - li.lineCount - 1;
+
+    writeIntBits(li.output, pcOffset, lastIndex, labelBits);
 
 }
 
@@ -102,13 +131,12 @@ int charsToInt(char* input, int firstIndex, int maxLength){
     } else {
 
         //Convert PC Offset to int
-        int out = (int)strtol(temp, NULL, 16);
+        int out = (int) strtol(temp, NULL, 16);
         free(temp);
 
         return out;
 
     }
-
 }
 
 int singleCharToInt (char* input, int firstIndex){
