@@ -31,33 +31,26 @@ int main() {
 
     testEverything();
 
-    //Find number of labels in file
-    int numberOfLabels = countNumberOfLabels(fileIn, inputSize);
+    SymbolTable st;
 
-    char** labels;
-    int* locations;
+    //Find number of labels in file
+    st.numberOfLabels = countNumberOfLabels(fileIn, inputSize);
 
     //If we have any labels
-    if(numberOfLabels > 0){
+    if(st.numberOfLabels > 0){
 
         //To hold pointers to all the Labels
-        labels = (char**) calloc(1, sizeof(char*)*(numberOfLabels));
+        st.labels = (char**) calloc(1, sizeof(char*) * (st.numberOfLabels));
 
-        for (int i = 0; i < numberOfLabels; ++i) {
-            *(labels+i) = (char*) calloc(1, sizeof(char )*(inputSize));
+        for (int i = 0; i < st.numberOfLabels; ++i) {
+            *(st.labels + i) = (char*) calloc(1, sizeof(char ) * (inputSize));
         }
 
         //To hold all the locations
-        locations = (int*) calloc(1, sizeof(int)*(numberOfLabels));
+        st.locations = (int*) calloc(1, sizeof(int) * (st.numberOfLabels));
 
-        createSymbolTable(fileIn, inputSize, labels, locations);
+        createSymbolTable(fileIn, inputSize, st);
     }
-
-    //todo integrer når psedoups er færdige
-    SymbolTable symbolTable;
-    symbolTable.labels = labels;
-    symbolTable.numberOfLabels = numberOfLabels;
-    symbolTable.locations = locations;
 
     FILE *inStream;
     FILE *outputStream;
@@ -84,12 +77,12 @@ int main() {
     while(exit == 0){
 
         LineInfo li;
-        li.symbolTable = symbolTable;
+        li.symbolTable = st;
         li.lineLength = inputSize;
         li.lineCount = lineCount;
 
         //Used to skip any predicate labels
-        int firstIndex = 0;
+        li.firstIndex = 0;
 
         //To hold output
         char* output = (char*) calloc(1, sizeof(char) * (outputSize+1));
@@ -103,29 +96,27 @@ int main() {
         int blocks = 0;
 
         //If we have any labels, change firstIndex accordingly
-        if(numberOfLabels > 0 ){
+        if(st.numberOfLabels > 0 ){
 
             //If we are currently on a line with a label referencing it
-            if(lineCount == *(locations + labelCount)){
+            if(lineCount == *(st.locations + labelCount)){
 
                 labelCount++;
 
                 //Update firstIndex accordingly
                 do{
-                    char currentChar = input[firstIndex];
+                    char currentChar = input[li.firstIndex];
                     if(currentChar == ' ' || currentChar == '\0' || currentChar == '\n'){
-                        firstIndex++;
+                        li.firstIndex++;
                         break;
                     }
-                    else firstIndex++;
+                    else li.firstIndex++;
                 } while(true);
             }
         }
 
-        li.firstIndex = firstIndex;
-
         //Multiply the ASCII values of the opcode's characters in order to differentiate them
-        int sum = multiplyChars(input, firstIndex, inputSize);
+        int sum = multiplyChars(input, li.firstIndex, inputSize);
 
         //Identify opcode
         switch(sum){
@@ -142,7 +133,7 @@ int main() {
                 END(&exit);
                 break;
             case -823617216 :
-                STRINGZ(li, outputStream, inputSize);
+                STRINGZ(li, outputStream);
                 break;
                 //LDR
             case 423776:
@@ -238,6 +229,6 @@ int main() {
 
     }
 
-    free(labels);
-    free(locations);
+    free(st.labels);
+    free(st.locations);
 }

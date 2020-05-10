@@ -114,7 +114,7 @@ bool isLabel(char* line, int firstIndex, int inputSize, char* stringTested){
 }
 
 //Indirect return through char** labels and int* locations
-void createSymbolTable(char* filePath, int inputSize, char** labels, int* locations){
+void createSymbolTable(char* filePath, int inputSize, SymbolTable symbolTable){
 
     FILE* inStream;
     inStream = fopen(filePath, "r");
@@ -133,11 +133,11 @@ void createSymbolTable(char* filePath, int inputSize, char** labels, int* locati
 
             //Record the lable's chars
             for (int i = 0; i < inputSize +1; ++i) {
-                *(*(labels + labelCounter)+i) = *(currentLabel+i);
+                *(*(symbolTable.labels + labelCounter)+i) = *(currentLabel+i);
             }
 
             //And record the lineNumber
-            *(locations + labelCounter) = lineNumber;
+            *(symbolTable.locations + labelCounter) = lineNumber;
             labelCounter++;
         }
         lineNumber++;

@@ -7,11 +7,11 @@
 #pragma once
 #include "../Functionality/FuncOpcodes.h"
 
-void STRINGZ(LineInfo li, FILE *outputStream, int inputSize){
+void STRINGZ(LineInfo li, FILE *outputStream){
     int mask = 1;
     int countfirstindex = 0;
     int countchars = 0;
-    for (int i = 10+li.firstIndex; i <inputSize ; ++i) {
+    for (int i = 10+li.firstIndex; i <li.lineLength ; ++i) {
 
         if (li.input[i] == '"') {
             break;
