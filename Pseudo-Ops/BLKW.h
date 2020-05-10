@@ -9,19 +9,19 @@
 #include "../Functionality/FuncOpcodes.h"
 
 
-int BLKW(char* input, char* output,int firstInt){
+int BLKW(LineInfo li){
 
     // Calculates the place of dot
     int xorhash = 0;
     for (int i = 0; i <30 ; ++i) {
-        if((input[i]=='x') || (input[i]=='#')  ){
+        if((li.input[i]=='x') || (li.input[i]=='#')  ){
             break;
         }
         else xorhash++;
     }
 
 
-    int memoryBlocks = charsToInt(input, xorhash, 6);
-    writeIntBits(output, 0, 15, 16);
+    int memoryBlocks = charsToInt(li.input, xorhash, 6);
+    writeIntBits(li.output, 0, 15, 16);
     return memoryBlocks;
 }

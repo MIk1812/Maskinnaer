@@ -59,7 +59,7 @@ void writeLabelBits(LineInfo li, int labelIndex, int labelBits, int lastIndex){
     //Isolate label from input
     char* inputLabel = (char*) calloc(1, sizeof(char) * li.lineLength);
     isolateChars(li.input, labelIndex + li.firstIndex, li.lineLength, inputLabel);
-
+//NULL her vvvvvvvvvvvv
     int matchIndex = NULL;
 
     //Go through labels to find match

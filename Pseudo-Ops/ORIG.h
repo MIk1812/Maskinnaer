@@ -10,10 +10,10 @@
 #pragma once
 #include "../Functionality/FuncOpcodes.h"
 
-void ORIG(char* input, char* output){
+void ORIG(LineInfo li){
 
-    int pcOffset = charsToInt(input, 6, 6);
+    int pcOffset = charsToInt(li.input, 6, 6);
 
-    writeIntBits(output, pcOffset, 15, 16);
+    writeIntBits(li.output, pcOffset, 15, 16);
 
 }

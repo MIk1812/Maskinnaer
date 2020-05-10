@@ -9,6 +9,7 @@
 
 #include "../../Functionality/FuncTest.h"
 #include "../../Pseudo-Ops/ORIG.h"
+#include "../../Functionality/Structs.h"
 
 void testORIG1();
 
@@ -19,15 +20,16 @@ void testORIG(){
 }
 
 void testORIG1() {
-
+    LineInfo li;
+    li.input = ".ORIG x3000";
+    li.output = (char*) calloc(1, sizeof(char) * 17);
+    li.firstIndex = 0;
+    li.lineLength = 30;
     char *testID = "ORIG1";
-    char *input = ".ORIG x3000";
-    char *output = (char *) calloc(1, sizeof(char) * 17);
 
-    ORIG(input, output);
+    ORIG(li);
     char *expected = "0011000000000000";
 
-    equals(output, expected, testID);
-    free(output);
+    equals(li.output, expected, testID);
 
 }

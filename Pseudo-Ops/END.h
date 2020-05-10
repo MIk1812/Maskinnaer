@@ -7,6 +7,6 @@
 
 #endif //PROJEKT2_END_H
 
-void END(char* input , int* exit,int firstInt){
+void END(int* exit){
     *exit = 1;
 }

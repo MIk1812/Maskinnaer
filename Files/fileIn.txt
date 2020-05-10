@@ -1,37 +1,8 @@
 .ORIG x3050
-ADD R1, R2, R3
-labelADD ADD R1, R2, R3
-AND R1, R2, #10
-AND R1, R2, #10
-BRnzp #10
-BRnzp #10
-JMP R4
-JMP R4
-JSR #932
-JSR #932
-JSRR R4
-JSRR R4
-LD R1, #-3
-labelToSkip LD R1, labelEND2
-LDI R7, #212
-labelEND2 LDI R7, #212
-LDR R1, R2, #29
-LDR R1, R2, #29
-LEA R1, #13
-labelToSkip LEA R1, labelEND2
-NOT R2, R1
-NOT R2, R1
-.ORIG x3000
-.ORIG x3000
-RET
-RET
-RTI
-RTI
-ST R1, #3
-ST R1, #3
-STI R1, #-3
-STI R1, #-3
-STR R1, R3, #-3
-STR R1, R3, #-3
-TRAP #34
-labelEND TRAP #34
+LD R1, kok
+AND R1, R2, #0
+kok .FILL x5
+.STRINGZ "hej"
+.BLKW #5
+
+.END

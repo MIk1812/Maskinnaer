@@ -130,23 +130,19 @@ int main() {
         //Identify opcode
         switch(sum){
             case 1544471804:
-                ORIG(input, output);
+                ORIG(li);
                 break;
-
-                //todo end skal med
-            case 16834896: //.END
-
             case 1357706560:
-                FILL(input, output,firstIndex);
+                FILL(li);
                 break;
             case 1505552400:
-                blocks = BLKW(input, output,firstIndex);
+                blocks = BLKW(li);
                 break;
             case 168348960:
-                END(input, &exit, firstIndex);
+                END(&exit);
                 break;
             case -823617216 :
-                STRINGZ(input, output, outputStream, inputSize, firstIndex);
+                STRINGZ(li, outputStream, inputSize);
                 break;
                 //LDR
             case 423776:
@@ -227,8 +223,8 @@ int main() {
                     fprintf(outputStream, "%s\n", output);
                 }
 
-            } else {
-//                printf("%s\n", output);
+            } else if (exit==0) {
+//
                 fprintf(outputStream, "%s\n", output);
             }
         }

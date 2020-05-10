@@ -9,7 +9,7 @@
 
 #include "../../Functionality/FuncTest.h"
 #include "../../Opcodes/LD.h"
-#include "struct.h"
+#include "../../Functionality/Structs.h"
 
 void testLD1();
 void testLD2();
