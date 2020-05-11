@@ -89,26 +89,23 @@ int main() {
     //To track how many labels we have passed
     int labelCount = 0;
 
-    //To hold input
-    char* input = (char*) calloc(1,sizeof(char )*(inputSize + 1));
-
-    //To hold output
-    char* output = (char*) calloc(1, sizeof(char) * (outputSize+1));
-
-    LineInfo li;
-    li.symbolTable = st;
-    li.lineLength = inputSize;
-    li.output = output;
-
     //Until EOF
     while(exit == 0){
 
+        LineInfo li;
+        li.symbolTable = st;
+        li.lineLength = inputSize;
         li.lineCount = lineCount;
 
         //Used to skip any predicate labels
         li.firstIndex = 0;
 
-        readNextLine(inStream, &exit, input);
+        //To hold output
+        char* output = (char*) calloc(1, sizeof(char) * (outputSize+1));
+        li.output = output;
+
+        //To hold input
+        char *input = readNextLine(inStream, inputSize, &exit);
         li.input = input;
 
         // Number of memory places allocated by .BLKW
@@ -224,23 +221,26 @@ int main() {
 
 
             if (blocks > 0) {
-                // lineCount = lineCount-1;
                 int getlines = 0;
                 for (int i = 0; i < blocks; ++i) {
+
                     fprintf(outputStream, "%s\n", output);
                 }
 
             } else if (exit==0) {
+
                 fprintf(outputStream, "%s\n", output);
             }
         }
 
         lineCount++;
+
+        free(input);
+        free(output);
         blocks = 0;
+
     }
 
-    free(input);
-    free(output);
     free(st.labels);
     free(st.locations);
 }
