@@ -20,7 +20,6 @@ void STRINGZ(LineInfo li, FILE *outputStream, int* lineCount){
             (*lineCount)++;
         }
     }
-    (*lineCount)--;
 
     for (int k = 0; k < countchars ; ++k) {
 
@@ -33,5 +32,9 @@ void STRINGZ(LineInfo li, FILE *outputStream, int* lineCount){
         fprintf(outputStream, "%s\n", li.output);
 
     }
+
+    fprintf(outputStream, "%s\n", "0000000000000000");
+
+
 }
 

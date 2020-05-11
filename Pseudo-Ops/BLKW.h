@@ -9,7 +9,6 @@
 #include "../Functionality/FuncOpcodes.h"
 #pragma once
 
-
 int BLKW(LineInfo li, int* lineCount){
 
     // Calculates the place of dot
