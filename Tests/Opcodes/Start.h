@@ -53,8 +53,8 @@ void testEverything(){
     testAND();
     testTRAP();
     testORIG();
-    testFILL();
-    testBLKW();
+   // testFILL();
+   // testBLKW();
 //    testSTRINGZ();
 
     printf("\nTests completed successfully");

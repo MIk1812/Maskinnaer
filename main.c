@@ -28,14 +28,30 @@
 int main() {
 
     //todo brugerinterface?
+    int mode = 0;
+    char path[100]="../Files/fileIn.txt";
+    while (true) {
+        printf("Please choose a source mode to execute the assembler:\n");
+        printf("Press 1 and return for predefined file in Files directory in project\n"
+               "Press 2 and return for a file that stored in this pc (This option requires full path to file)\n");
+        scanf("%d", &mode);
+        if(mode==1)
+            break;
+        if(mode==2)
+            break;
+    }
+    if (mode==2){
 
+        printf("Enter absolute path to file:\n");
+        scanf("%s",&path);
+    }
 
     testEverything();
 
     SymbolTable st;
 
     //Find number of labels in file
-    st.numberOfLabels = countNumberOfLabels(fileIn, inputSize);
+    st.numberOfLabels = countNumberOfLabels(path, inputSize);
 
     //If we have any labels
     if(st.numberOfLabels > 0){
@@ -50,7 +66,7 @@ int main() {
         //To hold all the locations
         st.locations = (int*) calloc(1, sizeof(int) * (st.numberOfLabels));
 
-        createSymbolTable(fileIn, inputSize, st);
+        createSymbolTable(path, inputSize, st);
     }
 
     FILE *inStream;
@@ -58,7 +74,7 @@ int main() {
 
     //Initialize input and output
     outputStream = fopen(fileOut,"w");
-    inStream = fopen(fileIn,"r");
+    inStream = fopen(path,"r");
 
     //todo slet
     if (inStream != NULL && outputStream != NULL){
