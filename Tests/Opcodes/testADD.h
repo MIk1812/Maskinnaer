@@ -59,7 +59,7 @@ void testADD2(){
 
 void testADD3(){
 
-    char* testID = "ADD1";
+    char* testID = "ADD3";
 
     LineInfo li;
     li.input = "ADD R1, R2, #-10";

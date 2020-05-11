@@ -8,8 +8,6 @@
 #include "../Functionality/FuncOpcodes.h"
 
 void STRINGZ(LineInfo li, FILE *outputStream, int* lineCount){
-    int mask = 1;
-    int countfirstindex = 0;
     int countchars = 0;
     for (int i = 10 + li.firstIndex; i <li.lineLength ; ++i) {
 
@@ -22,8 +20,6 @@ void STRINGZ(LineInfo li, FILE *outputStream, int* lineCount){
     }
 
     for (int k = 0; k < countchars ; ++k) {
-
-        int alphaindex = (10 + li.firstIndex+k);
         int charIndex = (9 + li.firstIndex+k);
 
         int pcoff = singleCharToInt(li.input,charIndex);

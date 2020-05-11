@@ -55,7 +55,7 @@ void testEverything(){
     testORIG();
     testFILL();
     testBLKW();
-//    testSTRINGZ();
+    testSTRINGZ();
 
     printf("\nTests completed successfully");
 

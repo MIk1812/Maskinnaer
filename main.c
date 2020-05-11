@@ -29,7 +29,7 @@ void printSymbolTable(SymbolTable st);
 int main() {
 
     //This function test every opcode and pseudo-op
-    //testEverything();
+    testEverything();
 
     //Program menu
     char mode = '0';
@@ -240,7 +240,7 @@ int main() {
         }
 
 
-        if (sum != -823617216) {
+        if (sum != -823617216) {   // we want to handover the control of .STRINGZ to the function itself
             if (exit == 1) printf("\n");
 
 
