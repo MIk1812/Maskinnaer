@@ -18,7 +18,8 @@ void testBLKW(){
     li.output = (char*) calloc(1, sizeof(char) * 17);
     li.firstIndex = 0;
     li.lineLength = 30;
-    int blok = BLKW(li);
+    int lineCount = 0;
+    int blok = BLKW(li, &lineCount);
     if(blok!=3){
         printf("BLKW test has failed.\n");
     }

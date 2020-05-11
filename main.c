@@ -19,7 +19,7 @@
 #include "Pseudo-Ops/STRINGZ.h"
 #include "Functionality/Structs.h"
 
-#define inputSize 30
+#define inputSize 100
 #define outputSize 16
 #define fileOut "../Files/fileOut.txt"
 
@@ -42,7 +42,7 @@ int main() {
     }
 
     //This function test every opcodes and pseudo-ops
-    testEverything();
+    //testEverything();
 
     SymbolTable st;
 
@@ -143,13 +143,13 @@ int main() {
                 FILL(li);
                 break;
             case 1505552400:
-                blocks = BLKW(li);
+                blocks = BLKW(li, &lineCount);
                 break;
             case 168348960:
                 END(&exit);
                 break;
             case -823617216 :
-                STRINGZ(li, outputStream);
+                STRINGZ(li, outputStream, &lineCount);
                 break;
                 //LDR
             case 423776:
@@ -243,4 +243,12 @@ int main() {
 
     free(st.labels);
     free(st.locations);
+}
+
+void printSymbolTable(SymbolTable st){
+    printf("\n");
+    for (int j = 0; j < st.numberOfLabels; ++j) {
+        printf("%s -> ", *(st.labels+j));
+        printf("%d\n", *(st.locations+j));
+    }
 }
