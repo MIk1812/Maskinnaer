@@ -27,18 +27,15 @@
 
 int main() {
 
-    //todo brugerinterface?
+    //Program menu
     int mode = 0;
     char path[100]="../Files/fileIn.txt";
-    while (true) {
+    while (mode != 1 && mode !=2) {
         printf("Please choose a source mode to execute the assembler:\n");
         printf("Press 1 and return for predefined file in Files directory in project\n"
                "Press 2 and return for a file that stored in this pc (This option requires full path to file)\n");
         scanf("%d", &mode);
-        if(mode==1)
-            break;
-        if(mode==2)
-            break;
+
     }
     if (mode==2){
 
