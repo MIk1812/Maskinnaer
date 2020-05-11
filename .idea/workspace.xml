@@ -12,11 +12,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a743651-696a-4619-ad37-2d12b7607c3e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/fileIn.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Files/fileIn.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/fileOut.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Files/fileOut.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Functionality/FuncIO.h" beforeDir="false" afterPath="$PROJECT_DIR$/Functionality/FuncIO.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pseudo-Ops/BLKW.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pseudo-Ops/BLKW.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pseudo-Ops/STRINGZ.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pseudo-Ops/STRINGZ.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +40,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunManager">
     <configuration name="projekt2" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="projekt2" TARGET_NAME="projekt2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="projekt2" RUN_TARGET_NAME="projekt2">
@@ -57,7 +59,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1589197688323</updated>
-      <workItem from="1589197691294" duration="1798000" />
+      <workItem from="1589197691294" duration="3323000" />
     </task>
     <task id="LOCAL-00001" summary="Gjort .STRINGZ og .BLKW kombatible med labels">
       <created>1589198212924</created>
@@ -66,7 +68,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589198212924</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Implementeret null pointer i stringz">
+      <created>1589199703709</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1589199703709</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -74,52 +83,64 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Gjort .STRINGZ og .BLKW kombatible med labels" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gjort .STRINGZ og .BLKW kombatible med labels" />
+    <MESSAGE value="Implementeret null pointer i stringz" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementeret null pointer i stringz" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1255" y="154" key="CommitChangelistDialog2" timestamp="1589198212736">
+    <state x="1255" y="154" key="CommitChangelistDialog2" timestamp="1589199703599">
       <screen x="42" y="23" width="2518" height="1057" />
     </state>
-    <state x="1255" y="154" key="CommitChangelistDialog2/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589198212736" />
-    <state width="1509" height="290" key="GridCell.Tab.0.bottom" timestamp="1589199657889">
+    <state x="1255" y="154" key="CommitChangelistDialog2/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589199703599" />
+    <state width="1509" height="290" key="GridCell.Tab.0.bottom" timestamp="1589201021110">
       <screen x="42" y="23" width="2518" height="1057" />
     </state>
-    <state width="1509" height="290" key="GridCell.Tab.0.bottom/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589199657889" />
-    <state width="1509" height="290" key="GridCell.Tab.0.center" timestamp="1589199657888">
+    <state width="1509" height="290" key="GridCell.Tab.0.bottom/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589201021110" />
+    <state width="1509" height="290" key="GridCell.Tab.0.center" timestamp="1589201021110">
       <screen x="42" y="23" width="2518" height="1057" />
     </state>
-    <state width="1509" height="290" key="GridCell.Tab.0.center/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589199657888" />
-    <state width="1509" height="290" key="GridCell.Tab.0.left" timestamp="1589199657887">
+    <state width="1509" height="290" key="GridCell.Tab.0.center/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589201021110" />
+    <state width="1509" height="290" key="GridCell.Tab.0.left" timestamp="1589201021109">
       <screen x="42" y="23" width="2518" height="1057" />
     </state>
-    <state width="1509" height="290" key="GridCell.Tab.0.left/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589199657887" />
-    <state width="1509" height="290" key="GridCell.Tab.0.right" timestamp="1589199657888">
+    <state width="1509" height="290" key="GridCell.Tab.0.left/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589201021109" />
+    <state width="1509" height="290" key="GridCell.Tab.0.right" timestamp="1589201021110">
       <screen x="42" y="23" width="2518" height="1057" />
     </state>
-    <state width="1509" height="290" key="GridCell.Tab.0.right/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589199657888" />
-    <state width="1509" height="357" key="GridCell.Tab.1.bottom" timestamp="1589198088068">
+    <state width="1509" height="290" key="GridCell.Tab.0.right/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589201021110" />
+    <state width="1509" height="357" key="GridCell.Tab.1.bottom" timestamp="1589200767241">
       <screen x="42" y="23" width="2518" height="1057" />
     </state>
-    <state width="1509" height="357" key="GridCell.Tab.1.bottom/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589198088068" />
-    <state width="1509" height="357" key="GridCell.Tab.1.center" timestamp="1589198088067">
+    <state width="1509" height="357" key="GridCell.Tab.1.bottom/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589200767241" />
+    <state width="1509" height="357" key="GridCell.Tab.1.center" timestamp="1589200767240">
       <screen x="42" y="23" width="2518" height="1057" />
     </state>
-    <state width="1509" height="357" key="GridCell.Tab.1.center/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589198088067" />
-    <state width="1509" height="357" key="GridCell.Tab.1.left" timestamp="1589198088067">
+    <state width="1509" height="357" key="GridCell.Tab.1.center/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589200767240" />
+    <state width="1509" height="357" key="GridCell.Tab.1.left" timestamp="1589200767239">
       <screen x="42" y="23" width="2518" height="1057" />
     </state>
-    <state width="1509" height="357" key="GridCell.Tab.1.left/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589198088067" />
-    <state width="1509" height="357" key="GridCell.Tab.1.right" timestamp="1589198088068">
+    <state width="1509" height="357" key="GridCell.Tab.1.left/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589200767239" />
+    <state width="1509" height="357" key="GridCell.Tab.1.right" timestamp="1589200767240">
       <screen x="42" y="23" width="2518" height="1057" />
     </state>
-    <state width="1509" height="357" key="GridCell.Tab.1.right/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589198088068" />
-    <state x="1244" y="291" key="Vcs.Push.Dialog.v2" timestamp="1589198215353">
+    <state width="1509" height="357" key="GridCell.Tab.1.right/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589200767240" />
+    <state x="1244" y="291" key="Vcs.Push.Dialog.v2" timestamp="1589199706067">
       <screen x="42" y="23" width="2518" height="1057" />
     </state>
-    <state x="1244" y="291" key="Vcs.Push.Dialog.v2/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589198215353" />
+    <state x="1244" y="291" key="Vcs.Push.Dialog.v2/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589199706067" />
     <state x="1337" y="384" key="com.intellij.ide.util.TipDialog" timestamp="1589197691354">
       <screen x="42" y="23" width="2518" height="1057" />
     </state>
     <state x="1337" y="384" key="com.intellij.ide.util.TipDialog/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589197691354" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Functionality/FuncIO.h</url>
+          <line>134</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -20,7 +20,6 @@ void STRINGZ(LineInfo li, FILE *outputStream, int* lineCount){
             (*lineCount)++;
         }
     }
-    (*lineCount)--;
 
     for (int k = 0; k < countchars ; ++k) {
 

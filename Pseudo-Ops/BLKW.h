@@ -24,8 +24,8 @@ int BLKW(LineInfo li, int* lineCount){
 //    printf("\nLinecount før: %d", *lineCount);
 
     int memoryBlocks = charsToInt(li.input, xorhash, 6);
-//    *lineCount = *lineCount + memoryBlocks - 1;
-//
+    *lineCount = *lineCount + memoryBlocks - 1;
+
 //    printf("\nLinecount efter: %d", *lineCount);
 
     writeIntBits(li.output, 0, 15, 16);

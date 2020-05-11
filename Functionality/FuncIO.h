@@ -128,13 +128,13 @@ void incrementSTRINGZ(char* currentLine, int firstIndex, int* lineNumber){
 
         (*lineNumber)++;
     }
-    (*lineNumber)--;
 }
 
 void incrementBLKW(char* currentLine, int firstIndex,  int* lineNumber){
 
-//    int numberOfBlocks = charsToInt(currentLine, firstIndex + 6, 30);
-//    (*lineNumber)++;
+    int numberOfBlocks = charsToInt(currentLine, firstIndex + 6, 30);
+
+    *lineNumber = *lineNumber + numberOfBlocks - 1;
 
 }
 
@@ -158,26 +158,30 @@ void createSymbolTable(char* filePath, int inputSize, SymbolTable symbolTable){
         //If current line contains a label
         if( isLabel(currentLine, 0, inputSize, currentLabel, &currentLabelLength) ){
 
-            //Record the lable's chars
+            //Record the lable's chars in the symbol table
             for (int i = 0; i < inputSize +1; ++i) {
                 *(*(symbolTable.labels + labelCounter)+i) = *(currentLabel+i);
             }
 
-            //And record the lineNumber
+            //And the lineNumber
             *(symbolTable.locations + labelCounter) = lineNumber;
             labelCounter++;
 
-            //If currentLine is .STRINGZ or .BLKW we need to increment lineNumber accordingly
-            isolateChars(currentLine, currentLabelLength + 1, inputSize, currentOpcode);
+            currentLabelLength++;
 
-            //.STRINGZ
-            if(currentOpcode[0] == '.' && currentOpcode[1] == 'S')
-                incrementSTRINGZ(currentLine, currentLabelLength + 1, &lineNumber);
+        } else
+            currentLabelLength = 0;
 
-            //.BLKW
-            if(currentOpcode[0] == '.' && currentOpcode[1] == 'B')
-                incrementBLKW(currentLine, currentLabelLength + 1, &lineNumber);
-        }
+        //If currentLine is .STRINGZ or .BLKW we need to increment lineNumber accordingly
+        isolateChars(currentLine, currentLabelLength, inputSize, currentOpcode);
+
+        //.STRINGZ
+        if(currentOpcode[0] == '.' && currentOpcode[1] == 'S')
+            incrementSTRINGZ(currentLine, currentLabelLength, &lineNumber);
+
+        //.BLKW
+        if(currentOpcode[0] == '.' && currentOpcode[1] == 'B')
+            incrementBLKW(currentLine, currentLabelLength, &lineNumber);
 
         lineNumber++;
         free(currentLabel);
