@@ -133,8 +133,8 @@ void incrementSTRINGZ(char* currentLine, int firstIndex, int* lineNumber){
 
 void incrementBLKW(char* currentLine, int firstIndex,  int* lineNumber){
 
-    int numberOfBlocks = charsToInt(currentLine, firstIndex + 6, 30);
-    (*lineNumber)++;
+//    int numberOfBlocks = charsToInt(currentLine, firstIndex + 6, 30);
+//    (*lineNumber)++;
 
 }
 

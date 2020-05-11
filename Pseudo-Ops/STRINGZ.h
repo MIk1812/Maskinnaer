@@ -33,5 +33,9 @@ void STRINGZ(LineInfo li, FILE *outputStream, int* lineCount){
         fprintf(outputStream, "%s\n", li.output);
 
     }
+
+    fprintf(outputStream, "%s\n", "0000000000000000");
+
+
 }
 

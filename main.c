@@ -23,23 +23,25 @@
 #define outputSize 16
 #define fileOut "../Files/fileOut.txt"
 
+void printSymbolTable(SymbolTable st);
+
 int main() {
 
     //Program menu
     int mode = 0;
     char path[100]="../Files/fileIn.txt";
-    while (mode != 1 && mode !=2) {
-
-        printf("\nPlease choose a source mode\n");
-        printf("1: Predefined file in project\n"
-               "2: Specify path of a different file\n");
-        scanf("%d", &mode);
-    }
-
-    if (mode==2){
-        printf("Enter absolute path to file:\n");
-        scanf("%s",&path);
-    }
+//    while (mode != 1 && mode !=2) {
+//
+//        printf("\nPlease choose a source mode\n");
+//        printf("1: Predefined file in project\n"
+//               "2: Specify path of a different file\n");
+//        scanf("%d", &mode);
+//    }
+//
+//    if (mode==2){
+//        printf("Enter absolute path to file:\n");
+//        scanf("%s",&path);
+//    }
 
     //This function test every opcodes and pseudo-ops
     //testEverything();
@@ -64,6 +66,8 @@ int main() {
 
         createSymbolTable(path, inputSize, st);
     }
+
+    printSymbolTable(st);
 
     FILE *inStream;
     FILE *outputStream;

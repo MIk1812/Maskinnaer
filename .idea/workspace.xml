@@ -12,15 +12,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a743651-696a-4619-ad37-2d12b7607c3e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/volkan.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/fileIn.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Files/fileIn.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/fileOut.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Files/fileOut.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Functionality/FuncIO.h" beforeDir="false" afterPath="$PROJECT_DIR$/Functionality/FuncIO.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pseudo-Ops/BLKW.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pseudo-Ops/BLKW.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pseudo-Ops/FILL.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pseudo-Ops/FILL.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pseudo-Ops/STRINGZ.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pseudo-Ops/STRINGZ.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Pseudo-Ops/testBLKW.h" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Pseudo-Ops/testBLKW.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,30 +57,46 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1589197688323</updated>
-      <workItem from="1589197691294" duration="492000" />
+      <workItem from="1589197691294" duration="1798000" />
     </task>
+    <task id="LOCAL-00001" summary="Gjort .STRINGZ og .BLKW kombatible med labels">
+      <created>1589198212924</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1589198212924</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Gjort .STRINGZ og .BLKW kombatible med labels" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gjort .STRINGZ og .BLKW kombatible med labels" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1509" height="290" key="GridCell.Tab.0.bottom" timestamp="1589198177533">
+    <state x="1255" y="154" key="CommitChangelistDialog2" timestamp="1589198212736">
       <screen x="42" y="23" width="2518" height="1057" />
     </state>
-    <state width="1509" height="290" key="GridCell.Tab.0.bottom/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589198177533" />
-    <state width="1509" height="290" key="GridCell.Tab.0.center" timestamp="1589198177532">
+    <state x="1255" y="154" key="CommitChangelistDialog2/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589198212736" />
+    <state width="1509" height="290" key="GridCell.Tab.0.bottom" timestamp="1589199657889">
       <screen x="42" y="23" width="2518" height="1057" />
     </state>
-    <state width="1509" height="290" key="GridCell.Tab.0.center/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589198177532" />
-    <state width="1509" height="290" key="GridCell.Tab.0.left" timestamp="1589198177532">
+    <state width="1509" height="290" key="GridCell.Tab.0.bottom/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589199657889" />
+    <state width="1509" height="290" key="GridCell.Tab.0.center" timestamp="1589199657888">
       <screen x="42" y="23" width="2518" height="1057" />
     </state>
-    <state width="1509" height="290" key="GridCell.Tab.0.left/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589198177532" />
-    <state width="1509" height="290" key="GridCell.Tab.0.right" timestamp="1589198177533">
+    <state width="1509" height="290" key="GridCell.Tab.0.center/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589199657888" />
+    <state width="1509" height="290" key="GridCell.Tab.0.left" timestamp="1589199657887">
       <screen x="42" y="23" width="2518" height="1057" />
     </state>
-    <state width="1509" height="290" key="GridCell.Tab.0.right/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589198177533" />
+    <state width="1509" height="290" key="GridCell.Tab.0.left/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589199657887" />
+    <state width="1509" height="290" key="GridCell.Tab.0.right" timestamp="1589199657888">
+      <screen x="42" y="23" width="2518" height="1057" />
+    </state>
+    <state width="1509" height="290" key="GridCell.Tab.0.right/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589199657888" />
     <state width="1509" height="357" key="GridCell.Tab.1.bottom" timestamp="1589198088068">
       <screen x="42" y="23" width="2518" height="1057" />
     </state>
@@ -102,20 +113,13 @@
       <screen x="42" y="23" width="2518" height="1057" />
     </state>
     <state width="1509" height="357" key="GridCell.Tab.1.right/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589198088068" />
+    <state x="1244" y="291" key="Vcs.Push.Dialog.v2" timestamp="1589198215353">
+      <screen x="42" y="23" width="2518" height="1057" />
+    </state>
+    <state x="1244" y="291" key="Vcs.Push.Dialog.v2/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589198215353" />
     <state x="1337" y="384" key="com.intellij.ide.util.TipDialog" timestamp="1589197691354">
       <screen x="42" y="23" width="2518" height="1057" />
     </state>
     <state x="1337" y="384" key="com.intellij.ide.util.TipDialog/517.1103.1440.877/42.23.2518.1057@42.23.2518.1057" timestamp="1589197691354" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Functionality/FuncIO.h</url>
-          <line>135</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
