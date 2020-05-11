@@ -28,6 +28,8 @@
 #include "testTRAP.h"
 #include "../Pseudo-Ops/testORIG.h"
 #include "../Pseudo-Ops/testSTRINGZ.h"
+#include "../Pseudo-Ops/testFILL.h"
+#include "../Pseudo-Ops/testBLKW.h"
 
 
 void testEverything(){
@@ -51,6 +53,8 @@ void testEverything(){
     testAND();
     testTRAP();
     testORIG();
+    testFILL();
+    testBLKW();
 //    testSTRINGZ();
 
     printf("\nTests completed successfully");

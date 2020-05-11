@@ -7,6 +7,7 @@
 
 #endif //PROJEKT2_BLKW_H
 #include "../Functionality/FuncOpcodes.h"
+#pragma once
 
 
 int BLKW(LineInfo li){
