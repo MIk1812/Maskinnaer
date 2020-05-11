@@ -19,10 +19,10 @@ void testBLKW(){
     li.firstIndex = 0;
     li.lineLength = 30;
     int blok = BLKW(li);
-    int* expected = 3;
-    for (int i = 0; i <blok ; ++i) {
-        equals(li.output,expected,testID);
-    }
+    char* expected = "0000000000000000";
+
+    equals(li.output,expected,testID);
+
     free(li.output);
 
 }
