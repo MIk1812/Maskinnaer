@@ -14,7 +14,7 @@ void FILL(LineInfo li){
 
     // Calculates the place of dot
     int xorhash = 0;
-    for (int i = 0; i <30 ; ++i) {
+    for (int i = 0; i < li.lineLength ; ++i) {
         if((li.input[i]=='x') || (li.input[i]=='#')  ){
             break;
         }

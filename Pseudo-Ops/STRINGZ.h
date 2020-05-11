@@ -7,7 +7,7 @@
 #pragma once
 #include "../Functionality/FuncOpcodes.h"
 
-void STRINGZ(LineInfo li, FILE *outputStream){
+void STRINGZ(LineInfo li, FILE *outputStream, int* lineCount){
     int mask = 1;
     int countfirstindex = 0;
     int countchars = 0;
@@ -15,9 +15,12 @@ void STRINGZ(LineInfo li, FILE *outputStream){
 
         if (li.input[i] == '"') {
             break;
-        } else
+        } else{
             countchars++;
+            (*lineCount)++;
+        }
     }
+    (*lineCount)--;
 
     for (int k = 0; k < countchars ; ++k) {
 

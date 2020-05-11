@@ -9,8 +9,10 @@
 
 #pragma once
 
+#include "FuncOpcodes.h"
+
 int multiplyChars(char* input, int firstIndex, int inputSize);
-bool isLabel(char* line, int firstIndex, int inputSize, char* labelToReturn);
+bool isLabel(char* line, int firstIndex, int inputSize, char* labelToReturn, int* stringTestedLength);
 
 char* readNextLine(FILE* file, int inputSize, int* statusEOF){
 
@@ -32,7 +34,6 @@ int countNumberOfLabels(char* filePath, int inputSize){
 
     FILE* inStream;
     inStream = fopen(filePath,"r");
-    char* str = (char*) calloc(1, sizeof(char )*(inputSize));
 
     int count = 0;
 
@@ -40,9 +41,10 @@ int countNumberOfLabels(char* filePath, int inputSize){
     while(statusEOF == 0){
 
         char* str = (char*) calloc(1, sizeof(char) * inputSize);
+        int strLength;
 
         char* nextLine = readNextLine(inStream, inputSize, &statusEOF);
-        bool opcodeStatus = isLabel(nextLine, 0, inputSize, str);
+        bool opcodeStatus = isLabel(nextLine, 0, inputSize, str, &strLength);
 
         if(opcodeStatus)
             count++;
@@ -54,24 +56,24 @@ int countNumberOfLabels(char* filePath, int inputSize){
 }
 
 //The method return the string in stringToReturn
-void isolateChars(char* string, int firstIndex, int inputSize, char* stringToReturn){
+int isolateChars(char* string, int firstIndex, int inputSize, char* stringToReturn){
 
     //First, copy the chars to stringTested
     for (int i = firstIndex; i < inputSize + 1; ++i) {
 
         //Until first blank space
         if(string[i] == ' ' || string[i] == '\0' || string[i] == '\n')
-            break;
+            return i;
 
         stringToReturn[i-firstIndex] = string[i];
     }
 }
 
 //The method also returns the chars it tests, and therefor requires char* stringTested
-bool isLabel(char* line, int firstIndex, int inputSize, char* stringTested){
+bool isLabel(char* line, int firstIndex, int inputSize, char* stringTested, int* stringTestedLength){
 
     //First, copy the chars to stringTested
-    isolateChars(line, firstIndex, inputSize, stringTested);
+    *stringTestedLength = isolateChars(line, firstIndex, inputSize, stringTested);
 
     //Multiply the ASCII values of the characters in the first word in order to differentiate them
     int product = multiplyChars(line, firstIndex, inputSize);
@@ -113,6 +115,29 @@ bool isLabel(char* line, int firstIndex, int inputSize, char* stringTested){
     }
 }
 
+void incrementSTRINGZ(char* currentLine, int firstIndex, int* lineNumber){
+
+    int currentIndex = 10;
+
+    while(true){
+
+        char currentChar = currentLine[firstIndex + currentIndex++];
+
+        if(currentChar == '"')
+            break;
+
+        (*lineNumber)++;
+    }
+    (*lineNumber)--;
+}
+
+void incrementBLKW(char* currentLine, int firstIndex,  int* lineNumber){
+
+    int numberOfBlocks = charsToInt(currentLine, firstIndex + 6, 30);
+    (*lineNumber)++;
+
+}
+
 //Indirect return through char** labels and int* locations
 void createSymbolTable(char* filePath, int inputSize, SymbolTable symbolTable){
 
@@ -127,9 +152,11 @@ void createSymbolTable(char* filePath, int inputSize, SymbolTable symbolTable){
 
         char* currentLine = readNextLine(inStream, inputSize, &statusEOF);
         char* currentLabel = (char*) calloc(1, sizeof(char) * inputSize);
+        char* currentOpcode = (char*) calloc(1, sizeof(char) * inputSize);
+        int currentLabelLength = 0;
 
         //If current line contains a label
-        if( isLabel(currentLine, 0, inputSize, currentLabel) ){
+        if( isLabel(currentLine, 0, inputSize, currentLabel, &currentLabelLength) ){
 
             //Record the lable's chars
             for (int i = 0; i < inputSize +1; ++i) {
@@ -139,13 +166,22 @@ void createSymbolTable(char* filePath, int inputSize, SymbolTable symbolTable){
             //And record the lineNumber
             *(symbolTable.locations + labelCounter) = lineNumber;
             labelCounter++;
-        }
 
-//        //If currentLine is .STRINGZ or .BLKW we need to increment lineNumber accordingly
-//        if()
+            //If currentLine is .STRINGZ or .BLKW we need to increment lineNumber accordingly
+            isolateChars(currentLine, currentLabelLength + 1, inputSize, currentOpcode);
+
+            //.STRINGZ
+            if(currentOpcode[0] == '.' && currentOpcode[1] == 'S')
+                incrementSTRINGZ(currentLine, currentLabelLength + 1, &lineNumber);
+
+            //.BLKW
+            if(currentOpcode[0] == '.' && currentOpcode[1] == 'B')
+                incrementBLKW(currentLine, currentLabelLength + 1, &lineNumber);
+        }
 
         lineNumber++;
         free(currentLabel);
+        free(currentOpcode);
     }
 }
 
@@ -164,17 +200,4 @@ int multiplyChars(char* input, int firstIndex, int inputSize){
 
     }
     return sum;
-}
-
-char* takeInput(int inputSize) {
-
-    char* input = (char*) calloc(1, sizeof(char) * inputSize + 1);
-
-    //Space for 30 characters. Scanf reads until \n
-    scanf("%30[^\n]s", input);
-
-    //Clears line (\n)
-    scanf("%*c");
-
-    return input;
 }
