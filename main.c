@@ -23,27 +23,26 @@
 #define outputSize 16
 #define fileOut "../Files/fileOut.txt"
 
-
 int main() {
 
     //Program menu
     int mode = 0;
     char path[100]="../Files/fileIn.txt";
     while (mode != 1 && mode !=2) {
-        printf("Please choose a source mode to execute the assembler:\n");
-        printf("Press 1 and return for predefined file in Files directory in project\n"
-               "Press 2 and return for a file that stored in this pc (This option requires full path to file)\n");
+
+        printf("\nPlease choose a source mode\n");
+        printf("1: Predefined file in project\n"
+               "2: Specify path of a different file\n");
         scanf("%d", &mode);
-
     }
-    if (mode==2){
 
+    if (mode==2){
         printf("Enter absolute path to file:\n");
         scanf("%s",&path);
     }
 
-     //This function test every opcodes and pseudo-ops
-    //testEverything();
+    //This function test every opcodes and pseudo-ops
+    testEverything();
 
     SymbolTable st;
 
@@ -76,6 +75,9 @@ int main() {
 
     if (inStream != NULL && outputStream != NULL){
         printf("\nFile read success!\n");
+    }else{
+        printf("\nError trying to read file\n");
+        return 1;
     }
 
     //Marks when EOF is reached
@@ -87,23 +89,26 @@ int main() {
     //To track how many labels we have passed
     int labelCount = 0;
 
+    //To hold input
+    char* input = (char*) calloc(1,sizeof(char )*(inputSize + 1));
+
+    //To hold output
+    char* output = (char*) calloc(1, sizeof(char) * (outputSize+1));
+
+    LineInfo li;
+    li.symbolTable = st;
+    li.lineLength = inputSize;
+    li.output = output;
+
     //Until EOF
     while(exit == 0){
 
-        LineInfo li;
-        li.symbolTable = st;
-        li.lineLength = inputSize;
         li.lineCount = lineCount;
 
         //Used to skip any predicate labels
         li.firstIndex = 0;
 
-        //To hold output
-        char* output = (char*) calloc(1, sizeof(char) * (outputSize+1));
-        li.output = output;
-
-        //To hold input
-        char *input = readNextLine(inStream, inputSize, &exit);
+        readNextLine(inStream, &exit, input);
         li.input = input;
 
         // Number of memory places allocated by .BLKW
@@ -215,7 +220,6 @@ int main() {
 
 
         if (sum != -823617216) {
-//            printf("\n%s", input);
             if (exit == 1) printf("\n");
 
 
@@ -223,25 +227,20 @@ int main() {
                 // lineCount = lineCount-1;
                 int getlines = 0;
                 for (int i = 0; i < blocks; ++i) {
-//                    printf("%s\n", output);
                     fprintf(outputStream, "%s\n", output);
                 }
 
             } else if (exit==0) {
-//
                 fprintf(outputStream, "%s\n", output);
             }
         }
 
         lineCount++;
-
-            free(input);
-            free(output);
-            blocks = 0;
-
-
+        blocks = 0;
     }
 
+    free(input);
+    free(output);
     free(st.labels);
     free(st.locations);
 }

@@ -12,43 +12,46 @@
 int multiplyChars(char* input, int firstIndex, int inputSize);
 bool isLabel(char* line, int firstIndex, int inputSize, char* labelToReturn);
 
-char* readNextLine(FILE* file, int inputSize, int* statusEOF){
+void readNextLine(FILE* file, int* statusEOF, char* lineToReturn){
 
     int i = 0;
-    char* data = (char*) calloc(1,sizeof(char )*(inputSize + 1));
 
-    while (fscanf(file, "%c", &data[i]) != EOF ){
+    while (fscanf(file, "%c", &lineToReturn[i]) != EOF ){
 
         i++;
-        if (data[i-1] == '\n' )
-            return data;
+        if (lineToReturn[i-1] == '\n' )
+            return;
     }
 
     *statusEOF = 1;
-    return data;
+    return;
 }
 
 int countNumberOfLabels(char* filePath, int inputSize){
 
     FILE* inStream;
     inStream = fopen(filePath,"r");
-    char* str = (char*) calloc(1, sizeof(char )*(inputSize));
 
     int count = 0;
+
+    char* str = (char*) calloc(1, sizeof(char) * inputSize);
+    char* nextLine = (char*) calloc(1,sizeof(char )*(inputSize + 1));
 
     int statusEOF = 0;
     while(statusEOF == 0){
 
-        char* str = (char*) calloc(1, sizeof(char) * inputSize);
 
-        char* nextLine = readNextLine(inStream, inputSize, &statusEOF);
+        readNextLine(inStream, &statusEOF, nextLine);
+
         bool opcodeStatus = isLabel(nextLine, 0, inputSize, str);
 
         if(opcodeStatus)
             count++;
 
-        free(str);
     }
+
+    free(str);
+    free(nextLine);
     return count;
 
 }
@@ -123,10 +126,12 @@ void createSymbolTable(char* filePath, int inputSize, SymbolTable symbolTable){
     int statusEOF = 0;
     int labelCounter = 0;
 
+    char* currentLine = (char*) calloc(1,sizeof(char )*(inputSize + 1));;
+    char* currentLabel = (char*) calloc(1, sizeof(char) * inputSize);
+
     while(statusEOF == 0){
 
-        char* currentLine = readNextLine(inStream, inputSize, &statusEOF);
-        char* currentLabel = (char*) calloc(1, sizeof(char) * inputSize);
+        readNextLine(inStream, &statusEOF, currentLine);
 
         //If current line contains a label
         if( isLabel(currentLine, 0, inputSize, currentLabel) ){
@@ -140,9 +145,15 @@ void createSymbolTable(char* filePath, int inputSize, SymbolTable symbolTable){
             *(symbolTable.locations + labelCounter) = lineNumber;
             labelCounter++;
         }
+
+//        //If currentLine is .STRINGZ or .BLKW we need to increment lineNumber accordingly
+//        if()
+
         lineNumber++;
-        free(currentLabel);
     }
+    free(currentLabel);
+    free(currentLine);
+
 }
 
 //Multiplies the ASCII values of chars from firstIndex to ' ' or '\0'.
