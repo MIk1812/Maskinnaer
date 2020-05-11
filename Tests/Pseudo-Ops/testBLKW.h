@@ -19,6 +19,10 @@ void testBLKW(){
     li.firstIndex = 0;
     li.lineLength = 30;
     int blok = BLKW(li);
+    if(blok!=3){
+        printf("BLKW test has failed.\n");
+    }
+
     char* expected = "0000000000000000";
 
     equals(li.output,expected,testID);
