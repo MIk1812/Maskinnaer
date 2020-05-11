@@ -19,17 +19,17 @@ void STRINGZ(LineInfo li, FILE *outputStream){
             countchars++;
     }
 
-    printf("\n%s",li.input);
+
     for (int k = 0; k < countchars ; ++k) {
 
         int alphaindex = (10+li.firstIndex+k);
         int charIndex = (9+li.firstIndex+k);
 
-        printf("%c: ", li.input[alphaindex]);
+
 
         int pcoff = singleCharToInt(li.input,charIndex);
         writeIntBits(li.output,pcoff, 15, 16);
-        printf("%s\n", li.output);
+
         fprintf(outputStream, "%s\n", li.output);
 
     }

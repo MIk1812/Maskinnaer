@@ -21,7 +21,6 @@
 
 #define inputSize 30
 #define outputSize 16
-#define fileIn "../Files/fileIn.txt"
 #define fileOut "../Files/fileOut.txt"
 
 
@@ -43,7 +42,8 @@ int main() {
         scanf("%s",&path);
     }
 
-    testEverything();
+     //This function test every opcodes and pseudo-ops
+    //testEverything();
 
     SymbolTable st;
 
@@ -73,7 +73,7 @@ int main() {
     outputStream = fopen(fileOut,"w");
     inStream = fopen(path,"r");
 
-    //todo slet
+
     if (inStream != NULL && outputStream != NULL){
         printf("\nFile read success!\n");
     }
@@ -106,7 +106,7 @@ int main() {
         char *input = readNextLine(inStream, inputSize, &exit);
         li.input = input;
 
-        //todo hvad er blocks?
+        // Number of memory places allocated by .BLKW
         int blocks = 0;
 
         //If we have any labels, change firstIndex accordingly
@@ -213,8 +213,7 @@ int main() {
                 break;
         }
 
-        //todo slet udskrifter
-        //todo hvad er -823617216
+
         if (sum != -823617216) {
 //            printf("\n%s", input);
             if (exit == 1) printf("\n");
