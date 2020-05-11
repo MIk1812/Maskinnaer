@@ -11,16 +11,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb59133d-8e42-43d6-9228-317878544a5e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Tests/Pseudo-Ops/TestFiles/readfile.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/Pseudo-Ops/TestFiles/writefile.txt" afterDir="false" />
+    <list default="true" id="0a743651-696a-4619-ad37-2d12b7607c3e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/fileIn.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Files/fileIn.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/fileOut.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Files/fileOut.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pseudo-Ops/STRINGZ.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pseudo-Ops/STRINGZ.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/Opcodes/Start.h" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Opcodes/Start.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Opcodes/testADD.h" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Opcodes/testADD.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Pseudo-Ops/testSTRINGZ.h" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Pseudo-Ops/testSTRINGZ.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Pseudo-Ops/TestFiles/readfile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Pseudo-Ops/TestFiles/writefile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Pseudo-Ops/testSTRINGZ.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -208,6 +205,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#New_File_Extensions/0.0.1536.824@0.0.1536.824" timestamp="1588851255607" />
+    <state x="477" y="215" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589232374532">
+      <screen x="38" y="23" width="1402" height="877" />
+    </state>
+    <state x="477" y="215" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/38.23.1402.877@38.23.1402.877" timestamp="1589232374532" />
     <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1589106020664">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -216,22 +217,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1588845322966" />
-    <state width="1478" height="169" key="GridCell.Tab.0.bottom" timestamp="1589228704422">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1348" height="159" key="GridCell.Tab.0.bottom" timestamp="1589232406610">
+      <screen x="38" y="23" width="1402" height="877" />
     </state>
     <state width="1478" height="169" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589228704422" />
-    <state width="1478" height="169" key="GridCell.Tab.0.center" timestamp="1589228704422">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1348" height="159" key="GridCell.Tab.0.bottom/38.23.1402.877@38.23.1402.877" timestamp="1589232406610" />
+    <state width="1348" height="159" key="GridCell.Tab.0.center" timestamp="1589232406610">
+      <screen x="38" y="23" width="1402" height="877" />
     </state>
     <state width="1478" height="169" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589228704422" />
-    <state width="1478" height="169" key="GridCell.Tab.0.left" timestamp="1589228704422">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1348" height="159" key="GridCell.Tab.0.center/38.23.1402.877@38.23.1402.877" timestamp="1589232406610" />
+    <state width="1348" height="159" key="GridCell.Tab.0.left" timestamp="1589232406609">
+      <screen x="38" y="23" width="1402" height="877" />
     </state>
     <state width="1478" height="169" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589228704422" />
-    <state width="1478" height="169" key="GridCell.Tab.0.right" timestamp="1589228704422">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1348" height="159" key="GridCell.Tab.0.left/38.23.1402.877@38.23.1402.877" timestamp="1589232406609" />
+    <state width="1348" height="159" key="GridCell.Tab.0.right" timestamp="1589232406610">
+      <screen x="38" y="23" width="1402" height="877" />
     </state>
     <state width="1478" height="169" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589228704422" />
+    <state width="1348" height="159" key="GridCell.Tab.0.right/38.23.1402.877@38.23.1402.877" timestamp="1589232406610" />
     <state width="738" height="239" key="GridCell.Tab.1.bottom" timestamp="1589224052452">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

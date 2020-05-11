@@ -29,7 +29,7 @@ void printSymbolTable(SymbolTable st);
 int main() {
 
     //This function test every opcode and pseudo-op
-    testEverything();
+    //testEverything();
 
     //Program menu
     char mode = '0';
@@ -47,10 +47,12 @@ int main() {
 
     }
 
+    //If user want to specify new inputpath
     if (mode == '2'){
 
         FILE* file;
 
+        //Do until valid path is returned
         do{
             printf("\nEnter absolute path to file:\n");
             scanf("%99s",&path);
