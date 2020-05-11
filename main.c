@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/stat.h>
 
 #include "Tests/Opcodes/Start.h"
 #include "Functionality/FuncIO.h"
@@ -27,24 +28,42 @@ void printSymbolTable(SymbolTable st);
 
 int main() {
 
-    //Program menu
-    int mode = 0;
-    char path[100]="../Files/fileIn.txt";
-//    while (mode != 1 && mode !=2) {
-//
-//        printf("\nPlease choose a source mode\n");
-//        printf("1: Predefined file in project\n"
-//               "2: Specify path of a different file\n");
-//        scanf("%d", &mode);
-//    }
-//
-//    if (mode==2){
-//        printf("Enter absolute path to file:\n");
-//        scanf("%s",&path);
-//    }
-
-    //This function test every opcodes and pseudo-ops
+    //This function test every opcode and pseudo-op
     //testEverything();
+
+    //Program menu
+    char mode = '0';
+    char path[100] = "../Files/fileIn.txt";
+    while (mode != '1' && mode != '2') {
+
+        printf("\nPlease choose a source mode\n");
+        printf("1: Predefined file in project\n"
+               "2: Specify path of different file\n");
+        scanf("%c", &mode);
+
+        //clear stdin
+        scanf("%*[^\n]");
+        scanf("%*c");
+
+    }
+
+    if (mode == '2'){
+
+        FILE* file;
+
+        do{
+            printf("\nEnter absolute path to file:\n");
+            scanf("%99s",&path);
+
+            //clear stdin
+            scanf("%*[^\n]");
+            scanf("%*c");
+
+            file = fopen(path,"r");
+
+        }while (file == NULL);
+
+    }
 
     SymbolTable st;
 
@@ -67,7 +86,8 @@ int main() {
         createSymbolTable(path, inputSize, st);
     }
 
-    printSymbolTable(st);
+    //This functions is for debugging and prints out the symbol table
+    //printSymbolTable(st);
 
     FILE *inStream;
     FILE *outputStream;
@@ -75,7 +95,6 @@ int main() {
     //Initialize input and output
     outputStream = fopen(fileOut,"w");
     inStream = fopen(path,"r");
-
 
     if (inStream != NULL && outputStream != NULL){
         printf("\nFile read success!\n");
@@ -149,6 +168,7 @@ int main() {
             case 1505552400:
                 blocks = BLKW(li, &lineCount);
                 break;
+            case 16834896:
             case 168348960:
                 END(&exit);
                 break;

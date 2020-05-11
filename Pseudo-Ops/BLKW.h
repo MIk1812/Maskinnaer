@@ -9,7 +9,6 @@
 #include "../Functionality/FuncOpcodes.h"
 #pragma once
 
-
 int BLKW(LineInfo li, int* lineCount){
 
     // Calculates the place of dot
@@ -21,12 +20,8 @@ int BLKW(LineInfo li, int* lineCount){
         else xorhash++;
     }
 
-//    printf("\nLinecount før: %d", *lineCount);
-
     int memoryBlocks = charsToInt(li.input, xorhash, 6);
     *lineCount = *lineCount + memoryBlocks - 1;
-
-//    printf("\nLinecount efter: %d", *lineCount);
 
     writeIntBits(li.output, 0, 15, 16);
     return memoryBlocks;
