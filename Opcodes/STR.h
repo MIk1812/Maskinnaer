@@ -32,17 +32,7 @@ void STR(LineInfo li) {
     char BaseR = li.input[regIndexInput2 + li.firstIndex]; //
     writeRegBits(li.output, BaseR, regIndexOutput2);
 
-    char labelOrNot = li.input[li.firstIndex + labelIndexInput];
-
-    //Test wether or not instruction contains label reference
-    if(labelOrNot == '#' || labelOrNot == 'x' || labelOrNot == 'X'){
-
-        int pcOffset = charsToInt(li.input, labelIndexInput + li.firstIndex, labelLengthInput);
-        writeIntBits(li.output, pcOffset, lastIndex, labelBitsOutput);
-
-    } else{
-
-        writeLabelBits(li, labelIndexInput, labelBitsOutput, lastIndex);
-    }
+    int pcOffset = charsToInt(li.input, labelIndexInput + li.firstIndex, labelLengthInput);
+    writeIntBits(li.output, pcOffset, lastIndex, labelBitsOutput);
 
 }

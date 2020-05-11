@@ -21,20 +21,33 @@
 
 #define inputSize 30
 #define outputSize 16
-#define fileIn "../Files/fileIn.txt"
 #define fileOut "../Files/fileOut.txt"
-
 
 int main() {
 
-    //todo brugerinterface?
+    //Program menu
+    int mode = 0;
+    char path[100]="../Files/fileIn.txt";
+    while (mode != 1 && mode !=2) {
 
+        printf("\nPlease choose a source mode\n");
+        printf("1: Predefined file in project\n"
+               "2: Specify path of a different file\n");
+        scanf("%d", &mode);
+    }
+
+    if (mode==2){
+        printf("Enter absolute path to file:\n");
+        scanf("%s",&path);
+    }
+
+    //This function test every opcodes and pseudo-ops
     testEverything();
 
     SymbolTable st;
 
     //Find number of labels in file
-    st.numberOfLabels = countNumberOfLabels(fileIn, inputSize);
+    st.numberOfLabels = countNumberOfLabels(path, inputSize);
 
     //If we have any labels
     if(st.numberOfLabels > 0){
@@ -49,7 +62,7 @@ int main() {
         //To hold all the locations
         st.locations = (int*) calloc(1, sizeof(int) * (st.numberOfLabels));
 
-        createSymbolTable(fileIn, inputSize, st);
+        createSymbolTable(path, inputSize, st);
     }
 
     FILE *inStream;
@@ -57,11 +70,14 @@ int main() {
 
     //Initialize input and output
     outputStream = fopen(fileOut,"w");
-    inStream = fopen(fileIn,"r");
+    inStream = fopen(path,"r");
 
-    //todo slet
+
     if (inStream != NULL && outputStream != NULL){
         printf("\nFile read success!\n");
+    }else{
+        printf("\nError trying to read file\n");
+        return 1;
     }
 
     //Marks when EOF is reached
@@ -92,7 +108,7 @@ int main() {
         char *input = readNextLine(inStream, inputSize, &exit);
         li.input = input;
 
-        //todo hvad er blocks?
+        // Number of memory places allocated by .BLKW
         int blocks = 0;
 
         //If we have any labels, change firstIndex accordingly
@@ -199,33 +215,29 @@ int main() {
                 break;
         }
 
-        //todo slet udskrifter
-        //todo hvad er -823617216
+
         if (sum != -823617216) {
-//            printf("\n%s", input);
             if (exit == 1) printf("\n");
 
 
             if (blocks > 0) {
-                // lineCount = lineCount-1;
                 int getlines = 0;
                 for (int i = 0; i < blocks; ++i) {
-//                    printf("%s\n", output);
+
                     fprintf(outputStream, "%s\n", output);
                 }
 
             } else if (exit==0) {
-//
+
                 fprintf(outputStream, "%s\n", output);
             }
         }
 
         lineCount++;
 
-            free(input);
-            free(output);
-            blocks = 0;
-
+        free(input);
+        free(output);
+        blocks = 0;
 
     }
 

@@ -140,6 +140,10 @@ void createSymbolTable(char* filePath, int inputSize, SymbolTable symbolTable){
             *(symbolTable.locations + labelCounter) = lineNumber;
             labelCounter++;
         }
+
+//        //If currentLine is .STRINGZ or .BLKW we need to increment lineNumber accordingly
+//        if()
+
         lineNumber++;
         free(currentLabel);
     }
